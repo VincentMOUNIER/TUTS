@@ -1,13 +1,8 @@
 <?php get_header(); ?>
             <div class="row">
               <div class="col-lg-12" id="contenu">
-                Contenu
-                  <!-- <?php
-                    while (have_posts()) {
-                      the_post();
-                      get_template_part('content');
-                    }
-                  ?> -->
+                  <?php get_template_part('loop');?>
+
               </div>
             </div>
 

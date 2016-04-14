@@ -3,7 +3,7 @@
 
   <head profile="http://gmpg.org/xfn/11">
 
-    <title><?php bloginfo('name') ?><?php if ( is_404() ) : ?> &raquo; <?php _e('Not Found') ?><?php elseif ( is_home() ) : ?> &raquo; <?php bloginfo('description') ?><?php else : ?><?php wp_title() ?><?php endif ?></title>
+    <title><?php the_title(); ?></title>
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
     <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
     <!-- leave this for stats -->
@@ -23,12 +23,21 @@
 
         <div id="header" class="container-fluid">
 
-            <div class="col-lg-12">
-                <div class="col-lg-6">
-                <img alt="Logo Tous Unis Tous Solidaires" src="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/tlts.jpg">
+            <div class="col-lg-12 vertical-align">
+
+                <div class="col-lg-2 col-xs-0">
+                  <a href="../"><img class="img-responsive" alt="Logo Tous Unis Tous Solidaires" id="logo" src="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/tlts.jpg"></a>
                 </div>
-                <div class="col-lg-6" class="vertical-align">
-                <h1>Tous Unis Tous Solidaires</h1>
+                <div class="col-lg-6 col-xs-6">
+                  <h1><?php bloginfo('name'); ?></h1>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                  <h2>Je suis </h2>
+                  <div class="btn-group" role="group" aria-label="...">
+                      <a href="association"><button type="button" class="btn btn-default">une association</button></a>
+                      <a href="benevole"><button type="button" class="btn btn-default">un bénévole</button></a>
+
+                  </div>
                 </div>
             </div>
 

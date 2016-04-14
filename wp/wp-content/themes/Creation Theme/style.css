@@ -1,12 +1,18 @@
 /* Theme Name: Creation Theme Theme URI: http://www.fran6art.com/ Description: The first theme created by Francis Chouquet. Version: 0.1 Author: Francis Chouquet   Creation Theme by Francis Chouquet || http://www.fran6art.com   */
+
 #header
 {
-
+  border-bottom: 2px solid black;
 }
 
 #contenu
 {
-  background-color:pink;
+
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
 }
 
 html
@@ -16,11 +22,13 @@ html
 
 img
 {
-    height: 20em;
-    width: 20em;
+    height: 10em;
+    width: 10em;
 }
-#footer {
 
+
+#titre {
+  text-align:center;
 }
 
 td img
@@ -30,4 +38,21 @@ td img
   margin-left: auto;
   margin-right: auto;
   display:block;
+}
+table
+{
+  margin: auto;
+}
+
+#contenu td /* Toutes les cellules des tableaux... */
+{
+    border: 1px solid black; /* auront une bordure de 1px */
+    padding: 1em;
+}
+
+#footer
+{
+    border-top: 2px solid black;
+    margin:auto;
+
 }
