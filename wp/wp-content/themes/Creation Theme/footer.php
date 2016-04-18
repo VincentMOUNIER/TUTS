@@ -10,7 +10,7 @@
             <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/croixrouge.png"></td>
             <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/FranceBene.png"></td>
             <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/habitat.png"></td>
-            <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/rcf.png"></td>
+            <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/RCF_LOGO_LYON_QUADRI.png"></td>
             <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/petitsfreres.png"></td>
             <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/scd.png"></td>
             <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/UNICEF.png"></td>

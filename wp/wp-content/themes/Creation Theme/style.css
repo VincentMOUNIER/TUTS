@@ -3,13 +3,34 @@
 #header
 {
   border-bottom: 2px solid black;
+  background-color:#ecf0f1;
+}
+
+#titre
+{
+    font-size:3em;
+}
+
+@media screen and (max-width: 640px) {
+  #titre_site {
+    display:none;
+  }
+}
+#page
+{
+  background-image: url("http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/IMG_7082.jpg");
+  background-size: cover;
 }
 
 #contenu
 {
+    background-color:rgba(255,255,255,0.9);
+    margin-top:2em;
+    margin-bottom:2em;
+    padding:1em;
+    border-radius:1em;
 
 }
-
 .vertical-align {
     display: flex;
     align-items: center;
@@ -42,6 +63,7 @@ td img
 table
 {
   margin: auto;
+  /*Les tables se centrent */
 }
 
 #contenu td /* Toutes les cellules des tableaux... */
@@ -53,6 +75,25 @@ table
 #footer
 {
     border-top: 2px solid black;
-    margin:auto;
+    background-color:#ecf0f1;
 
+}
+
+#charte
+{
+    text-align: center;
+}
+
+#charte_contenu
+{
+    border: 1px solid black;
+    overflow-y:scroll;
+    height: 10em;
+    padding:1em;
+}
+
+#formulaire
+{
+    text-align: center;
+    margin-top: 3em;"
 }

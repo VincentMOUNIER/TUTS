@@ -1,7 +1,7 @@
 <?php /* Template Name: Aide */ ?>
 <?php get_header('aide'); ?>
 <div class="row">
-  <div class="col-lg-12" id="contenu">
+  <div class="col-lg-12" >
     <div class="main page">
       <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>

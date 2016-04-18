@@ -28,7 +28,7 @@
                 <div class="col-lg-2">
                   <a href="../"><img class="img-responsive" alt="Logo Tous Unis Tous Solidaires" id="logo" src="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/tlts.jpg"></a>
                 </div>
-                <div class="col-lg-6 ">
+                <div class="col-lg-6 " id="titre_site">
                   <h1><?php bloginfo('name'); ?></h1>
                 </div>
                 <div class="col-lg-3 ">

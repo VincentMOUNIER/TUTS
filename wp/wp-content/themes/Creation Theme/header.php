@@ -25,13 +25,13 @@
 
             <div class="col-lg-12 vertical-align">
 
-                <div class="col-lg-2 col-xs-0">
+                <div class="col-lg-4  " id="logo">
                   <a href="../"><img class="img-responsive" alt="Logo Tous Unis Tous Solidaires" id="logo" src="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/tlts.jpg"></a>
                 </div>
-                <div class="col-lg-6 col-xs-6">
-                  <h1><?php bloginfo('name'); ?></h1>
+                <div class="col-lg-4 col-xs-2">
+                  <p id="titre_site"><?php bloginfo('name'); ?></p>
                 </div>
-                <div class="col-lg-3 col-xs-6">
+                <div class="col-lg-4 col-xs-8">
                   <h2>Je suis </h2>
                   <div class="btn-group" role="group" aria-label="...">
                       <a href="association"><button type="button" class="btn btn-default">une association</button></a>
