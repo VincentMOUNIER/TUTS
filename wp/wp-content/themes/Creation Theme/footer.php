@@ -5,11 +5,11 @@
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_LEFOYER.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_emmaeus.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_ANCIELA.png"></td>
-            <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/LOGO.png"></td>
+            <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_MAISONDESSOLIDARITES.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_HI.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_CROIXROUGE.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_FB.png"></td>
-            <td><img alt="" class="img-responsive" src ="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/habitat.png"></td>
+            <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_HABITAT.jpg"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_RCF.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_PETITSFRERES.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_SCD.png"></td>
