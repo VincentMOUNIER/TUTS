@@ -66,10 +66,16 @@ table
   /*Les tables se centrent */
 }
 
+#contenu table
+{
+    width: 20em;
+}
+
 #contenu td /* Toutes les cellules des tableaux... */
 {
     border: 1px solid black; /* auront une bordure de 1px */
     padding: 1em;
+
 }
 
 #footer
