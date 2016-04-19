@@ -32,6 +32,12 @@
  *
  * @since Twenty Fourteen 1.0
  */
+
+function getScriptVitrine(){
+	
+}
+
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 474;
 }
