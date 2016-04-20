@@ -31,6 +31,14 @@
     border-radius:1em;
 
 }
+.accueil_texte
+{
+  height:40%;
+}
+.img_accueil{
+
+  width:100%;
+}
 .vertical-align {
     display: flex;
     align-items: center;

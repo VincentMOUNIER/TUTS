@@ -43,5 +43,5 @@
 
         </div>
 
-          <div id="page" class="container-fluid">
-            <div id="contenu" class="container">
+          <div id="page_accueil" class="container-fluid">
+            <div id="contenu_accueil" class="container">

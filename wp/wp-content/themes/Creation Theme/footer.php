@@ -10,7 +10,7 @@
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_CROIXROUGE.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_FB.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_HABITAT.jpg"></td>
-            <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_RCF.png"></td>
+            <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_RCFLYON.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_PETITSFRERES.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_SCD.png"></td>
             <td><img alt="" class="img-responsive" src ="<?php bloginfo('template_directory');?>/img/LOGO_UNICEF.png"></td>

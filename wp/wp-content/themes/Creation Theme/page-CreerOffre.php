@@ -1,34 +1,90 @@
-<?php /* Template Name: Creation Compte */ ?>
+<?php /* Template Name: Creation Offre */ ?>
 <?php get_header('aide'); ?>
 <div class="row">
   <div class="col-lg-12">
-
     <div class="main page">
       <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
-      <!-- Partie identification -->
+
       <div class="row" id="formulaire" >
         <form>
           <div class="col-lg-6 col-lg-offset-3">
+            <fieldset>
+              <legend>Expérience</legend>
+
             <div class="form-group">
-              <label for="email">Numéro d'identification:</label>
+              <label for="email">Titre de l'expérience</label>
               <input type="text" class="form-control" id="email">
             </div>
             <div class="form-group">
-              <label for="email">Nom:</label>
-              <input type="text" class="form-control" id="email">
+              <label for="comment">Définition:</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+            </div>
+            <div class="row">
+              <label>Type</label>
+            </div>
+            <div class="col-lg-4">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 1</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 2</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 3</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 4</label>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 5</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Option 6</label>
+              </div>
+            </div>
+            <div class="row">
+              <label>Accessibilité</label>
+            </div>
+            <div class="col-lg-12">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Mineur</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Handicap</label>
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Adresse :</label>
+              <label for="email">Adresse:</label>
               <input type="text" class="form-control" id="email">
             </div>
-            <div class="form-group">
-              <label for="email">Site Web:</label>
-              <input type="text" class="form-control" id="email">
+            <div class="row">
+              <label>Moyen d'accès</label>
             </div>
+            <div class="col-lg-12">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Tram</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Bus</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="">Métro</label>
+              </div>
+            </div>
+
+
+          </fieldset>
+
+
+
           </div>
           <div class="col-lg-6 col-lg-offset-3">
           <fieldset>
-            <legend>Référent</legend>
+            <legend>Référent de l'expérience</legend>
             <div class="form-group">
               <label for="email">Nom Référent:</label>
               <input type="text" class="form-control" id="email">
@@ -45,15 +101,13 @@
               <label for="email">Adresse Référent:</label>
               <input type="text" class="form-control" id="email">
             </div>
-            <div class="form-group">
-              <label for="email">Email Référent:</label>
-              <input type="email" class="form-control" id="email">
-            </div>
           </fieldset>
         </div>
+
         <div class="col-lg-6 col-lg-offset-3">
           <fieldset>
             <legend>Description</legend>
+            
             <div class="form-group">
               <label for="comment">Mission(s):</label>
               <textarea class="form-control" rows="5" id="comment"></textarea>
@@ -156,7 +210,7 @@
 </div>
 </div>
 
-
+<script type="text/javascript" src="cal.js"></script>
 <script src="bootstrap/js/jquery.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </div>

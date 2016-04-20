@@ -1,5 +1,11 @@
-<?php get_header(); ?>
-<div class="row">
+<?php /* Template Name: Test */ ?>
+<?php get_header('test'); ?>
+<div class="row accueil_text">
+  <div class="container-fluid">
+    <img class="img-responsive img_accueil" src="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/IMG_7082.jpg">
+  </div>
+</div>
+<div class="row accueil_texte">
   <div class="col-lg-12">
     <div class="main page">
       <?php if (have_posts()) : ?>
