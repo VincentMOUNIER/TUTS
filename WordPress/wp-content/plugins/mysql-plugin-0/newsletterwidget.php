@@ -19,7 +19,8 @@ class Tuts_Newsletter_Widget extends WP_Widget
         <form action="#" method="post" class="form-horizontal" name="getmailform" id="getmailform">
           <div class="form-group">
             <div class="col-lg-8 col-md-8 col-xs-10 col-sm-10 col-xs-offset-1 col-md-offset-2 col-sm-offset-1 col-lg-offset-2">
-              <input type="email" id="mail" name="mail" class="form-control" placeholder="exemple@gmail.com">
+              <input type="email" id="nouvassmail" name="nouvassmail" class="form-control" placeholder="exemple@gmail.com">
+              <label><input type="checkbox" id="nouvetatasso" name="nouvetatasso"> Je suis une association/collectif </label>
             </div>
           </div>
           <div class="form-group">
