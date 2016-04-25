@@ -16,7 +16,7 @@
     <?php wp_head(); ?>
     <?php wp_get_archives('type=monthly&format=link'); ?>
     <?php //comments_popup_script(); <?php wp_head(); ?>
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css" type="text/css" media="screen" />
   </head>
 
       <body>
