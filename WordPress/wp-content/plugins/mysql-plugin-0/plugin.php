@@ -15,7 +15,7 @@ class Tuts_Plugin {
     new Tuts_Newsletter();
     register_activation_hook(__FILE__, array('Tuts_Newsletter','install'));
     add_action('admin_menu',array($this, 'add_admin_menu'));
-
+    
 
 
   }
