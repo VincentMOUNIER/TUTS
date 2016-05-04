@@ -1,0 +1,34 @@
+GEN . Contact en pied de page (mail / num Tel de Caroline emplye TUTS )
+
+
+1. Checkbox pour benevole | Ajout un "Qui sommes nous" PDF
+
+2. Ajout un "Qui sommes nous" PDF 
+
+3. Tranche horaire large, qui "debordent"
+
+4. Association qui puissent s'inscrire sur les reunions -> Google Forms
+
+5. Rien 
+
+6.Bien faire la page de confirmation apres inscription
+
+7.
+
+8.EMunerer nom prenom tel email et toussa de chaque inscrit pour chaque offre ( ajout d'un bouton "info d'offre" )
+
+9.
+
+10. "button imprimer"  => Recapitulazeizferfk de l'offre
+
+11.
+
+12.
+
+13.Mettre le tuto comment publier une offre en pdf
+
+14.Logo par defaut si no logo
+
+15.Google map
+
+16. Menu deroulant pour la commune de residence : Toutes les communes (58) +  Lyon arrondissement (9) +autre commune (1) soit 68 communes 
