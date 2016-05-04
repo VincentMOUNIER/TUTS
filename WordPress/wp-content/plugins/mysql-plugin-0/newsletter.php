@@ -1,17 +1,19 @@
 <?php
 include_once plugin_dir_path(__FILE__).'/newsletterwidget.php';
-
+include_once plugin_dir_path(__FILE__).'/formtransitionwidget.php';
 class Tuts_Newsletter
 {
   public function __construct()
   {
+    add_action('wp_loaded', array($this, 'save_email'));
+    add_action('admin_menu', array($this, 'add_admin_menu'),20);
+    add_action('admin_init', array($this, 'register_settings'));
     add_action('widgets_init', function() {
       register_widget('Tuts_Newsletter_Widget');
-      add_action('wp_loaded', array($this, 'save_email'));
-      add_action('admin_menu', array($this, 'add_admin_menu'));
-      add_action('admin_init', array($this, 'register_settings'));
-
+      register_widget('Tuts_FormBenevole_Widget');
     } );
+
+
   }
 
 
@@ -21,14 +23,17 @@ class Tuts_Newsletter
     register_setting('tuts_mail_settings', 'tuts_mail_sender');
     register_setting('tuts_mail_settings', 'tuts_mail_object');
     register_setting('tuts_mail_settings', 'tuts_mail_message');
+    register_setting('tuts_mail_settings', 'tuts_mail_dest');
 
     register_setting('tuts_mail_settings', 'tuts_sendaccept_message');
     register_setting('tuts_mail_settings', 'tuts_sendrefuse_message');
 
     add_settings_section('tuts_mail_section','Envoi d\'un mail general', array($this, 'section_html'), 'tuts_mail_settings');
 
+
     add_settings_field('tuts_mail_sender', 'Expediteur', array($this, 'sender_mail_html'),'tuts_mail_settings','tuts_mail_section');
     add_settings_field('tuts_mail_object', 'Objet', array($this, 'object_mail_html'),'tuts_mail_settings','tuts_mail_section');
+    add_settings_field('tuts_mail_dest','Destinaire : ' , array($this, 'dest_mail_html'),'tuts_mail_settings','tuts_mail_section');
     add_settings_field('tuts_mail_message', 'Message', array($this, 'message_mail_html'),'tuts_mail_settings','tuts_mail_section');
   }
 
@@ -63,7 +68,15 @@ class Tuts_Newsletter
 
   public function send_mail(){
     global $wpdb;
-    $receive = $wpdb->get_results("SELECT email FROM {$wpdb->prefix}tuts_email");
+
+    if ($_POST['tuts_mail_dest_asso']==="on" && $_POST['tuts_mail_dest_bene']==="on"){
+      $receive = $wpdb->get_results("SELECT email FROM {$wpdb->prefix}tuts_email");
+    }elseif ($_POST['tuts_mail_dest_asso']==="on") {
+      $receive = $wpdb->get_results("SELECT email FROM {$wpdb->prefix}tuts_email where type='association'");
+    }elseif ($_POST['tuts_mail_dest_bene']==="on") {
+      $receive = $wpdb->get_results("SELECT email FROM {$wpdb->prefix}tuts_email where type='benevole'");
+    }
+
     $header = array('From : '.$_POST['tuts_mail_sender']);
     $textresult =0;
     foreach($receive as $_receive) {
@@ -178,7 +191,8 @@ class Tuts_Newsletter
   public function dest_mail_html(){
     ?>
 
-    
+    <label><input type="checkbox" name="tuts_mail_dest_asso" id="inputdestasso"/>Associations/Collectifs</label>
+    <label><input type="checkbox" name="tuts_mail_dest_bene" id="inputdestbene"/>Benevoles</label>
 
     <?php
   }
@@ -276,6 +290,7 @@ class Tuts_Newsletter
 
     }
 
+    // Envoi de mail avec identifiant lors de la confirmation de la part de l'administrateur
     public function send_verification() {
       global $wpdb;
       $resultat = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}tuts_association WHERE validation = 0 ");
@@ -295,7 +310,7 @@ class Tuts_Newsletter
               wp_mail($row->email_ref,"Vos identifants Tous Unis Tous Solidaires",$message,$header);
 
               $wpdb->update("{$wpdb->prefix}tuts_association", array('validation'=> '1'), array( 'id_association' => $row->id_association ), array('%d'));
-
+              wp_update_user(array ('ID' => $row->id_user, 'role' => 'publisher'));
             } elseif ($_POST[$row->id_association]=="refuse"){
 
               wp_mail($row->email_ref,"Tous Unis Tous Solidaires",get_option('tuts_sendrefuse_message'),$header);
@@ -342,7 +357,88 @@ class Tuts_Newsletter
 
       global $wpdb;
 
-      $wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}tuts_email (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL);");
+      $wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}tuts_email (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL, type VARCHAR(255) NOT NULL);");
+
+      /*TABLE ASSOCIATION*/
+      $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_association` (
+      `id_association` int(11) NOT NULL,
+        `login` varchar(255) NOT NULL,
+        `mdp` varchar(255) NOT NULL,
+        `num_id` varchar(255) DEFAULT NULL,
+        `ass_referente` varchar(255) DEFAULT NULL,
+        `nom` varchar(255) NOT NULL,
+        `adresse` varchar(255) NOT NULL,
+        `site_web` varchar(255) NOT NULL,
+        `nom_ref` varchar(255) NOT NULL,
+        `prenom_ref` varchar(255) NOT NULL,
+        `fonction_ref` varchar(255) NOT NULL,
+        `tel_ref` varchar(10) NOT NULL,
+        `email_ref` varchar(100) NOT NULL,
+        `mission` text NOT NULL,
+        `activite` text NOT NULL,
+        `valeur` text NOT NULL,
+        `projet` text NOT NULL,
+        `act_id` int(11) NOT NULL,
+        `validation` int(11) NOT NULL DEFAULT '0'
+      );");
+      $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_association`
+       ADD PRIMARY KEY (`id_association`);");
+       $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_association`
+       MODIFY `id_association` int(11) NOT NULL AUTO_INCREMENT;");
+
+
+       /*TABLE HORAIRE*/
+       $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_horaire` (
+       `id_horaire` int(11) NOT NULL,
+         `id_offre` int(11) NOT NULL,
+         `h_debut` varchar(20) NOT NULL,
+         `h_fin` varchar(20) NOT NULL,
+         `nb_places` int(11) NOT NULL,
+         `date` varchar(50) NOT NULL
+       );");
+       $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_horaire`
+        ADD PRIMARY KEY (`id_horaire`);");
+        $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_horaire`
+        MODIFY `id_horaire` int(11) NOT NULL AUTO_INCREMENT;");
+
+        /*TABLE inscription*/
+
+        $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_inscription` (
+        `id_inscription` int(11) NOT NULL,
+          `id_offre` int(11) NOT NULL,
+          `id_horaire` int(11) NOT NULL,
+          `nom` varchar(255) NOT NULL,
+          `prenom` varchar(255) NOT NULL,
+          `addr_mail` varchar(255) NOT NULL,
+          `telephone` varchar(10) NOT NULL,
+          `connaissance` varchar(255) NOT NULL
+        );");
+        $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_inscription`
+         ADD PRIMARY KEY (`id_inscription`);");
+         $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_inscription`
+         MODIFY `id_inscription` int(11) NOT NULL AUTO_INCREMENT;");
+
+        /*TABLE OFFRE*/
+         $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_offre` (
+         `id_offre` int(11) NOT NULL,
+           `titre` varchar(255) NOT NULL,
+           `definition` text NOT NULL,
+           `type` varchar(255) NOT NULL,
+           `acces` varchar(255) NOT NULL,
+           `adresse` varchar(255) NOT NULL,
+           `moyen_acces` varchar(255) NOT NULL,
+           `nom_ref` varchar(255) NOT NULL,
+           `prenom_ref` varchar(255) NOT NULL,
+           `fonction_ref` varchar(255) NOT NULL,
+           `tel_ref` varchar(10) NOT NULL
+         );");
+         $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_offre`
+          ADD PRIMARY KEY (`id_offre`);");
+          $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_offre`
+          MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT;");
+
+
+
 
     }
 

@@ -36,13 +36,14 @@ Template Name: vitrine
 
 
 
-
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/vitrine.css"> <!-- CSS pour la page -->
+
 
 <script src="<?php bloginfo('template_url'); ?>/js/tuts_script.js"></script> <!-- JS pour la page -->
 </head>
 <body>
-
+<div> 
 <!-- debut carousel -->
   <div class="carousel slide carousel-fade" data-ride="carousel">
 
@@ -97,6 +98,6 @@ Template Name: vitrine
     </footer>
 
 
-
+</div>
   </body>
   </html>
