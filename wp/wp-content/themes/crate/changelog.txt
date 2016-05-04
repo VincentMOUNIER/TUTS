@@ -1,0 +1,52 @@
+1.4.0 - Apr 30, 2015
+
+** Crate Changelog **
+
+30 April 2015 - Version 1.4.0
+	* XSS fix
+	* Theme Customizer UI improvements
+	* bean_custom_form_filters comments 4.2+ fix
+	* Framework updated to v2.2.5
+		- Updated Theme Customizer UI
+		- Updated Custom CSS Editor
+	* Updated languages
+
+15 January 2015 - Version 1.3.2
+	* Contact form updated
+		- Anti-spam $headers fix	
+	* Framework updated to v2.2.3.1
+		- Customizer image upload update
+	* Updated languages
+
+22 December 2014 - Version 1.3.1	
+	* Framework updated to v2.2.1
+	* Updated languages
+
+9 December 2014 - Version 1.3.0	
+	* Framework updated to v2.2
+		- Updated Custom CSS Editor
+		- Notifications for theme updates
+		- Dashboard updating enabled
+		- Theme license admin page (NEW)
+		- Moved customizer functions to /framework
+	* Updated languages
+
+25 September 2014 - Version 1.2.0
+	* Updated template-contact.php
+	* Updated languages
+
+25 September 2014 - Version 1.2.0
+	* Framework updated to v2.1
+		- Customizer major update
+	* Updated languages
+
+5 September 2014 - Version 1.1.0
+	* WP 4.0 compatibility update
+	* Updated languages
+
+30 June 2014 - Version 1.0.1
+     * Support for Bean 500px Plugin
+     * Framework updated to v2.0.9
+
+16 June 2014 - Version 1.0.0
+     * Initial release

@@ -1,0 +1,32 @@
+.screenshot {
+	border: 5px solid #ECECEC;
+	display: block;
+	height: 410px;
+	margin-bottom: 30px;
+}
+
+.screenshot.options { background: url(images/screenshots/options.jpg); }
+.screenshot.widget-areas { background: url(images/screenshots/widget-areas.jpg); }
+.screenshot.post-gallery { background: url(images/screenshots/post-gallery.jpg); }
+.screenshot.styles { background: url(images/screenshots/styles.jpg); }
+
+/* RETINA */
+@media all and (-webkit-min-device-pixel-ratio: 1.5), 
+(min-resolution: 192dpi) {
+	.screenshot.options {
+		background-image: url(images/screenshots/options@2x.jpg);
+		background-size: 760px 400px;
+	}
+	.screenshot.widget-areas {
+		background-image: url(images/screenshots/widget-areas@2x.jpg);
+		background-size: 760px 400px;
+	}	
+	.screenshot.post-gallery {
+		background-image: url(images/screenshots/post-gallery@2x.jpg);
+		background-size: 760px 400px;
+	}
+	.screenshot.styles {
+		background-image: url(images/screenshots/styles@2x.jpg);
+		background-size: 760px 400px;
+	}			
+}
