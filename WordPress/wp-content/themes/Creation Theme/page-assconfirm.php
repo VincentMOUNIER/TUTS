@@ -7,20 +7,19 @@
       <!-- Partie identification -->
       <p> Hey </p>
       <?php
-      function generer_mot_de_passe($nb_caractere)
-      {
-        $mot_de_passe = "";
+      function generate_login($car) {
+$string = "TUTS_";
+$chaine = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+srand((double)microtime()*1000000);
+for($i=0; $i<$car; $i++) {
+$string .= $chaine[rand()%strlen($chaine)];
+}
+return $string;
+}
 
-        $chaine = "abcdefghjkmnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ023456789";
-        $longeur_chaine = strlen($chaine);
+// APPEL
+// Génère une chaine de longueur 20
 
-        for($i = 1; $i <= $nb_caractere; $i++)
-        {
-            $place_aleatoire = mt_rand(0,($longeur_chaine-1));
-            $mot_de_passe .= $chaine[$place_aleatoire];
-        }
-        return $mot_de_passe;
-      }
 
 
 
@@ -59,9 +58,14 @@
 
 
         if (is_null($row)){
+          do {
+          $login = generate_login(5);
+        } while (username_exists( $login ));
 
-          $login = uniqid('TUTS');
-          $mdp = generer_mot_de_passe(mt_rand(8,12));
+           //TODO a faire verifier
+
+
+          $mdp = wp_generate_password( $length=10, $include_standard_special_chars=false );
 
           $reg_name = $_POST['reg_name'];
           $reg_addr = $_POST['reg_addr'];
@@ -76,16 +80,45 @@
           $reg_val = $_POST['reg_val'];
           $reg_projet = $_POST['reg_projet'];
 
+          $userdata = array (
+          'user_login'  =>  $login,
+          'user_pass'    =>  $mdp,
+          'user_email'   =>  $reg_ref_mail,
+          'display_name' => $reg_name
+          );
+
+          $user_id = wp_insert_user( $userdata );
+          if ( is_wp_error( $user_id ) ) {
+              echo $user_id->get_error_message();
+            } else {
 
 
-          $result = $wpdb->insert("{$wpdb->prefix}tuts_association", array('login' => $login, 'mdp'=>$mdp, 'num_id'=>$reg_idnum,'ass_referente' => $reg_assref,'nom'=> $reg_name, 'adresse' => $reg_addr, 'site_web' =>  $reg_website, 'nom_ref' =>  $reg_ref_name, 'prenom_ref' =>  $reg_ref_pname,
-          'fonction_ref' => $reg_ref_fonction,'tel_ref' => $reg_ref_tel ,'email_ref' =>  $reg_ref_mail, 'mission' =>  $reg_mission, 'activite'  =>  $reg_act,  'valeur'  =>  $reg_val,'projet' => $reg_projet ));
+          $result = $wpdb->insert("{$wpdb->prefix}tuts_association",
+          array('id_user'=> $user_id,
+          'login' => $login,
+          'mdp'=>$mdp,
+          'num_id'=>$reg_idnum,
+          'ass_referente' => $reg_assref,
+          'nom'=> $reg_name,
+          'adresse' => $reg_addr,
+          'site_web' =>  $reg_website,
+          'nom_ref' =>  $reg_ref_name,
+          'prenom_ref' =>  $reg_ref_pname,
+          'fonction_ref' => $reg_ref_fonction,
+          'tel_ref' => $reg_ref_tel ,
+          'email_ref' =>  $reg_ref_mail,
+          'mission' =>  $reg_mission,
+          'activite'  =>  $reg_act,
+          'valeur'  =>  $reg_val,
+          'projet' => $reg_projet ));
+
           if ($result!==false) {echo "Votre enregistrement a été pris en compte, vous recevrez un mail contenant vos informations de connexion après confirmation de notre part" ;
           echo $_POST['reg_assref'];
           echo "and id num : ";
           echo $_POST['reg_idnum'];}
           else {echo"Une erreur lors du traitement a été relevé, veuillez réessayer.";}
           //TODO Traitement de l'insertion
+          }
         }else{
           echo "Vous vous êtes inscrit récemment, veuillez attendre confirmation de notre part pour obtenir vos identifiants" ;
 

@@ -125,3 +125,22 @@ img.aligncenter {
 	margin-left: auto;
 	margin-right: auto;
 }
+#pdf-tools {
+
+
+  overflow: auto;
+  white-space:nowrap;
+  overflow-y: hidden;
+}
+
+.div-tools{
+  display : inline-block;
+  width : auto;
+}
+.img-tools{
+  width : auto;
+}
+.name-pdf {
+word-wrap: break-word;
+padding : 0.2em;
+}

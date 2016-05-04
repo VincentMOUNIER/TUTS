@@ -290,6 +290,7 @@ class Tuts_Newsletter
 
     }
 
+    // Envoi de mail avec identifiant lors de la confirmation de la part de l'administrateur
     public function send_verification() {
       global $wpdb;
       $resultat = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}tuts_association WHERE validation = 0 ");
@@ -309,7 +310,7 @@ class Tuts_Newsletter
               wp_mail($row->email_ref,"Vos identifants Tous Unis Tous Solidaires",$message,$header);
 
               $wpdb->update("{$wpdb->prefix}tuts_association", array('validation'=> '1'), array( 'id_association' => $row->id_association ), array('%d'));
-
+              wp_update_user(array ('ID' => $row->id_user, 'role' => 'publisher'));
             } elseif ($_POST[$row->id_association]=="refuse"){
 
               wp_mail($row->email_ref,"Tous Unis Tous Solidaires",get_option('tuts_sendrefuse_message'),$header);

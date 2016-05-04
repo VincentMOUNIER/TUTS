@@ -16,7 +16,7 @@
       </div>
       <!-- Partie identification -->
       <div class="col-lg-4" style="text-align: center; margin-top: 3  em;">
-        <form>
+    <!--    <form>
           <label>Identifiant:</label></br>
           <input type="text"></br></br>
           <label>Mot de passe:</label></br>
@@ -28,7 +28,38 @@
               <button class="btn btn-default" type="button">Connexion</button>
             </a>
           </p>
-        </form>
+        </form> -->
+
+        <!--
+                    POUR CUSTOMISER LE FORMULAIRE REGARDER :
+        https://codex.wordpress.org/Customizing_the_Login_Form#Make_a_Custom_Login_Page -->
+
+        <?php
+        if ( !is_user_logged_in() ) {
+
+        if ($_GET['login']=="failed") {
+          echo '<p> Les identifiants sont incorrects </p>';
+        }
+
+        wp_login_form(array(
+
+          'redirect' => site_url('index.php/page-association/mon-compte'),
+         'label_username' => 'Identifiant',
+          'label_log_in' => 'Se Connecter')); ?>
+          <a href="creer-son-compte-association">Je ne suis pas encore inscrit</a></br></br>
+          <a href="<?php wp_lostpassword_url(); ?>">Identifiants oubliés</a></br></br>
+          <?php
+
+      } else {
+        ?>
+
+        <p> Bienvenue Association </p>
+        <p> Cliquez <a href="mon-compte">ici</a> pour acceder à votre compte </p>
+        <p><a href="<?php echo wp_logout_url( get_permalink() ); ?>">Se deconnecter</a></p>
+        <?php
+      }// END if (!is_user_logged_in())
+
+        ?>
       </div>
     </div>
   </div>

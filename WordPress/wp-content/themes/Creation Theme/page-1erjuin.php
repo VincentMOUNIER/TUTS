@@ -1,7 +1,5 @@
 <?php /* Template Name: 1erjuin */ ?>
 <?php get_header("1erjuin"); ?>
-
-
 <div class="row">
   <div class="col-lg-12">
     <div class="main page">

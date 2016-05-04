@@ -5,7 +5,7 @@ $('.carousel').carousel();
 $(document).ready( function () {
   $("#getmailform").submit( function() {	// à la soumission du formulaire
 
-    $.ajax({ // fonction permettant de faire de l'ajax
+    jQuery.ajax({ // fonction permettant de faire de l'ajax
     type: "POST", // methode de transmission des données au fichier php
     url: "", // url du fichier php
     data: "nouvassmail="+$("#nouvassmail").val()+"&nouvetatasso="+$('#nouvetatasso').is(':checked'), // données à transmettre

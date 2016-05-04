@@ -4,6 +4,11 @@
 <head profile="http://gmpg.org/xfn/11">
 
   <title><?php the_title(); ?></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
   <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
   <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
   <!-- leave this for stats -->
@@ -28,7 +33,7 @@
         <div class="col-lg-12 vertical-align">
 
           <div class="col-lg-2 col-lg-offset-3 col-xs-3 col-sx-offset-3" id="logo">
-            <a href="../"><img class="img-responsive" alt="Logo Tous Unis Tous Solidaires" id="logo" src="http://localhost:8888/TUTS/wp/wp-content/uploads/2016/04/tlts.jpg"></a>
+            <a href="../"><img class="img-responsive" alt="Logo Tous Unis Tous Solidaires" id="logo" src="http://tuts.vincentmounier.fr/projet/wp-content/themes/Creation%20Theme/img/tuts.jpg"></a>
           </div>
           <div class="col-lg-3 " id="titre_site">
             <h1><?php bloginfo('name'); ?></h1>
