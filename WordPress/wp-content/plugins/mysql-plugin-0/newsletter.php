@@ -446,7 +446,7 @@ class Tuts_Newsletter
       if (isset($_POST['nouvassmail']) && !empty($_POST['nouvassmail'])){
         global $wpdb;
         $email = $_POST['nouvassmail'];
-        if(($_POST['nouvetatasso'])==="true"){
+        if(($_POST['nouvetatasso']) == 'association'){
           $etat = "association";
         }else {
           $etat = "benevole";

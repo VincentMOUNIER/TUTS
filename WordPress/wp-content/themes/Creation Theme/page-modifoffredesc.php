@@ -14,15 +14,6 @@
 
     			<?php /* The loop */ ?>
     			<?php while ( have_posts() ) : the_post(); ?>
-
-    				<?php
-            echo $_POST['post_id'];
-
-
-            ?>
-
-
-
             <?php
             // acf_form, il s'agit ici de la méthode V4, voir ensuite le hook prepost dans functions.php , le field group concerné est le 60 pour l'instant
             // Je pense et c'est sûr, qu'il va falloir mettre tout les id field group
