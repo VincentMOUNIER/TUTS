@@ -52,7 +52,7 @@ return $string;
         $reg_name = $_POST['reg_name'];
 
 
-          $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE ass_referente = '$reg_assref'AND nom = '$reg_name'" );
+          $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE ass_referente = '$reg_assref' AND nom = '$reg_name'" );
       }
 
 

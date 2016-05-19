@@ -1,4 +1,9 @@
 <?php /* Template Name: Inscription Benevole */ ?>
+<!-- En $_POST on a :
+
+  $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
+
+ -->
 <?php get_header('aide'); ?>
 <div class="row">
   <div class="col-lg-12">
@@ -6,58 +11,60 @@
       <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
       <!-- Partie identification -->
       <div class="row" id="formulaire" >
-        <form action="confirmation" method="post" id="idform" onsubmit="return verifAll(this)">
+        <form action="confirmer-benevole" method="post" id="idform" onsubmit="return verifAll(this)">
           <div class="col-lg-6 col-lg-offset-3">
               <div class="form-group">
                 <label> Je suis : </label>
-                <input type="radio" name="reg_type" value="association" id="reg_type_ass" checked>Une association
-                <input type="radio" name="reg_type" value="collectif" id="reg_type_col">Un collectif
+                <input type="radio" name="reg_genre" value="Homme" id="reg_genre" checked>Homme
+                <input type="radio" name="reg_genre" value="Femme" id="reg_genre">Femme
               </div>
               <div class="form-group">
-                <label id="textinp1">Numéro d'identification:</label>
-                <input type="text" class="form-control" name="reg_idnum" id="reg_idnum">
-                <input type="hidden" class="form-control" name="reg_assref" id="reg_assref">
+                <label id="textinp1">Nom:</label>
+                <input type="text" class="form-control" name="reg_nom" id="reg_nom">
+
               </div>
 
             <div class="form-group">
-              <label for="email">Nom:</label>
-              <input type="text" class="form-control" id="reg_name" name="reg_name" onblur="checkNom(this)">
+              <label for="email">Prenom</label>
+              <input type="text" class="form-control" id="reg_prenom" name="reg_prenom" onblur="checkNom(this)">
             </div>
             <div class="form-group">
-              <label for="email">Adresse :</label>
+              <label for="email">Commune :</label>
               <input type="text" class="form-control" id="reg_addr" name="reg_addr">
+              <!-- TODO Faire une liste déroulante de TOUTES LES COMMUNES ( c'est une liste exhaustive avec "autre" donc en brut ? -> si selectionnée ajout d'un input pour la commune ) -->
             </div>
             <div class="form-group">
-              <label for="email">Site Web:</label>
+              <label for="email">Address Mail:</label>
               <input type="text" class="form-control" id="reg_website" name="reg_website">
             </div>
           </div>
 
-          <div class="col-lg-6 col-lg-offset-3">
+          <!-- <div class="col-lg-6 col-lg-offset-3">
           <fieldset>
-            <legend>Référent</legend>
+          TODO Extraire les infos de l'offre (ACF) pour les mettre dans le formualaire
+            <legend>Offre</legend>
             <div class="form-group">
-              <label for="email">Nom Référent:</label>
-              <input type="text" class="form-control"  id="reg_ref_name" name="reg_ref_name">
+              <label for="email">Date:</label>
+              <input type="text" class="form-control"  id="reg_ref_name" name="reg_date">
             </div>
             <div class="form-group">
-              <label for="email">Prénom référent:</label>
-              <input type="text" class="form-control" id="reg_ref_pname" name="reg_ref_pname">
+              <label for="email">Heure:</label>
+              <input type="text" class="form-control" id="reg_ref_pname" name="reg_heure">
             </div>
             <div class="form-group">
-              <label for="email">Fonction Référent:</label>
-              <input type="text" class="form-control" id="reg_ref_fonction" name="reg_ref_fonction">
+              <label for="email">Déjà bénévolat:</label>
+              <input type="text" class="form-control" id="reg_ref_fonction" name="reg_expbenevole">
             </div>
             <div class="form-group">
-              <label for="email">Telephone Référent:</label>
-              <input type="text" class="form-control" id="reg_ref_tel" name="reg_ref_tel">
+              <label for="email">Comment avez vous connu TUTS:</label>
+              <input type="text" class="form-control" id="reg_ref_tel" name="reg_connututs">
             </div>
             <div class="form-group">
-              <label for="email">Email Référent:</label>
-              <input type="email" class="form-control" id="reg_ref_mail" name="reg_ref_mail">
+              <label for="email">Infos à nous transmettre:</label>
+              <input type="text" class="form-control" id="reg_ref_tel" name="reg_info">
             </div>
           </fieldset>
-        </div>
+        </div> -->
 
         </fieldset>
       </div>

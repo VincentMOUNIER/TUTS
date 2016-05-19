@@ -8,7 +8,7 @@ $(document).ready( function () {
     jQuery.ajax({ // fonction permettant de faire de l'ajax
     type: "POST", // methode de transmission des données au fichier php
     url: "", // url du fichier php
-    data: "nouvassmail="+$("#nouvassmail").val()+"&nouvetatasso="+$('#nouvetatasso').is(':checked'), // données à transmettre
+    data: "nouvassmail="+$("#nouvassmail").val()+"&nouvetatasso="+$('input[name=nouvetatasso]').val(), // données à transmettre
     success : clearAndConfirm
   });
   return false; // permet de rester sur la même page à la soumission du formulaire

@@ -52,9 +52,13 @@ function child_theme_head_script() { ?>
                   echo $value;
                   echo '</div>';
                 }
+
+
               }
             }
-
+            echo '<div>';
+            echo '<h3>Une offre proposée par ' . the_author() . '.</h3>';
+            echo '</div>';
 
 
 
@@ -62,7 +66,7 @@ function child_theme_head_script() { ?>
             ?>
 
             <div class="text-center">
-              <form method="post" action="inscription-benevole">
+              <form method="post" action="<?php echo esc_url( get_permalink( get_page_by_title( 'Inscription Bénévole' ) ) ); ?>">
                 <input type="hidden" name="post_id" value=<?= get_the_ID(); ?>/>
               <button type="submit" class="btn btn-primary">S'inscrire</button>
               </form>

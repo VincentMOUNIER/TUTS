@@ -25,8 +25,9 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
             <?php
             // On va recuperer l'user pour filtrer les offres affichés par auteur
             $current_user = wp_get_current_user();
+            
             // posts_per_page => -1 sert à lister toutes les offres ( sans se limiter à 5 par défaut )
-            $args = array( 'posts_per_page'=>'-1', 'author' => $current_user->user_login, 'post_type' => 'offre' );
+            $args = array( 'posts_per_page'=>'-1', 'author' => $current_user->ID, 'post_type' => 'offre' );
             $myposts = get_posts( $args );
 
             // setup_postdata sert à set la variable global $post ici pour apres la remettre comme avant avec wp_reset_postdata()
