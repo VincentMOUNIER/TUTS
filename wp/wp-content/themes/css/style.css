@@ -40,6 +40,7 @@ div[class="container-fluid conteneur"]
 {
   width: 100%;
   background-color: rgb(52, 73, 93);
+  height : 15%;
 
 }
 
@@ -47,6 +48,7 @@ div[class="container-fluid conteneur"]
 {
   width: 100%;
   background-color: white;
+
 
 }
 
@@ -58,6 +60,7 @@ div[class="container-fluid conteneur"]
   bottom: 0px;
   overflow: hidden;
   border-top: 0.2em outset black;
+    height : 10%;
   /*height: 10em;*/
 }
 
@@ -120,6 +123,13 @@ table
   height:8em;
 }
 
+@-moz-document url-prefix() {
+	#org img{
+		/*overflow-x: scroll;*/
+    max-width: 3.5em;
+	}
+}
+
 /*Responsive*/
 @media screen and(max-width: 640px) {
 
@@ -127,49 +137,32 @@ table
 
     font-size: 1em;
   }
-
-
-
-
 }
 
-/*@media screen and(max-width: 1024px) and (min-width: 640px){
-  .aside
-  {
-    display:none;
-  }
+@media screen and (min-width: 1200px){
 
-}*/
-@media screen and(max-width: 1200px){
+  .bouton_footer
+  {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px){
   .bouton_footer
   {
     text-align: center;
     margin-bottom: 0.4em;
   }
-  .aside
+  .aside, #soutien, #org
   {
-    display:none;
+    display:none !important;
   }
   .texte_contenu
   {
     width: 100%;
   }
-  .soutien
-  {
-    display: none;
-  }
-  .organisateur
-  {
-    display: none;
-  }
   .coordonnees
   {
     text-align: center;
   }
-}
-@media screen and(min-width: 1200px){
-
-  .bouton_footer
-  {
-    display: none;
 }

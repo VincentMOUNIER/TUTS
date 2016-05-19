@@ -12,7 +12,7 @@
   <script src="<?php bloginfo('template_url'); ?>/js/tuts_script.js"></script>
   <meta name="viewport" content="width=device-width" />
   <?php wp_head(); ?>
-  <title>Test - css</title>
+  <title><?php the_title(); ?></title>
 </head>
 <body>
   <div class="page">
@@ -34,7 +34,7 @@
 
         <div class="col-lg-2">
 
-          <a href="#"><button type="button" name="button"></button></a>
+          <a href="#"><button type="button" name="button">Besoin d'aide</button></a>
 
         </div>
 

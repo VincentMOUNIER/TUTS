@@ -1,0 +1,165 @@
+/* Theme Name: Creation Theme Theme URI: Description:  Version: 0.1 Author: Vincent MOUNIER */
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+html
+{
+    margin-top: 0px !important;
+}
+
+body
+{
+  background-color: #34495E !important;
+}
+.page
+{
+  height: 100%;
+  min-height: 100%;
+
+
+}
+div[class="container-fluid conteneur"]
+{
+    /*background-color: #34495E !important;*/
+    background-image: url("img/back.png");
+}
+
+.texte_contenu
+{
+  background-color: white;
+  border-radius: 3em;
+  border: 0.5em outset black;
+}
+
+.header
+{
+  width: 100%;
+  background-color: rgb(52, 73, 93);
+
+}
+
+.conteneur
+{
+  width: 100%;
+  background-color: white;
+
+}
+
+.footer
+{
+  width: 100%;
+  background: white;
+  position: fixed;
+  bottom: 0px;
+  overflow: hidden;
+  border-top: 0.2em outset black;
+  /*height: 10em;*/
+}
+
+
+.titre{
+  text-align: center;
+  color:white;
+}
+
+/*#titre_header
+{
+    background-color: #E4F1FE;
+    border-radius: 0.5em;
+    border: 0.2em outset white;
+}*/
+
+.contenu
+{
+  text-align: center;
+}
+#logo
+{
+  width: 10em;
+  border-radius: 5em;
+  border: 0.3em outset white;
+
+}
+
+td img
+{
+  width: 5em;
+
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+}
+table
+{
+  margin: auto;
+  /*Les tables se centrent */
+}
+/*.aside{
+  padding:0 !important;
+  background-color: #34495E;
+}*/
+/*#aside_a
+{
+  float: left;
+  height: 60em;
+}
+
+#aside_b
+{
+  float: right;
+  height: 60em;
+}*/
+
+.clear
+{
+  height:8em;
+}
+
+@-moz-document url-prefix() {
+	#org img{
+		/*overflow-x: scroll;*/
+    max-width: 3.5em;
+	}
+}
+
+/*Responsive*/
+@media screen and(max-width: 640px) {
+
+  .contenu{
+
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1200px){
+
+  .bouton_footer
+  {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px){
+  .bouton_footer
+  {
+    text-align: center;
+    margin-bottom: 0.4em;
+  }
+  .aside, #soutien, #org
+  {
+    display:none !important;
+  }
+  .texte_contenu
+  {
+    width: 100%;
+  }
+  .coordonnees
+  {
+    text-align: center;
+  }
+}

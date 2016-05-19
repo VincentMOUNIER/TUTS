@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header("trans"); ?>
 <div class="container-fluid conteneur">
 
   <div class="row">

@@ -12,7 +12,7 @@
   <script src="<?php bloginfo('template_url'); ?>/js/tuts_script.js"></script>
   <meta name="viewport" content="width=device-width" />
   <?php wp_head(); ?>
-  <title>Test - css</title>
+  <title><?php the_title(); ?></title>
 </head>
 <body>
   <div class="page">
