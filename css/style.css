@@ -1,0 +1,100 @@
+/* Theme Name: Creation Theme Theme URI: Description:  Version: 0.1 Author: Vincent MOUNIER */
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page
+{
+  height: 100%;
+  min-height: 100%;
+}
+
+.header
+{
+  border: solid black;
+  width: 100%;
+
+
+}
+
+.conteneur
+{
+  border : solid black;
+  width: 100%;
+
+}
+
+.footer
+{
+  border : solid black;
+  width: 100%;
+  background: orange;
+  position: fixed;
+  bottom: 0px;
+  overflow: hidden;
+
+}
+
+.titre{
+  text-align: center;
+}
+
+.contenu
+{
+  text-align: center;
+  height:60em;
+  border: 0.1em solid black;
+}
+#logo
+{
+  width: 10em;
+
+}
+
+td img
+{
+  width: 5em;
+
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+}
+table
+{
+  margin: auto;
+  /*Les tables se centrent */
+}
+.aside{
+  padding:0 !important;
+}
+#aside_a
+{
+  float: left;
+  height: 60em;
+}
+
+#aside_b
+{
+  float: right;
+  height: 60em;
+}
+
+/*Responsive*/
+@media screen and(max-width: 640px) {
+  .aside
+  {
+    display:none;
+  }
+}
+
+@media screen and(max-width: 1024px) and (min-width: 640px){
+  .aside
+  {
+    display:none;
+  }
+}
+@media screen and(min-width: 1024px){
+
+}

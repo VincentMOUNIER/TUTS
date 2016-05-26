@@ -1,0 +1,20 @@
+/*===================================================================*/
+/*
+/* THEME CUSTOMIZER UI STYLES
+/* 
+/*===================================================================*/
+
+/*===================================================================*/
+/* THEME SPECIFIC STYLES
+/*===================================================================*/
+#customize-control-type_select_logo {
+	border-top: 1px solid #EEE;
+	padding-top: 20px;
+	margin-top: 15px;
+}
+
+#customize-control-thumb_bg_color {
+	border-bottom: 1px solid #EEE;
+	padding-bottom: 17px;
+	margin-bottom: 15px;
+}

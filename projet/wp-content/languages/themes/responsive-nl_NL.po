@@ -1,0 +1,1235 @@
+# Translation of Responsive in Dutch
+# This file is distributed under the same license as the Responsive package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-04-23 20:30:27+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Project-Id-Version: Responsive\n"
+
+#. Description of the plugin/theme
+msgid "Responsive Theme is a flexible foundation with fluid grid system that adapts your website to mobile devices and the desktop or any other viewing environment. Theme features 9 Page Templates, 11 Widget Areas, 6 Template Layouts, 4 Menu Positions and more. Powerful but simple Theme Options for full CMS control with easy Logo Upload and Social Networking. Responsive is WooCommerce Compatible, Multilingual Ready (WPML), RTL-Language Support, Retina-Ready, Search Engine Friendly, W3C Markup Validated and currently translated into over 45 languages. Cross-Browser compatible. <a href=\"http://cyberchimps.com/forum/free/responsive/\">Official support forum</a> (http://cyberchimps.com/forum/free/responsive/)"
+msgstr "Het Responsive thema is een flexibele basis met een vloeiend roosterschema dat je website aanpast aan mobiele apparaten, desktop of ieder andere omgeving. Het thema biedt 9 paginatemplates, 11 widgetgebieden, 6 template-ontwerpen, 4 menu-posities en meer. Krachtig maar simpele thema-opties voor volledige CMS-controle met een makkelijke logo-upload en sociale netwerken. Responsive is WooCommerce compatibel, vertaalbaar (WPML), heeft RTL-ondersteuning, is retina klaar, zoekmachinevriendelijk, W3C gevalideerd en momenteel vertaald in 45 talen. Werkt in verschillende browsers. <a href=\"http://cyberchimps.com/forum/free/responsive/\">Officiële support forum</a> (http://cyberchimps.com/forum/free/responsive/)"
+
+#. Theme Name of the plugin/theme
+msgid "Responsive"
+msgstr "Responsive"
+
+#: core/includes/theme-options/theme-options.php:224
+msgid "Default Copyright Text"
+msgstr "Standaard Copyright tekst "
+
+#: core/includes/theme-options/theme-options.php:218
+msgid "Copyright Text"
+msgstr "Copyright tekst"
+
+#: core/includes/customizer.php:323
+msgid "Footer Settings"
+msgstr "Footer instellingen"
+
+#: core/includes/customizer.php:326
+msgid "Default copyright text"
+msgstr "Standaard copyright tekst "
+
+#: core/includes/customizer.php:329
+msgid "Copyright text"
+msgstr "Copyright tekst in footer"
+
+#. Template Name of the plugin/theme
+msgid "Blog Excerpt (summary)"
+msgstr "Blog Fragment (samenvatting)"
+
+#. Template Name of the plugin/theme
+msgid "Blog (full posts)"
+msgstr "Blog (volledige berichten)"
+
+#. Template Name of the plugin/theme
+msgid "Landing Page (no menu)"
+msgstr "Landingspagina (geen menu)"
+
+#. Template Name of the plugin/theme
+msgid "Sitemap"
+msgstr "Sitemap"
+
+#: sitemap.php:57
+msgid "Pages"
+msgstr "Pagina&#39;s"
+
+#: sitemap.php:50
+msgid "Permanent Link to %s"
+msgstr "Permanente koppeling naar %s"
+
+#: sitemap.php:46
+msgid "Latest Posts"
+msgstr "Laatste berichten"
+
+#: sitemap.php:41
+msgid "Categories"
+msgstr "Categorie&#235;n"
+
+#: sidebar-home.php:33
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area 6 called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Dit is je eerste home widget box. Om te bewerken ga naar Uiterlijk > Widgets en kies het 6e widget van boven in gebied 6 genaamd Home Widget 1. Titel is ook te bewerken vanuit de widgets."
+
+#: sidebar-home.php:49
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area 7 called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Dit is je tweede home widget box. Om te bewerken ga naar Uiterlijk > Widgets en kies het 7e widget van boven in gebied 7 genaamd Home Widget 2. Titel is ook te bewerken vanuit de widgets."
+
+#: sidebar-home.php:65
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area 8 called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Dit is je derde home widget box. Om te bewerken ga naar Uiterlijk > Widgets en kies het 8e widget van boven in gebied 8 genaamd Home Widget 3. Titel is ook te bewerken vanuit de widgets."
+
+#: single.php:48
+msgid "About"
+msgstr "Over"
+
+#: sidebar-gallery.php:59 sidebar-gallery.php:62 sidebar-gallery.php:66
+msgid "sec"
+msgstr "sec"
+
+#: sidebar-gallery.php:73
+msgid "Camera:"
+msgstr "Model:"
+
+#: sidebar-half-left.php:30 sidebar-left-half.php:30 sidebar-left.php:30
+#: sidebar-right-half.php:30 sidebar-right.php:30 sidebar.php:56
+msgid "In Archive"
+msgstr "In het Archief"
+
+#: sidebar-gallery.php:46
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php:50
+msgid "ISO:"
+msgstr "Gevoelligheid (ISO):"
+
+#: sidebar-gallery.php:54
+msgid "Shutter:"
+msgstr "Belichtingsduur:"
+
+#: sidebar-gallery.php:41
+msgid "Aperture: f&#47;"
+msgstr "Opening f&#47;"
+
+#: sidebar-gallery.php:46
+msgid "Focal Length:"
+msgstr "Brandpuntafstand:"
+
+#: sidebar-gallery.php:28
+msgid "Image Information"
+msgstr "Afbeelding Informatie"
+
+#: sidebar-gallery.php:35
+msgid "Full Size:"
+msgstr "Volledige grootte:"
+
+#: searchform.php:26
+msgid "Go"
+msgstr "Ga"
+
+#: searchform.php:25
+msgid "search here &hellip;"
+msgstr "zoek hier &hellip;"
+
+#: searchform.php:24
+msgid "Search for:"
+msgstr "Zoeken naar:"
+
+#: loop-no-posts.php:34
+msgid "You can return %s or search for the page you were looking for."
+msgstr "Je kan teruggaan naar %s of naar de pagina zoeken die je zocht"
+
+#: loop-no-posts.php:38
+msgid "&larr; Home"
+msgstr "&larr; Thuis"
+
+#: loop-no-posts.php:26
+msgid "Your search for %s did not match any entries."
+msgstr "Je zoektocht naar %s heeft geen uitkomsten opgeleverd"
+
+#: loop-no-posts.php:26
+msgid "404 &#8212; Fancy meeting you here!"
+msgstr "404 &#8212; Leuk om je hier tegen te komen!"
+
+#: loop-no-posts.php:31
+msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
+msgstr "Niet in paniek raken. Laten we kijken wat de mogelijkheden hier zijn."
+
+#: loop-header.php:41
+msgid "Blog Archives"
+msgstr "Sitearchief"
+
+#: loop-header.php:39
+msgid "Yearly Archives: %s"
+msgstr "Jaarlijks archief: %s"
+
+#: loop-header.php:37
+msgid "Monthly Archives: %s"
+msgstr "Maandelijks archief: %s"
+
+#: loop-header.php:35
+msgid "Daily Archives: %s"
+msgstr "Dagelijks archief: %s"
+
+#: image.php:74 post-data.php:32 sidebar-content-half-page.php:66
+#: sidebar-content-page.php:66 sitemap.php:65
+msgid "Edit"
+msgstr "Bewerken"
+
+#: image.php:70 post-data.php:26 sidebar-content-half-page.php:62
+#: sidebar-content-page.php:62
+msgid "Posted in %s"
+msgstr "Geplaatst in %s"
+
+#: image.php:45 post-meta-page.php:32 post-meta.php:35
+#: sidebar-content-half-page.php:47 sidebar-content-page.php:47
+msgid "% Comments &darr;"
+msgstr "% reacties &darr;"
+
+#: image.php:69 post-data.php:27 sidebar-content-half-page.php:61
+#: sidebar-content-page.php:61
+msgid "Tagged with:"
+msgstr "Getagd met"
+
+#: image.php:45 post-meta-page.php:32 post-meta.php:35
+#: sidebar-content-half-page.php:47 sidebar-content-page.php:47
+msgid "No Comments &darr;"
+msgstr "Geen reacties &darr;"
+
+#: image.php:45 post-meta-page.php:32 post-meta.php:35
+#: sidebar-content-half-page.php:47 sidebar-content-page.php:47
+msgid "1 Comment &darr;"
+msgstr "1 reactie &darr;"
+
+#: header.php:54
+msgid "&darr; Skip to Main Content"
+msgstr "&darr; Doorgaan naar hoofdinhoud"
+
+#: image.php:36
+msgid "&#8249; Return to"
+msgstr "&#8249; Keer terug naar"
+
+#: footer.php:73
+msgid "WordPress"
+msgstr "WordPress"
+
+#: footer.php:68
+msgid "&uarr;"
+msgstr "&uarr;"
+
+#: footer.php:71
+msgid "Responsive Theme"
+msgstr "Responsive thema"
+
+#: footer.php:73
+msgid "powered by"
+msgstr "Mogelijk gemaakt door"
+
+#: footer.php:68
+msgid "scroll to top"
+msgstr "scroll naar boven"
+
+#: core/includes/theme-options/theme-options.php:477
+msgid "Enter your custom header script."
+msgstr "Vul je aangepaste header script in."
+
+#: core/includes/theme-options/theme-options.php:483
+msgid "Embeds to footer.php &darr;"
+msgstr "Wordt ingesloten in footer.php &darr;"
+
+#: core/includes/theme-options/theme-options.php:486
+msgid "Enter your custom footer script."
+msgstr "Vul je aangepaste footer script in."
+
+#: core/includes/upsell/theme-upsell.php:64
+msgid "Themes You Can Trust"
+msgstr "Thema's waarop u kunt vertrouwen"
+
+#: footer.php:63
+msgid "&copy;"
+msgstr "&copy;"
+
+#: core/includes/theme-options/theme-options.php:472
+msgid "Custom Scripts for Header and Footer"
+msgstr "Aangepaste Scripts voor Header en Footer"
+
+#: core/includes/theme-options/theme-options.php:473
+msgid "Quick Tutorial"
+msgstr "Snelle handleiding"
+
+#: core/includes/theme-options/theme-options.php:474
+msgid "Embeds to header.php &darr;"
+msgstr "Wordt ingesloten in header.php &darr;"
+
+#: core/includes/theme-options/theme-options.php:466
+msgid "Enter your custom CSS styles."
+msgstr "Voer je eigen CSS in."
+
+#: core/includes/theme-options/theme-options.php:454
+msgid "Enter your foursquare URL"
+msgstr "Vul je foursquare URL in"
+
+#: core/includes/theme-options/theme-options.php:462
+msgid "CSS Tutorial"
+msgstr "CSS tutorial"
+
+#: core/includes/theme-options/theme-options.php:436
+msgid "Enter your Yelp! URL"
+msgstr "Vul je Yelp! URL in"
+
+#: core/includes/theme-options/theme-options.php:445
+msgid "Enter your Vimeo URL"
+msgstr "Vul je Vimeo URL in"
+
+#: core/includes/theme-options/theme-options.php:427
+msgid "Enter your Pinterest URL"
+msgstr "Vul je Pinterest URL in"
+
+#: core/includes/theme-options/theme-options.php:418
+msgid "Enter your Instagram URL"
+msgstr "Vul je Instagram URL in"
+
+#: core/includes/theme-options/theme-options.php:400
+msgid "Enter your RSS Feed URL"
+msgstr "Vul je RSS Feed URL in"
+
+#: core/includes/theme-options/theme-options.php:409
+msgid "Enter your Google+ URL"
+msgstr "Vul je Google+ URL in"
+
+#: core/includes/theme-options/theme-options.php:391
+msgid "Enter your StumbleUpon URL"
+msgstr "Vul je StumbleUpon URL in"
+
+#: core/includes/theme-options/theme-options.php:382
+msgid "Enter your YouTube URL"
+msgstr "Vul je YouTube URL in"
+
+#: core/includes/theme-options/theme-options.php:373
+msgid "Enter your LinkedIn URL"
+msgstr "Vul je LinkedIn URL in"
+
+#: core/includes/theme-options/theme-options.php:364
+msgid "Enter your Facebook URL"
+msgstr "Vul je Facebook URL in"
+
+#: core/includes/theme-options/theme-options.php:273
+msgid "Enter your subheadline"
+msgstr "Vul je subkoptekst in"
+
+#: core/includes/theme-options/theme-options.php:282
+msgid "Enter your content"
+msgstr "Vul je inhoud in"
+
+#: core/includes/theme-options/theme-options.php:291
+msgid "Enter your call to action URL"
+msgstr "Voer je actie-URL in"
+
+#: core/includes/theme-options/theme-options.php:300
+msgid "Enter your call to action text"
+msgstr "Voer je call-to-action tekst in"
+
+#: core/includes/theme-options/theme-options.php:301
+#: template-parts/featured-area.php:57
+msgid "Call to Action"
+msgstr "Call-to-action"
+
+#: core/includes/theme-options/theme-options.php:305
+#: core/includes/theme-options/theme-options.php:306
+msgid "See Docs"
+msgstr "Zie Docs"
+
+#: core/includes/theme-options/theme-options.php:355
+msgid "Enter your Twitter URL"
+msgstr "Vul je Twitter URL in"
+
+#: core/includes/theme-options/theme-options.php:243
+msgid "Need to replace or remove default logo?"
+msgstr "Wil je het standaard logo vervangen of verwijderen?"
+
+#: core/includes/theme-options/theme-options.php:243
+msgid "Click here"
+msgstr "Klik hier"
+
+#: core/includes/theme-options/theme-options.php:255
+msgid "Overrides the WordPress %1sfront page option%2s"
+msgstr "Overschrijft de Wordpress %1sfrontpaginaoptie%2s"
+
+#: core/includes/theme-options/theme-options.php:264
+msgid "Enter your headline"
+msgstr "Vul je koptekst in"
+
+#: core/includes/theme-options/theme-options.php:238
+msgid "Custom Header"
+msgstr "Header aanpassen"
+
+#: core/includes/theme-options/theme-options.php:197
+#: core/includes/theme-options/theme-options.php:206
+msgid "check to enable"
+msgstr "Aanvinken om aan te zetten"
+
+#: core/includes/theme-options/theme-options.php:215
+msgid "Blog"
+msgstr "Blog"
+
+#: core/includes/theme-options/theme-options.php:179
+#: core/includes/theme-options/theme-options.php:188
+msgid "check to disable"
+msgstr "Vink aan om uit te schakelen"
+
+#: core/includes/theme-options/theme-options.php:128
+msgid "Logo Upload"
+msgstr "Logo Upload"
+
+#: core/includes/theme-options/theme-options.php:108
+msgid "Options Saved"
+msgstr "Instellingen opgeslagen"
+
+#: core/includes/functions.php:360
+msgid "<span class=\"%1$s\">Posted on </span>%2$s<span class=\"%3$s\"> by </span>%4$s"
+msgstr "<span class=\"%1$s\">Geplaatst op </span>%2$s<span class=\"%3$s\"> door </span>%4$s"
+
+#: core/includes/post-custom-meta.php:190
+msgid "Layout"
+msgstr "Layout"
+
+#: core/includes/functions.php:161
+msgid "Footer Menu"
+msgstr "Voettekst menu"
+
+#: core/includes/functions.php:160
+msgid "Sub-Header Menu"
+msgstr "Sub-Kop Menu"
+
+#: core/includes/functions.php:159
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#: core/includes/functions-sidebar.php:118
+msgid "Area 10 - sidebar-colophon.php, 100% width Footer widgets"
+msgstr "Gebied 10 - sidebar-colophon.php, voettekst widget van volledige (100%) breedte"
+
+#: core/includes/functions-sidebar.php:127
+msgid "Top Widget"
+msgstr "Bovenste Widget"
+
+#: core/includes/functions-sidebar.php:128
+msgid "Area 11 - sidebar-top.php - Displays on the right of the header"
+msgstr "Gebied 11 - sidebar-top.php - Wordt rechts van de header weergegeven"
+
+#: core/includes/functions-sidebar.php:137
+msgid "Footer Widget"
+msgstr "Voettekst widget"
+
+#: core/includes/functions-sidebar.php:138
+msgid "Area 12 - sidebar-footer.php - Maximum of 3 widgets per row"
+msgstr "Gebied 12 - sidebar-footer.php - Maximaal 3 widgets per rij"
+
+#. Translators: This is a big update. Please read the blog post before
+#. updating.
+#: core/includes/functions-update.php:109
+msgid "<strong>WARNING:</strong> There is a big <strong>Responsive Theme</strong> update available. Please read the %1$s before updating."
+msgstr "<strong>OPGELET:</strong> Er is een belangrijke <strong>Responsive Theme</strong> update beschikbaar. Gelieve eerst de %1$s na te lezen alvorens te updaten."
+
+#: core/includes/functions-update.php:110
+msgid "update page"
+msgstr "Pagina bijwerken"
+
+#: core/includes/functions.php:158
+msgid "Top Menu"
+msgstr "Bovenste Menu"
+
+#: core/includes/functions-sidebar.php:98
+msgid "Area 8 - sidebar-home.php - Displays on the Home Page"
+msgstr "Gebied 8 - sidebar-home.php - Wordt op de homepagina weergegeven"
+
+#: core/includes/functions-sidebar.php:107
+msgid "Gallery Sidebar"
+msgstr "Galerij Zijbalk"
+
+#: core/includes/functions-sidebar.php:108
+msgid "Area 9 - sidebar-gallery.php - Displays on the page after an image has been clicked in a Gallery"
+msgstr "Gebied 9 - sidebar-gallery.php - Wordt weergegeven op de pagina die verschijnt nadat er op een afbeelding in een galerij is geklikt"
+
+#: core/includes/functions-sidebar.php:117
+msgid "Colophon Widget"
+msgstr "Colofon Widget"
+
+#: core/includes/functions-sidebar.php:78
+msgid "Area 6 - sidebar-home.php - Displays on the Home Page"
+msgstr "Gebied 6 - sidebar-home.php - Wordt op de homepagina weergegeven"
+
+#: core/includes/functions-sidebar.php:87 sidebar-home.php:47
+msgid "Home Widget 2"
+msgstr "Thuis Widget 2"
+
+#: core/includes/functions-sidebar.php:88
+msgid "Area 7 - sidebar-home.php - Displays on the Home Page"
+msgstr "Gebied 7 - sidebar-home.php - Wordt op de hompagina weergegeven"
+
+#: core/includes/functions-sidebar.php:97 sidebar-home.php:63
+msgid "Home Widget 3"
+msgstr "Thuis Widget 3"
+
+#: core/includes/functions-sidebar.php:48
+msgid "Area 3 - sidebar-left.php - Displays on Sidebar/Content page templates"
+msgstr "Gebied 3 - sidebar-left.php - Wordt weergegeven op zijbalk/inhoud paginasjablonen"
+
+#: core/includes/functions-sidebar.php:57
+msgid "Left Sidebar Half Page"
+msgstr "Linker Zijbalk Halverwege Pagina"
+
+#: core/includes/functions-sidebar.php:58
+msgid "Area 4 - sidebar-left-half.php - Displays on Sidebar Half Page/Content page templates"
+msgstr "Gebied 4 - sidebar-left-half.php - Wordt weergegeven op de Zijbalk halverwege pagina/Inhoud paginasjablonen"
+
+#: core/includes/functions-sidebar.php:67
+msgid "Right Sidebar Half Page"
+msgstr "Rechter Zijbalk Halverwege Pagina"
+
+#: core/includes/functions-sidebar.php:68
+msgid "Area 5 - sidebar-right-half.php - Displays on Content/Sidebar Half Page page templates"
+msgstr "Gebied 5 - sidebar-right-half.php - Wordt weergegeven op de Inhoud/Zijbalk halverwege pagina paginasjablonen"
+
+#: core/includes/functions-sidebar.php:77 sidebar-home.php:31
+msgid "Home Widget 1"
+msgstr "Thuis Widget 1"
+
+#: core/includes/functions-sidebar.php:38
+msgid "Area 2 - sidebar-right.php - Displays on Content/Sidebar page templates"
+msgstr "Gebied 2 - sidebar-right - Wordt weergegeven op inhoud/zijbalk paginasjablonen"
+
+#: core/includes/functions-sidebar.php:47
+msgid "Left Sidebar"
+msgstr "Sidebar links"
+
+#: core/includes/functions-sidebar.php:28
+msgid "Area 1 - sidebar.php - Displays on Default, Blog, Blog Excerpt page templates"
+msgstr "Gebied 1 - sidebar.php - Wordt weergegeven op standaard sjablonen, blogpaginasjablonen en op uittreksels van blogpaginasjablonen"
+
+#: core/includes/functions-sidebar.php:37
+msgid "Right Sidebar"
+msgstr "Sidebar rechts"
+
+#: core/includes/functions-sidebar.php:27
+msgid "Main Sidebar"
+msgstr "Hoofd sidebar"
+
+#: core/includes/functions-install.php:38
+#: core/includes/theme-options/theme-options.php:52
+#: core/includes/theme-options/theme-options.php:104
+msgid "Theme Options"
+msgstr "Thema opties"
+
+#: core/includes/functions-install.php:31
+msgid "Settings saved and %s activated successfully."
+msgstr "Instellingen opgeslagen en %s succesvol geactiveerd."
+
+#: core/includes/functions-install.php:33
+msgid "%s activated successfully."
+msgstr "%s heeft kunnen activeren."
+
+#: core/includes/functions-install.php:35
+msgid "Visit site"
+msgstr "Site bekijken"
+
+#: core/includes/functions-extentions.php:332
+#: core/includes/theme-options/theme-options.php:431
+msgid "Yelp!"
+msgstr "Yelp!"
+
+#: core/includes/functions-extentions.php:334
+#: core/includes/theme-options/theme-options.php:449
+msgid "foursquare"
+msgstr "FourSquare"
+
+#: core/includes/functions-extentions.php:326
+#: core/includes/theme-options/theme-options.php:377
+msgid "YouTube"
+msgstr "YouTube"
+
+#: core/includes/functions-extentions.php:193
+#: core/includes/functions-extras.php:169
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: core/includes/functions-extentions.php:49
+msgid "Error 404"
+msgstr "Fout 404 "
+
+#: core/includes/functions-extentions.php:47
+msgid "Posts tagged %s"
+msgstr "Berichten getagd met %s"
+
+#: core/includes/functions-extentions.php:48 core/includes/functions.php:371
+msgid "View all posts by %s"
+msgstr "Alle berichten tonen van %s"
+
+#: core/includes/functions-extentions.php:46 loop-header.php:59
+msgid "Search results for: %s"
+msgstr "Zoekresultaten voor: %s"
+
+#: core/includes/functions-extentions.php:45
+msgid "Archive for %s"
+msgstr "Archief van %s"
+
+#: core/includes/functions-admin.php:163
+msgid "The Custom Front Page is enabled. You can disable it in the <a href=\"%1$s\">theme settings</a>."
+msgstr "De aangepaste frontpagina is ingeschakeld. U kunt deze uitschakelen in de <a href=\"%1$s\"> thema-instellingen</a>."
+
+#: core/includes/functions-admin.php:165
+msgid "The Custom Front Page is disabled. You can enable it in the <a href=\"%1$s\">theme settings</a>."
+msgstr "De aangepaste frontpagina is uitgeschakeld. U kunt deze inschakelen in de <a href=\"%1$s\"> thema-instellingen</a>."
+
+#: core/includes/functions-extentions.php:44 loop-no-posts.php:37
+msgid "Home"
+msgstr "Home"
+
+#: core/includes/functions-admin.php:139
+msgid "All plugins installed and activated successfully. %s"
+msgstr "Alles plugins zijn succesvol geinstalleerd en geactiveerd. %s"
+
+#: core/includes/functions-admin.php:123
+msgid "Responsive Add Features"
+msgstr "Responsive functies toevoegen"
+
+#: core/includes/functions-admin.php:124
+msgid "Activate Add Ons"
+msgstr "Schakel add-ons in"
+
+#: core/includes/functions-admin.php:126
+msgid "Something went wrong with the plugin API."
+msgstr "Er is iets fout gegaan met de plugin API."
+
+#: core/includes/functions-admin.php:75 core/includes/functions-admin.php:76
+msgid "More Themes"
+msgstr "Meer Thema's"
+
+#: core/includes/functions-admin.php:69 core/includes/functions-admin.php:70
+msgid "Translate"
+msgstr "Vertaal"
+
+#: core/includes/functions-admin.php:72 core/includes/functions-admin.php:73
+msgid "Showcase"
+msgstr "Showcase"
+
+#: core/includes/customizer.php:283
+#: core/includes/theme-options/theme-options.php:145
+msgid "CSS Styles"
+msgstr "CSS-stijlen"
+
+#: core/includes/customizer.php:288
+#: core/includes/theme-options/theme-options.php:461
+msgid "Custom CSS Styles"
+msgstr "Aangepaste CCS Stijlen"
+
+#: core/includes/customizer.php:299
+#: core/includes/theme-options/theme-options.php:149
+msgid "Scripts"
+msgstr "Scripts"
+
+#: core/includes/customizer.php:304
+msgid "Embeds to header.php"
+msgstr "Embeds in header.php"
+
+#: core/includes/customizer.php:312
+msgid "Embeds to footer.php"
+msgstr "Embeds in footer.php"
+
+#: core/includes/functions-admin.php:16
+msgid "Welcome to %1$s! Upgrade to %2$s today."
+msgstr "Welkom bij %1$s! Upgrade vandaag nog naar %2$s."
+
+#: core/includes/functions-admin.php:63 core/includes/functions-admin.php:64
+msgid "Instructions"
+msgstr "Instructies"
+
+#: core/includes/functions-admin.php:66 core/includes/functions-admin.php:67
+#: core/includes/functions-install.php:39
+msgid "Help"
+msgstr "Hulp"
+
+#: core/includes/customizer.php:264
+msgid "Yelp"
+msgstr "Yelp"
+
+#: core/includes/customizer.php:273
+msgid "Foursquare"
+msgstr "FourSquare"
+
+#: core/includes/customizer.php:255 core/includes/functions-extentions.php:333
+#: core/includes/theme-options/theme-options.php:440
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: core/includes/customizer.php:246 core/includes/functions-extentions.php:327
+#: core/includes/theme-options/theme-options.php:386
+msgid "StumbleUpon"
+msgstr "StumbleUpon"
+
+#: core/includes/customizer.php:237 core/includes/functions-extentions.php:331
+#: core/includes/theme-options/theme-options.php:422
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: core/includes/customizer.php:228 core/includes/functions-extentions.php:330
+#: core/includes/theme-options/theme-options.php:413
+msgid "Instagram"
+msgstr "Instagram"
+
+#: core/includes/customizer.php:219 core/includes/functions-extentions.php:328
+#: core/includes/theme-options/theme-options.php:395
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+#: core/includes/customizer.php:210 core/includes/functions-extentions.php:329
+#: core/includes/theme-options/theme-options.php:404
+msgid "Google+"
+msgstr "Google+"
+
+#: core/includes/customizer.php:201
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: core/includes/customizer.php:192 core/includes/functions-extentions.php:325
+#: core/includes/theme-options/theme-options.php:368
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: core/includes/customizer.php:183 core/includes/functions-extentions.php:324
+#: core/includes/theme-options/theme-options.php:359
+msgid "Facebook"
+msgstr "Facebook"
+
+#: core/includes/customizer.php:167
+msgid "Enter the URL to your account for each service for the icon to appear in the header."
+msgstr "Voer de URL in van je account voor elke service om het icoon te laten zien in de header."
+
+#: core/includes/customizer.php:174 core/includes/functions-extentions.php:323
+#: core/includes/theme-options/theme-options.php:350
+msgid "Twitter"
+msgstr "Twitter"
+
+#: core/includes/customizer.php:137
+#: core/includes/theme-options/theme-options.php:317
+msgid "Default Static Page Layout"
+msgstr "Standaard Statische Pagina Layout"
+
+#: core/includes/customizer.php:145
+#: core/includes/theme-options/theme-options.php:327
+msgid "Default Single Blog Post Layout"
+msgstr "Standaard Enkel Blog Bericht Layout"
+
+#: core/includes/customizer.php:153
+#: core/includes/theme-options/theme-options.php:337
+msgid "Default Blog Posts Index Layout"
+msgstr "Standaard Blog Berichten Index Layout"
+
+#: core/includes/customizer.php:165
+#: core/includes/theme-options/theme-options.php:141
+msgid "Social Icons"
+msgstr "Sociale Pictogrammen"
+
+#: core/includes/customizer.php:123
+#: core/includes/theme-options/theme-options.php:310
+msgid "Paste your shortcode, video or image source"
+msgstr "Plak je shortcode, video of afbeeldingsbron"
+
+#: core/includes/customizer.php:132
+#: core/includes/theme-options/theme-options.php:137
+msgid "Default Layouts"
+msgstr "Standaard Layouts"
+
+#: core/includes/customizer.php:87
+#: core/includes/theme-options/theme-options.php:274
+#: template-parts/featured-area.php:36
+msgid "Your H2 subheadline here"
+msgstr "Je H2 subkoptekst hier"
+
+#: core/includes/customizer.php:89
+#: core/includes/theme-options/theme-options.php:268
+msgid "Subheadline"
+msgstr "Subkoptekst"
+
+#: core/includes/customizer.php:94
+#: core/includes/theme-options/theme-options.php:283
+#: template-parts/featured-area.php:44
+msgid "Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like."
+msgstr "Je titel, subtitel en deze content zijn te bewerken vanuit Themakeuze. Net als de Call-to-actionknop en de bijbehorende bestemmingslink. Afbeelding aan de rechterkant kan een afbeelding zijn of zelfs een Youtube-video als je dat wil."
+
+#: core/includes/customizer.php:96
+#: core/includes/theme-options/theme-options.php:277
+msgid "Content Area"
+msgstr "Inhoudsgebied"
+
+#: core/includes/customizer.php:103
+#: core/includes/theme-options/theme-options.php:286
+msgid "Call to Action (URL)"
+msgstr "Call-to-action (URL)"
+
+#: core/includes/customizer.php:111
+#: core/includes/theme-options/theme-options.php:295
+msgid "Call to Action (Text)"
+msgstr "Call-to-action (tekst)"
+
+#: core/includes/customizer.php:119
+#: core/includes/theme-options/theme-options.php:304
+msgid "Featured Content"
+msgstr "Uitgelichte inhoud"
+
+#: core/includes/customizer.php:74
+#: core/includes/theme-options/theme-options.php:250
+msgid "Enable Custom Front Page"
+msgstr "Schakel aangepaste frontpagina in"
+
+#: core/includes/customizer.php:78
+msgid "Overrides the WordPress front page option"
+msgstr "Overschrijft de WordPress voorpagina-optie"
+
+#: core/includes/customizer.php:80
+#: core/includes/theme-options/theme-options.php:265
+#: template-parts/featured-area.php:26
+msgid "Hello, World!"
+msgstr "Hallo wereld!"
+
+#: core/includes/customizer.php:82
+#: core/includes/theme-options/theme-options.php:259
+msgid "Headline"
+msgstr "Headline"
+
+#: core/includes/customizer.php:23
+#: core/includes/theme-options/theme-options.php:123
+msgid "Theme Elements"
+msgstr "Thema Elementen"
+
+#: core/includes/customizer.php:28
+#: core/includes/theme-options/theme-options.php:174
+msgid "Disable breadcrumb list?"
+msgstr "Kruimelpad uitschakelen?"
+
+#: core/includes/customizer.php:35
+#: core/includes/theme-options/theme-options.php:183
+msgid "Disable Call to Action Button?"
+msgstr "Call-to-actionknop uitschakelen?"
+
+#: core/includes/customizer.php:42
+#: core/includes/theme-options/theme-options.php:192
+msgid "Enable minified css?"
+msgstr "Gecomprimeerde css inschakelen?"
+
+#: core/includes/customizer.php:49
+#: core/includes/theme-options/theme-options.php:201
+msgid "Enable Blog Title"
+msgstr "Activeer blog-titel"
+
+#: core/includes/customizer.php:57
+#: core/includes/theme-options/theme-options.php:209
+msgid "Title Text"
+msgstr "Titel tekst"
+
+#: core/includes/customizer.php:69
+#: core/includes/theme-options/theme-options.php:132
+msgid "Home Page"
+msgstr "Home pagina"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2148
+msgid "Return to the Dashboard"
+msgstr "Ga terug naar het dashboard"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2055
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Plugin  %1$s (%2$d/%3$d) wordt geïnstalleerd"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2054
+msgid "All installations have been completed."
+msgstr "Alle installaties zijn voltooid."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2053
+msgid "%1$s installed successfully."
+msgstr "%1$s is succesvol geïnstalleerd."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2052
+msgid "The installation of %1$s failed."
+msgstr "De installatie van %1$s is mislukt."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2051
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Er is een fout opgetreden tijdens de installatie van %1$s: <strong> %2$s</strong>."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2050
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Het installatieproces is begonnen. Dit proces kan een tijdje duren afhankelijk van uw webhost, een moment geduld a.u.b."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2046
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Plugin %1$s (%2$d/%3$d) wordt geïnstalleerd en geactiveerd."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2045
+msgid "All installations and activations have been completed."
+msgstr "Alle installaties en activeringen zijn voltooid."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2044
+#: core/includes/classes/class-tgm-plugin-activation.php:2053
+msgid "Hide Details"
+msgstr "Details verbergen"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2044
+#: core/includes/classes/class-tgm-plugin-activation.php:2053
+msgid "Show Details"
+msgstr "Details tonen"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2044
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s succesvol geïnstalleerd en geactiveerd."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:2043
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Het installatie- en activeringsproces is begonnen. Dit proces kan een tijdje duren afhankelijk van uw webhost, een moment geduld a.u.b."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1930
+msgid "Plugin activation failed."
+msgstr "Plugin activatie mislukt."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1919
+msgid "Plugin installed successfully."
+msgstr "Plugin is succesvol ge&#239;nstalleerd."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1918
+msgid "Plugin install failed."
+msgstr "Plugin installatie mislukt."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1917
+msgid "Installing the plugin&#8230;"
+msgstr "De plugin installeren&#8230;"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1916
+msgid "Unpacking the package&#8230;"
+msgstr "Uitpakken van pakket&#8230;"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1915
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr "Downloaden installatiepakket van <span class=\"code\">%s</span>&#8230;"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1914
+msgid "Install package not available."
+msgstr "Installatiepakket niet beschikbaar."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1370
+msgid "Activate"
+msgstr "Activeren"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1369
+msgid "Install"
+msgstr "Installeren"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1351
+msgid "Status"
+msgstr "Status"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1350
+msgid "Type"
+msgstr "Type"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1349
+msgid "Source"
+msgstr "Bron"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1348
+msgid "Plugin"
+msgstr "Plugin"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1332
+msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
+msgstr "Er zijn geen plugins gevonden om te installeren of activeren. <a href=\"%1$s\" title=\"Ga terug naar het Dashboard\">Ga terug naar het Dashboard</a>"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1151
+msgid "Installed But Not Activated"
+msgstr "Geïnstalleerd maar niet geactiveerd"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1148
+msgid "Not Installed"
+msgstr "Niet geïnstalleerd"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1145
+msgid "Recommended"
+msgstr "Aanbevolen"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1145
+msgid "Required"
+msgstr "Verplicht"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1142
+msgid "WordPress Repository"
+msgstr "WordPress Archief"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1137
+msgid "Pre-Packaged"
+msgstr "Voorverpakt"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1133
+msgid "Private Repository"
+msgstr "Prive Archief"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:1128
+msgid "External Link"
+msgstr "Externe Link"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:174
+msgid "Dismiss this notice"
+msgstr "Negeer deze melding"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:173
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Alle plugins zijn succesvol geïnstalleerd en geactiveerd. %1$s"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:172
+#: core/includes/classes/class-tgm-plugin-activation.php:1614
+msgid "The following plugin was activated successfully:"
+msgstr "De volgende plugin is succesvol geactiveerd:"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:171
+#: core/includes/classes/class-tgm-plugin-activation.php:1931
+#: core/includes/functions-admin.php:138
+msgid "Plugin activated successfully."
+msgstr "Plugin succesvol geactiveerd."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:170
+msgid "Return to the dashboard"
+msgstr "Ga terug naar het dashboard"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:169
+#: core/includes/functions-admin.php:137
+msgid "Return to Required Plugins Installer"
+msgstr "Ga terug naar de Benodigde Plugins Installer"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:168
+#: core/includes/functions-admin.php:136
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] "Activeer geïnstalleerde plugin"
+msgstr[1] "Activeer geïnstalleerde plugins"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:167
+#: core/includes/functions-admin.php:135
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Begin met de installatie van de plugin"
+msgstr[1] "Begin met de installatie van de plugins"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:166
+#: core/includes/functions-admin.php:134
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] "Je hebt niet de juiste rechten om de plugin %s bij te werken. Neem contact op met de administrator"
+msgstr[1] "Je hebt niet de juiste rechten om de plugins %s bij te werken. Neem contact op met de administrator"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:165
+#: core/includes/functions-admin.php:133
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] "De volgende plugin moet bijgewerkt worden om goed te kunnen werken bij dit thema:  %1$s."
+msgstr[1] "De volgende plugins moeten bijgewerkt worden om goed te kunnen werken bij dit thema:  %1$s."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:164
+#: core/includes/functions-admin.php:132
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] "Je hebt niet de juiste rechten om de plugin  %s te activeren. Neem contact op met de administrator"
+msgstr[1] "Je hebt niet de juiste rechten om de plugins  %s te activeren. Neem contact op met de administrator"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:163
+#: core/includes/functions-admin.php:131
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "De volgende aanbevolen plugin is momenteel niet actief %1$s."
+msgstr[1] "De volgende aanbevolen plugins zijn momenteel niet actief %1$s."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:162
+#: core/includes/functions-admin.php:130
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "De volgende plugin is momenteel niet actief:  %1$s."
+msgstr[1] "De volgende plugins zijn momenteel niet actief:  %1$s."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:161
+#: core/includes/functions-admin.php:129
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] "Je hebt geen toestemming om de plugin %s  te installeren. Neem contact op met de administrator"
+msgstr[1] "Je hebt geen toestemming om de plugins %s  te installeren. Neem contact op met de administrator"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:160
+#: core/includes/functions-admin.php:128
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Dit thema raadt de volgende plugin aan: %1$s."
+msgstr[1] "Dit thema raadt de volgende plugins aan: %1$s."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:159
+#: core/includes/functions-admin.php:127
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Dit thema heeft de volgende plugin nodig: %1$s."
+msgstr[1] "Dit thema heeft de volgende plugins nodig: %1$s."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:158
+msgid "Something went wrong."
+msgstr "Oeps, er is iets fout gegaan."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:157
+#: core/includes/functions-admin.php:125
+msgid "Installing Plugin: %s"
+msgstr "Plugin %s wordt ge&#239;nstalleerd."
+
+#: core/includes/classes/class-tgm-plugin-activation.php:156
+msgid "Install Plugins"
+msgstr "Plugins installeren"
+
+#. #-#-#-#-#  responsive.pot (Responsive 1.9.8.2)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: core/includes/classes/Responsive_Options.php:257
+#: core/includes/post-custom-meta.php:167
+msgid "Sidebar/Content"
+msgstr "Zijbalk/Inhoud"
+
+#. #-#-#-#-#  responsive.pot (Responsive 1.9.8.2)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: core/includes/classes/Responsive_Options.php:258
+#: core/includes/post-custom-meta.php:168
+msgid "Content/Sidebar Half Page"
+msgstr "Inhoud/Zijbalk Halverwege Pagina"
+
+#. #-#-#-#-#  responsive.pot (Responsive 1.9.8.2)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: core/includes/classes/Responsive_Options.php:259
+#: core/includes/post-custom-meta.php:169
+msgid "Sidebar/Content Half Page"
+msgstr "Zijbalk/Inhoud Halverwege Pagina"
+
+#. #-#-#-#-#  responsive.pot (Responsive 1.9.8.2)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: core/includes/classes/Responsive_Options.php:260
+#: core/includes/post-custom-meta.php:170
+msgid "Full Width Page (no sidebar)"
+msgstr "Volledige Breedte Pagina (geen zijbalk)"
+
+#: core/includes/classes/class-tgm-plugin-activation.php:155
+msgid "Install Required Plugins"
+msgstr "Installeer de benodigde plugins"
+
+#. #-#-#-#-#  responsive.pot (Responsive 1.9.8.2)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: core/includes/classes/Responsive_Options.php:256
+#: core/includes/post-custom-meta.php:166
+msgid "Content/Sidebar"
+msgstr "Inhoud/Zijbalk"
+
+#: core/includes/classes/Responsive_Options.php:255
+#: core/includes/post-custom-meta.php:165
+msgid "Default"
+msgstr "Standaard"
+
+#: core/includes/classes/Responsive_Options.php:242
+msgid "Upgrade"
+msgstr "Upgraden"
+
+#: core/includes/classes/Responsive_Options.php:241
+msgid "Restore Defaults"
+msgstr "Standaardwaarden herstellen"
+
+#: core/includes/classes/Responsive_Options.php:38
+#: core/includes/theme-options/theme-options.php:99
+msgid "Do you want to restore?"
+msgstr "Wilt u de instellingen terugzetten?"
+
+#: core/includes/classes/Responsive_Options.php:38
+#: core/includes/theme-options/theme-options.php:99
+msgid "All theme settings will be lost!"
+msgstr "Alle thema-instellingen zullen verloren gaan!"
+
+#: core/includes/classes/Responsive_Options.php:38
+#: core/includes/theme-options/theme-options.php:99
+msgid "Click OK to Restore."
+msgstr "Klik op OK om de instellingen terug te zetten"
+
+#: core/includes/classes/Responsive_Options.php:240
+msgid "Save Options"
+msgstr "Bewaar opties"
+
+#: comments.php:86
+msgid "Website"
+msgstr "Website"
+
+#: comments.php:84
+msgid "E-mail"
+msgstr "E-mailadres"
+
+#: comments.php:82
+msgid "Name"
+msgstr "Naam"
+
+#: comments.php:69
+msgid "%1$d %2$s for \"%3$s\""
+msgstr "%1$d %2$s voor  \"%3$s\""
+
+#: comments.php:66
+msgid "Pings&#47;Trackbacks"
+msgstr "Pings&#47;Trackbacks"
+
+#: comments.php:41 comments.php:54
+msgid "Newer comments &#8250;"
+msgstr "nieuwer commentaar &#8250;"
+
+#: comments.php:39 comments.php:52
+msgid "&#8249; Older comments"
+msgstr "&#8249; oudere commentaar "
+
+#: comments.php:32
+msgid "One comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] "1 Reactie op &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s reacties op &ldquo;%2$s&rdquo;"
+
+#: blog-excerpt.php:80 blog.php:82 loop-nav.php:30
+msgid "Newer posts &#8250;"
+msgstr "Nieuwere berichten &#8250;"
+
+#: blog.php:65 content-sidebar-half-page.php:41 content-sidebar-page.php:41
+#: core/includes/functions-extras.php:96 full-width-page.php:41 home.php:53
+#: image.php:56 index.php:43 landing-page.php:39 page.php:40
+#: sidebar-content-half-page.php:54 sidebar-content-page.php:54 single.php:40
+msgid "Read more &#8250;"
+msgstr "Lees meer &#8250;"
+
+#: comments.php:24
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Dit bericht is beveiligd met een wachtwoord. Geef het wachtwoord om reacties te bekijken."
+
+#: blog-excerpt.php:79 blog.php:81 loop-nav.php:29
+msgid "&#8249; Older posts"
+msgstr "&#8249; Oudere berichten"
+
+#: archive.php:46 blog-excerpt.php:64 blog.php:66
+#: content-sidebar-half-page.php:42 content-sidebar-page.php:42
+#: full-width-page.php:42 home.php:54 image.php:57 index.php:44
+#: landing-page.php:40 page.php:41 search.php:41
+#: sidebar-content-half-page.php:55 sidebar-content-page.php:55 single.php:54
+#: sitemap.php:62
+msgid "Pages:"
+msgstr "Pagina&#39;s:"
+
+#. Theme URI of the plugin/theme
+msgid "http://cyberchimps.com/responsive-theme/"
+msgstr "http://cyberchimps.com/responsive-theme/"
+
+#. Author of the plugin/theme
+msgid "CyberChimps.com"
+msgstr "CyberChimps.com"
+
+#. Author URI of the plugin/theme
+msgid "http://cyberchimps.com"
+msgstr "http://cyberchimps.com"
