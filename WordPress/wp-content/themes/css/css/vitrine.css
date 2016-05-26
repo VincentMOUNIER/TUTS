@@ -1,0 +1,55 @@
+html {
+  position: relative;
+  min-height: 100%;
+  margin-top: 0px !important;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  text-shadow: 2px 2px #000;
+  color: #FFF;
+}
+.contentpost{
+  background-color: rgba(41, 197, 255,0.68);
+  border-radius: 50px;
+  border-style: solid;
+  border-width:5px;
+  border-top-color: rgba(57, 213, 255,0.68);
+  border-bottom-color: rgba(0, 119, 192,0.68);
+  border-left-color: rgba(57, 213, 255,0.68);
+  border-right-color: rgba(25, 181, 254,0.68);
+
+}
+#content{
+  margin-top: 5%;
+  margin-bottom : 5%;
+}
+
+.tooltip-head{
+  color: #fff;
+  background: #000;
+  padding: 10px 10px 5px;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  margin-bottom: -2px; /* Hide default tooltip rounded corner from top */
+}
+.tooltip-head .glyphicon{
+  font-size: 22px;
+  vertical-align: bottom;
+}
+.tooltip-head h3{
+  margin: 0;
+  font-size: 18px;
+  }
+.primary-text {
+background-color: rgba(213, 229, 230,0.8);
+border-radius: 4px ;
+padding : 8px;
+border-style: solid;
+border-width: 1px;
+}
+.well{
+margin-top: 20px;
+}

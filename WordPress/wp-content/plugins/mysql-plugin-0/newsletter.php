@@ -200,7 +200,7 @@ class Tuts_Newsletter
   public function pending_menu_html() {
 
     echo '<h1>'.get_admin_page_title().'</h1>';
-    echo '<p> Ici vous gerer les associations en cours de validation </p>';
+    echo '<p> Ici vous gerez les associations en cours de validation </p>';
     global $wpdb;
 
     $resultat = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}tuts_association WHERE validation = 0 ");
@@ -208,261 +208,352 @@ class Tuts_Newsletter
     if ($sqlError == "") {
       if ($wpdb->num_rows > 0){
         ?>
+        <div>
         <form action="" method="POST">
+
           <table>
             <thead>
               <td>Nom Association</td>
               <td>Id Association</td>
-              <td>Accepter</td>
-              <td>Refuser</td>
-            </thead>
-            <tbody>
+
+                <td>Accepter</td>
+                <td>Refuser</td>
+              </thead>
+              <tbody>
+                <?php
+                foreach($resultat as $row){
+                  echo "<tr>";
+                  echo "<td>". $row->nom ."</td>";
+                  echo "<td>". $row->num_id." </td>";
+                  echo '<td><input type="radio" name="'.$row->id_association.'" value="accept"></td>';
+                  echo '<td><input type="radio" name="'.$row->id_association.'" value="refuse"></td>';
+                  echo "</tr>";
+                }
+                ?>
+              </tbody>
+            </table>
+            <input type="hidden" name="form_pending" value="1"> <!-- Valeur pour verifier si on a soumis le formulaire au chargement de la page (voir verification_confirmform() plus haut)-->
+            <button type="submit">Valider</button>
+
+            <style>
+            .cell-div {
+              width : 400px;
+              word-break: break-all;
+              vertical-align :top;
+              display : inline-block;
+            }
+            p, h3{
+              margin : 3px;
+              margin-left : 20px;
+            }
+            p {
+              margin-bottom : 10x;
+              margin-left : 30px;
+            }
+            h2,H1 {
+              text-align : center ;
+            }
+
+            </style>
+
+
+            <div>
               <?php
               foreach($resultat as $row){
-                echo "<tr>";
-                echo "<td>". $row->nom ."</td>";
-                echo "<td>". $row->num_id." </td>";
-                echo '<td><input type="radio" name="'.$row->id_association.'" value="accept"></td>';
-                echo '<td><input type="radio" name="'.$row->id_association.'" value="refuse"></td>';
-                echo "</tr>";
+
+                ?>
+              <div class="cell-div">
+
+                <H1> <?=$row->nom?> <H1>
+                  <H2> General </H2>
+                  <H3> Type </H3>
+                  <p> <?php if ($row->ass_referente==NULL) {
+                    echo "Association";
+                  } else {
+                    echo "Collectif";
+                  }
+                  ?>
+                   </p>
+
+                  <H3> Adresse </H3>
+                  <p><?=$row->adresse?></p>
+
+                  <H3> Site Web </H3>
+                  <p> <?=$row->site_web?> </p>
+
+                  <H2> Referent </H2>
+                  <H3>Nom Referent</H3>
+                  <p> <?=$row->nom_ref?></p>
+
+                  <H3>Prenom Referent</H3>
+                  <p><?=$row->prenom_ref?> </p>
+
+                  <H3>Fonction Referent</H3>
+                  <p><?=$row->fonction_ref?></p>
+
+                  <H3>Telephone Referent</H3>
+                  <p><?=$row->tel_ref?></p>
+
+                  <H3>Email Referent</H3>
+                  <p><?=$row->email_ref?></p>
+
+                  <H2> Informations </H2>
+                  <H3>Mission</H3>
+                  <p> <?=$row->mission?>
+                  </p>
+                  <H3>Activite</H3>
+                  <p> <?=$row->activite?> </p>
+
+                  <H3>Valeur</H3>
+                  <p> <?=$row->valeur?> </p>
+
+                  <H3>Projet</H3>
+                  <p> <?=$row->projet?> </p>
+
+                  <H3>Domaine d'action</H3>
+                  <p> <?=$row->act?> </p>
+                </div>
+              <?php
               }
               ?>
-            </tbody>
-          </table>
-          <input type="hidden" name="form_pending" value="1"> <!-- Valeur pour verifier si on a soumis le formulaire au chargement de la page (voir verification_confirmform() plus haut)-->
-          <button type="submit">Valider</button>
+              </div>
+            </div>
+
+
+
+
+              <?php
+            }else{
+              echo "<p> Vous n'avez aucune association en attente de confirmation</p>";
+            }
+          }else{
+            //TODO Gerer les erreurs
+            echo "SQLERROR";
+            echo $erreurSql;
+          }
+
+
+          ?>
+          <script type="text/javascript">
+          jQuery.noConflict();
+
+          jQuery(function(){
+            var allRadios = jQuery('input[type=radio]')
+            var radioChecked;
+            var setCurrent =
+            function(e) {
+              var obj = e.target;
+              radioChecked = jQuery(obj).attr('checked');
+            }
+            var setCheck =
+            function(e) {
+
+              if (e.type == 'keypress' && e.charCode != 32) {
+                return false;
+              }
+              var obj = e.target;
+
+              if (radioChecked) {
+                jQuery(obj).attr('checked', false);
+              } else {
+                jQuery(obj).attr('checked', true);
+              }
+            }
+            jQuery.each(allRadios, function(i, val){
+              var label = jQuery('label[for=' + jQuery(this).attr("id") + ']');
+
+              jQuery(this).bind('mousedown keydown', function(e){
+                setCurrent(e);
+              });
+              label.bind('mousedown keydown', function(e){
+                e.target = jQuery('#' + jQuery(this).attr("for"));
+                setCurrent(e);
+              });
+              jQuery(this).bind('click', function(e){
+                setCheck(e);
+              });
+            });
+          });
+          </script>
           <?php
-        }else{
-          echo "<p> Vous n'avez aucune association en attente de confirmation</p>";
+
+
+
         }
-      }else{
-        //TODO Gerer les erreurs
-        echo "SQLERROR";
-        echo $erreurSql;
-      }
 
+        // Envoi de mail avec identifiant lors de la confirmation de la part de l'administrateur
+        public function send_verification() {
+          global $wpdb;
+          $resultat = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}tuts_association WHERE validation = 0 ");
+          $sqlError = $wpdb->last_error;
+          if ($sqlError == "") {
+            foreach($resultat as $row){
+              if (isset($_POST[$row->id_association])){
 
-      ?>
-      <script type="text/javascript">
-      jQuery.noConflict();
+                if($_POST[$row->id_association]=="accept"){
+                  //TODO send mail accept
 
-      jQuery(function(){
-        var allRadios = jQuery('input[type=radio]')
-        var radioChecked;
-        var setCurrent =
-        function(e) {
-          var obj = e.target;
-          radioChecked = jQuery(obj).attr('checked');
-        }
-        var setCheck =
-        function(e) {
+                  $str_loginpw ="Utilisateur : ".$row->login."\nMot de passe : ".$row->mdp ;
+                  $message = str_ireplace("[identifiant]",$str_loginpw,get_option('tuts_sendaccept_message'));
 
-          if (e.type == 'keypress' && e.charCode != 32) {
-            return false;
-          }
-          var obj = e.target;
+                  $header = array('From : '.get_option('tuts_mail_sender'));
 
-          if (radioChecked) {
-            jQuery(obj).attr('checked', false);
-          } else {
-            jQuery(obj).attr('checked', true);
-          }
-        }
-        jQuery.each(allRadios, function(i, val){
-          var label = jQuery('label[for=' + jQuery(this).attr("id") + ']');
+                  wp_mail($row->email_ref,"Vos identifants Tous Unis Tous Solidaires",$message,$header);
 
-          jQuery(this).bind('mousedown keydown', function(e){
-            setCurrent(e);
-          });
-          label.bind('mousedown keydown', function(e){
-            e.target = jQuery('#' + jQuery(this).attr("for"));
-            setCurrent(e);
-          });
-          jQuery(this).bind('click', function(e){
-            setCheck(e);
-          });
-        });
-      });
-      </script>
-      <?php
+                  $wpdb->update("{$wpdb->prefix}tuts_association", array('validation'=> '1'), array( 'id_association' => $row->id_association ), array('%d'));
+                  wp_update_user(array ('ID' => $row->id_user, 'role' => 'publisher'));
+                } elseif ($_POST[$row->id_association]=="refuse"){
+
+                  wp_mail($row->email_ref,"Tous Unis Tous Solidaires",get_option('tuts_sendrefuse_message'),$header);
+
+                  $wpdb->delete ("{$wpdb->prefix}tuts_association", array('id_association' => $row->id_association));
 
 
 
-    }
+                }
 
-    // Envoi de mail avec identifiant lors de la confirmation de la part de l'administrateur
-    public function send_verification() {
-      global $wpdb;
-      $resultat = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}tuts_association WHERE validation = 0 ");
-      $sqlError = $wpdb->last_error;
-      if ($sqlError == "") {
-        foreach($resultat as $row){
-          if (isset($_POST[$row->id_association])){
-
-            if($_POST[$row->id_association]=="accept"){
-              //TODO send mail accept
-
-              $str_loginpw ="Utilisateur : ".$row->login."\nMot de passe : ".$row->mdp ;
-              $message = str_ireplace("[identifiant]",$str_loginpw,get_option('tuts_sendaccept_message'));
-
-              $header = array('From : '.get_option('tuts_mail_sender'));
-
-              wp_mail($row->email_ref,"Vos identifants Tous Unis Tous Solidaires",$message,$header);
-
-              $wpdb->update("{$wpdb->prefix}tuts_association", array('validation'=> '1'), array( 'id_association' => $row->id_association ), array('%d'));
-              wp_update_user(array ('ID' => $row->id_user, 'role' => 'publisher'));
-            } elseif ($_POST[$row->id_association]=="refuse"){
-
-              wp_mail($row->email_ref,"Tous Unis Tous Solidaires",get_option('tuts_sendrefuse_message'),$header);
-
-              $wpdb->delete ("{$wpdb->prefix}tuts_association", array('id_association' => $row->id_association));
-
+              } // fin if pour verifier si on a decidé pour une association ou non
 
 
             }
-
-          } // fin if pour verifier si on a decidé pour une association ou non
-
+          }else{
+            //TODO Gerer les erreurs
+            echo "SQLERROR";
+            echo $erreurSql;
+          }
 
         }
-      }else{
-        //TODO Gerer les erreurs
-        echo "SQLERROR";
-        echo $erreurSql;
-      }
-
-    }
 
 
 
 
-    /*End menu Plugin */
+        /*End menu Plugin */
 
 
 
 
 
-    public function form($instance)
-    {
-      $title = isset($instance['title']) ? $instance['title'] : '';
-      ?>
-      <p>
-        <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo  $title; ?>" />
-      </p>
-      <?php
-    }
+        public function form($instance)
+        {
+          $title = isset($instance['title']) ? $instance['title'] : '';
+          ?>
+          <p>
+            <label for="<?php echo $this->get_field_name( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo  $title; ?>" />
+          </p>
+          <?php
+        }
 
-    public static function install() {
+        public static function install() {
 
-      global $wpdb;
+          global $wpdb;
 
-      $wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}tuts_email (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL, type VARCHAR(255) NOT NULL);");
+          $wpdb->query("CREATE TABLE IF NOT EXISTS {$wpdb->prefix}tuts_email (id INT AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL, type VARCHAR(255) NOT NULL);");
 
-      /*TABLE ASSOCIATION*/
-      $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_association` (
-      `id_association` int(11) NOT NULL,
-        `login` varchar(255) NOT NULL,
-        `mdp` varchar(255) NOT NULL,
-        `num_id` varchar(255) DEFAULT NULL,
-        `ass_referente` varchar(255) DEFAULT NULL,
-        `nom` varchar(255) NOT NULL,
-        `adresse` varchar(255) NOT NULL,
-        `site_web` varchar(255) NOT NULL,
-        `nom_ref` varchar(255) NOT NULL,
-        `prenom_ref` varchar(255) NOT NULL,
-        `fonction_ref` varchar(255) NOT NULL,
-        `tel_ref` varchar(10) NOT NULL,
-        `email_ref` varchar(100) NOT NULL,
-        `mission` text NOT NULL,
-        `activite` text NOT NULL,
-        `valeur` text NOT NULL,
-        `projet` text NOT NULL,
-        `act_id` int(11) NOT NULL,
-        `validation` int(11) NOT NULL DEFAULT '0'
-      );");
-      $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_association`
-       ADD PRIMARY KEY (`id_association`);");
-       $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_association`
-       MODIFY `id_association` int(11) NOT NULL AUTO_INCREMENT;");
-
-
-       /*TABLE HORAIRE*/
-       $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_horaire` (
-       `id_horaire` int(11) NOT NULL,
-         `id_offre` int(11) NOT NULL,
-         `h_debut` varchar(20) NOT NULL,
-         `h_fin` varchar(20) NOT NULL,
-         `nb_places` int(11) NOT NULL,
-         `date` varchar(50) NOT NULL
-       );");
-       $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_horaire`
-        ADD PRIMARY KEY (`id_horaire`);");
-        $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_horaire`
-        MODIFY `id_horaire` int(11) NOT NULL AUTO_INCREMENT;");
-
-        /*TABLE inscription*/
-
-        $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_inscription` (
-        `id_inscription` int(11) NOT NULL,
-          `id_offre` int(11) NOT NULL,
-          `id_horaire` int(11) NOT NULL,
+          /*TABLE ASSOCIATION*/
+          $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_association` (
+          `id_association` int(11) NOT NULL,
+          `login` varchar(255) NOT NULL,
+          `mdp` varchar(255) NOT NULL,
+          `num_id` varchar(255) DEFAULT NULL,
+          `ass_referente` varchar(255) DEFAULT NULL,
           `nom` varchar(255) NOT NULL,
-          `prenom` varchar(255) NOT NULL,
-          `addr_mail` varchar(255) NOT NULL,
-          `telephone` varchar(10) NOT NULL,
-          `connaissance` varchar(255) NOT NULL
+          `adresse` varchar(255) NOT NULL,
+          `site_web` varchar(255) NOT NULL,
+          `nom_ref` varchar(255) NOT NULL,
+          `prenom_ref` varchar(255) NOT NULL,
+          `fonction_ref` varchar(255) NOT NULL,
+          `tel_ref` varchar(10) NOT NULL,
+          `email_ref` varchar(100) NOT NULL,
+          `mission` text NOT NULL,
+          `activite` text NOT NULL,
+          `valeur` text NOT NULL,
+          `projet` text NOT NULL,
+          `act_id` int(11) NOT NULL,
+          `validation` int(11) NOT NULL DEFAULT '0'
         );");
-        $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_inscription`
-         ADD PRIMARY KEY (`id_inscription`);");
-         $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_inscription`
-         MODIFY `id_inscription` int(11) NOT NULL AUTO_INCREMENT;");
-
-        /*TABLE OFFRE*/
-         $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_offre` (
-         `id_offre` int(11) NOT NULL,
-           `titre` varchar(255) NOT NULL,
-           `definition` text NOT NULL,
-           `type` varchar(255) NOT NULL,
-           `acces` varchar(255) NOT NULL,
-           `adresse` varchar(255) NOT NULL,
-           `moyen_acces` varchar(255) NOT NULL,
-           `nom_ref` varchar(255) NOT NULL,
-           `prenom_ref` varchar(255) NOT NULL,
-           `fonction_ref` varchar(255) NOT NULL,
-           `tel_ref` varchar(10) NOT NULL
-         );");
-         $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_offre`
-          ADD PRIMARY KEY (`id_offre`);");
-          $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_offre`
-          MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT;");
+        $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_association`
+        ADD PRIMARY KEY (`id_association`);");
+        $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_association`
+        MODIFY `id_association` int(11) NOT NULL AUTO_INCREMENT;");
 
 
+        /*TABLE HORAIRE*/
+        $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_horaire` (
+        `id_horaire` int(11) NOT NULL,
+        `id_offre` int(11) NOT NULL,
+        `h_debut` varchar(20) NOT NULL,
+        `h_fin` varchar(20) NOT NULL,
+        `nb_places` int(11) NOT NULL,
+        `date` varchar(50) NOT NULL
+      );");
+      $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_horaire`
+      ADD PRIMARY KEY (`id_horaire`);");
+      $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_horaire`
+      MODIFY `id_horaire` int(11) NOT NULL AUTO_INCREMENT;");
+
+      /*TABLE inscription*/
+
+      $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_inscription` (
+      `id_inscription` int(11) NOT NULL,
+      `id_offre` int(11) NOT NULL,
+      `id_horaire` int(11) NOT NULL,
+      `nom` varchar(255) NOT NULL,
+      `prenom` varchar(255) NOT NULL,
+      `addr_mail` varchar(255) NOT NULL,
+      `telephone` varchar(10) NOT NULL,
+      `connaissance` varchar(255) NOT NULL
+    );");
+    $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_inscription`
+    ADD PRIMARY KEY (`id_inscription`);");
+    $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_inscription`
+    MODIFY `id_inscription` int(11) NOT NULL AUTO_INCREMENT;");
+
+    /*TABLE OFFRE*/
+    $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_offre` (
+    `id_offre` int(11) NOT NULL,
+    `titre` varchar(255) NOT NULL,
+    `definition` text NOT NULL,
+    `type` varchar(255) NOT NULL,
+    `acces` varchar(255) NOT NULL,
+    `adresse` varchar(255) NOT NULL,
+    `moyen_acces` varchar(255) NOT NULL,
+    `nom_ref` varchar(255) NOT NULL,
+    `prenom_ref` varchar(255) NOT NULL,
+    `fonction_ref` varchar(255) NOT NULL,
+    `tel_ref` varchar(10) NOT NULL
+  );");
+  $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_offre`
+  ADD PRIMARY KEY (`id_offre`);");
+  $wpdb->query("ALTER TABLE `{$wpdb->prefix}tuts_offre`
+  MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT;");
 
 
+
+
+}
+
+public function save_email() {
+  if (isset($_POST['nouvassmail']) && !empty($_POST['nouvassmail'])){
+    global $wpdb;
+    $email = $_POST['nouvassmail'];
+    if(($_POST['nouvetatasso']) == 'association'){
+      $etat = "association";
+    }else {
+      $etat = "benevole";
     }
 
-    public function save_email() {
-      if (isset($_POST['nouvassmail']) && !empty($_POST['nouvassmail'])){
-        global $wpdb;
-        $email = $_POST['nouvassmail'];
-        if(($_POST['nouvetatasso']) == 'association'){
-          $etat = "association";
-        }else {
-          $etat = "benevole";
-        }
+    $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_email WHERE email = '$email'");
 
-        $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_email WHERE email = '$email'");
-
-        if(is_null($row)){
-          $wpdb->insert("{$wpdb->prefix}tuts_email",array('email' => $email, 'type' => $etat ));
-        }
-
-      }
+    if(is_null($row)){
+      $wpdb->insert("{$wpdb->prefix}tuts_email",array('email' => $email, 'type' => $etat ));
     }
-
 
   }
+}
 
 
-  ?>
+}
+
+
+?>
