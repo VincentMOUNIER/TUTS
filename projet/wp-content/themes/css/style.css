@@ -23,10 +23,46 @@ body
 
 
 }
+p.infos
+{
+  margin: 0 0 0;
+}
+.coordonnees
+{
+      padding-top:1em;
+}
+
+#soutien
+{
+  padding-top: 1em;
+}
+#org{
+  padding-top:1em;
+  /*padding-left:6em;*/
+}
+.logo_soutien
+{
+  width: 8em;
+  margin-top:1em
+
+
+}
+.logo_soutien1
+{
+  width: 10em;
+  margin-top:1.5em;
+
+}
+
+#logo_soutien1
+{
+  padding-left: 3em;
+  padding-right: 0px;
+}
 div[class="container-fluid conteneur"]
 {
     /*background-color: #34495E !important;*/
-    background-image: url("img/back.png");
+    background-image: url("img/background.png");
 }
 
 .texte_contenu
@@ -39,10 +75,13 @@ div[class="container-fluid conteneur"]
 .header
 {
   width: 100%;
-  background-color: rgb(52, 73, 93);
+  background-color: rgb(9, 102, 142);
 
 }
-
+th
+{
+  text-align: center;
+}
 .conteneur
 {
   width: 100%;
@@ -67,6 +106,12 @@ div[class="container-fluid conteneur"]
   color:white;
 }
 
+.image_bas, .image_haut
+{
+  margin:auto;
+  width: 50%;
+}
+
 /*#titre_header
 {
     background-color: #E4F1FE;
@@ -86,14 +131,28 @@ div[class="container-fluid conteneur"]
 
 }
 
-td img
+td img, .item img
 {
-  width: 5em;
-
+  max-width: 12em !important;
+  width: auto;
+  height : 80px;
+  max-height: 80px;
   margin-left: auto;
   margin-right: auto;
-  display:block;
+  display:inline-block;
 }
+.img-container{
+  display:inline-block;
+}
+
+.item {
+    text-align: center;
+}
+.carousel-control{
+  background-image : none !important;
+}
+
+
 table
 {
   margin: auto;
@@ -120,12 +179,7 @@ table
   height:8em;
 }
 
-@-moz-document url-prefix() {
-	#org img{
-		/*overflow-x: scroll;*/
-    max-width: 3.5em;
-	}
-}
+
 
 /*Responsive*/
 @media screen and(max-width: 640px) {
@@ -150,7 +204,7 @@ table
     text-align: center;
     margin-bottom: 0.4em;
   }
-  .aside, #soutien, #org
+  .aside, #soutien, #org, #contact
   {
     display:none !important;
   }
@@ -161,5 +215,43 @@ table
   .coordonnees
   {
     text-align: center;
+
   }
+  .image_bas, .image_haut
+  {
+    display: none;
+  }
+}
+
+
+/*   ----- PAGE "MON COMPTE" ---- */
+
+#pdf-tools {
+  overflow: auto;
+  white-space:nowrap;
+  overflow-y: hidden;
+}
+
+.div-tools{
+  display : inline-block;
+  width : auto;
+}
+.img-tools{
+  width : auto;
+}
+.name-pdf {
+word-wrap: break-word;
+padding : 0.2em;
+}
+
+
+/* ----- PAGE " Mes Offres" ----- */
+#table-offre {
+  margin: auto;
+}
+
+#table-offre td
+{
+    border: 1px solid black;
+    padding: 1em;
 }

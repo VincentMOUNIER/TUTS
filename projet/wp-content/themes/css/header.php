@@ -12,7 +12,7 @@
   <script src="<?php bloginfo('template_url'); ?>/js/tuts_script.js"></script>
   <meta name="viewport" content="width=device-width" />
   <?php wp_head(); ?>
-  <title>Test - css</title>
+  <title><?php wp_title(); ?></title>
 </head>
 <body>
   <div class="page">
@@ -21,16 +21,18 @@
 
       <div class="row">
 
-        <div class="col-lg-2 logo">
+        <!-- <div class="col-lg-2 logo">
           <img src="<?php bloginfo('template_url'); ?>/img/tuts.jpg" alt="Logo Tuts" id="logo" />
         </div>
 
         <div class="col-lg-8 titre">
           <div class="col-lg-6 col-lg-offset-3" id="titre_header">
-                <h1 >Tous Unis Tous Solidaires</h1>
+                <h1 >Tous unis <br>Tous solidaires</h1>
           </div>
 
-        </div>
+        </div> -->
+        <img alt="" class="img-responsive image_haut" src ="<?php bloginfo('template_url'); ?>/img/Association.png">
+
 
       </div>
       <!-- row -->

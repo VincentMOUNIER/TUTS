@@ -25,14 +25,19 @@
       <!-- <img src="<?php bloginfo('template_url'); ?>/img/aside_b.gif" alt="" id="aside_b"/> -->
     </div>
   </div>
-  <!-- Container fluid -->
+  <!-- Row -->
+
+    <img alt="" class="img-responsive image_bas" src ="<?php bloginfo('template_url'); ?>/img/Bannierebas.png">
+
   <div class="clear">
 
   </div>
   <!-- Row -->
+  
 
 
 </div>
+  <!-- Container fluid -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/bootstrap.min.js"></script>
