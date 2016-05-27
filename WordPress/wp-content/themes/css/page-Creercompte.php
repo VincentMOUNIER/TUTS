@@ -1,4 +1,7 @@
+
 <?php /* Template Name: Creation Compte */ ?>
+
+<?php //TODO Un input pour le logo et le gerer ?>
 <?php get_header('aide'); ?>
 <div class="container-fluid conteneur">
 

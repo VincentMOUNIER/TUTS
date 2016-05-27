@@ -91,4 +91,45 @@ function recupextension ($filename)
   }
 
 
+
+
+function uploadLogo(){
+
+  // Check that the nonce is valid, and the user can edit this post.
+  if (
+  	isset( $_POST['my_image_upload_nonce'] )
+  	&& wp_verify_nonce( $_POST['my_image_upload_nonce'], 'my_image_upload' )
+
+  ) {
+  	// The nonce was valid
+
+  	// These files need to be included as dependencies when on the front end.
+  	require_once( ABSPATH . 'wp-admin/includes/image.php' );
+  	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+  	require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+  	// Let WordPress handle the upload.
+  	// Remember, 'my_image_upload' is the name of our file input in our form above.
+  	$attachment_id = media_handle_upload( 'my_image_upload', 0 );
+    $id_user = get_current_user_id();
+    global $wpdb;
+
+    $wpdb->update(
+    "{$wpdb->prefix}tuts_association",
+    array('logo' => $attachment_id),
+    array('id_user' => $id_user)
+    );
+
+
+  	if ( is_wp_error( $attachment_id ) ) {
+  		echo $attachment_id->get_error_message();
+  	} else {
+  		// The image was uploaded successfully!
+  	}
+
+  } else {
+
+  	// The security check failed, maybe show the user an error.
+  }
+}
 ?>

@@ -40,7 +40,7 @@ function child_theme_head_script() { ?>
                         foreach( $value as $term ): ?>
                         <h5><?php echo $term->name; ?></h5>
                         <p><?php echo $term->description; ?></p>
-                        <a href="<?php echo get_term_link( $term ); ?>">Voir toutes les offres de type '<?php echo $term->name; ?>' </a>
+                        <a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?> </a>
 
                       <?php endforeach; ?>
 
@@ -56,6 +56,7 @@ function child_theme_head_script() { ?>
                   echo $value;
                   echo '</div>';
                 }
+                //TODO Traiter les champs spéciaux
 
 
               }

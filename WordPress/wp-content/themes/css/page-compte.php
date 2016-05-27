@@ -28,7 +28,26 @@ function child_theme_head_script() { ?>
 
             <?php /* The loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
+              <h2 class="text-center"> Votre Logo </h2>
+              <form action="#" method="POST" enctype="multipart/form-data">
+                <?php
+                uploadLogo();
+                wp_nonce_field( 'my_image_upload', 'my_image_upload_nonce' );
+                //TODO Afficher le logo s'il en a un
+                global $wpdb;
+                $id_user = get_current_user_id();
+                $result= $wpdb->get_row("SELECT * from {$wpdb->prefix}tuts_association WHERE id_user = '$id_user'");
+                if (($id_logo = $result->logo) != NULL) {
 
+                  ?>
+                  <img src="<?=wp_get_attachment_url($id_logo)?>">
+                  <?php
+                }
+                ?>
+                <input type="file" name="my_image_upload" id="my_image_upload">
+                <button type="submit">Valider</button>
+
+              </form>
               <h2 class="text-center"> Boite à outils </h2>
               <div id="pdf-tools">
                 <?php
@@ -70,7 +89,7 @@ function child_theme_head_script() { ?>
 
     </div>
 
-    
+
 
   </div>
   <script>

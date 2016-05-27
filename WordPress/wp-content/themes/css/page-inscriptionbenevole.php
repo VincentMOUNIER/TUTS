@@ -23,7 +23,7 @@ $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
             <div class="col-lg-6 col-lg-offset-3">
               <div class="form-group">
                 <label> Je suis : </label>
-                <input type="radio" name="reg_genre" value="Homme" id="reg_genre" checked>Homme
+                <input type="radio" name="reg_genre" value="Homme" id="reg_genre">Homme
                 <input type="radio" name="reg_genre" value="Femme" id="reg_genre">Femme
               </div>
               <div class="form-group">
@@ -38,14 +38,83 @@ $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
               </div>
               <div class="form-group">
                 <label for="email">Commune :</label>
-                <input type="text" class="form-control" id="reg_addr" name="reg_addr">
-                <!-- TODO Faire une liste déroulante de TOUTES LES COMMUNES ( c'est une liste exhaustive avec "autre" donc en brut ? -> si selectionnée ajout d'un input pour la commune ) -->
+                <select name="reg_commune" size="1">
+
+                <option>Lyon</option>
+                <option>Albigny-sur-Saône</option>
+                <option>Bron</option>
+                <option>Cailloux-sur-Fontaines</option>
+                <option>Caluire-et-Cuire</option>
+                <option>Champagne-au-Mont-d'Or</option>
+                <option>Charbonnières-les-Bains</option>
+                <option>Charly</option>
+                <option>Chassieu</option>
+                <option>Collonges-au-Mont-d'Or</option>
+                <option>Corbas</option>
+                <option>Couzon-au-Mont-d'Or</option>
+                <option>Craponne</option>
+                <option>Curis-au-Mont-d'Or</option>
+                <option>Dardilly</option>
+                <option>Décines-Charpieu</option>
+                <option>Ecully</option>
+                <option>Feyzin</option>
+                <option>Fleurieu-sur-Saône</option>
+                <option>Fontaines-Saint-Martin</option>
+                <option>Fontaines-sur-Saône</option>
+                <option>Francheville</option>
+                <option>Genay</option>
+                <option>Givors</option>
+                <option>Grigny</option>
+                <option>Irigny</option>
+                <option>Jonage</option>
+                <option>La Mulatière</option>
+                <option>Limonest</option>
+                <option>La Tour de Salvagny</option>
+                <option>Lissieu</option>
+                <option>Lyon</option>
+                <option>Marcy-l'Etoile</option>
+                <option>Meyzieu</option>
+                <option>Mions</option>
+                <option>Montanay</option>
+                <option>Neuville-sur-Saône</option>
+                <option>Oullins</option>
+                <option>Pierre-Bénite</option>
+                <option>Poleymieux-au-Mont-d'Or</option>
+                <option>Quincieux</option>
+                <option>Rillieux-la-Pape</option>
+                <option>Rochetaillée-sur-Saône</option>
+                <option>Saint-Cyr-au-Mont-d'Or</option>
+                <option>Saint-Didier-au-Mont-d'Or</option>
+                <option>Saint-Fons</option>
+                <option>Saint-Genis-Laval</option>
+                <option>Saint-Genis-les-Ollières</option>
+                <option>Saint-Germain-au-Mont-d'Or</option>
+                <option>Saint-Priest</option>
+                <option>Saint-Romain-au-Mont-d'Or</option>
+                <option>Sainte-Foy-lès-Lyon</option>
+                <option>Sathonay-Camp</option>
+                <option>Sathonay-Village</option>
+                <option>Solaize</option>
+                <option>Tassin-la-Demi-Lune</option>
+                <option>Vaulx-en-Velin</option>
+                <option>Vénissieux</option>
+                <option>Vernaison</option>
+                <option>Villeurbanne</option>
+                <option>Autre</option>
+
+              </select>
               </div>
               <div class="form-group">
                 <label for="email">Address Mail:</label>
-                <input type="text" class="form-control" id="reg_website" name="reg_website">
+                <input type="text" class="form-control" id="reg_website" name="reg_mail">
+              </div>
+              <div class="form-group">
+                <label for="email">Telephone:</label>
+                <input type="text" class="form-control" id="reg_website" name="reg_telephone">
               </div>
             </div>
+
+            <?php //TODO offre.getHoraire à faire?>
 
             <!-- <div class="col-lg-6 col-lg-offset-3">
             <fieldset>

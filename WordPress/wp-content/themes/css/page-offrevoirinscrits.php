@@ -25,23 +25,49 @@ function child_theme_head_script() { ?>
 
               <?php
               // $_POST['post_id'] sert à avoir l'id du de l'offre à laquelle on va lister les participants qui attendent la confirmation
-              // TODO Alors, on est sur une page et non plus sur une offre donc get_fields ne va pas fonctionner, cependant nous avons l'id de l'offre qu'on observe
+              // TODO Alors, on est sur une page et pas sur une offre donc get_fields ne va pas fonctionner, cependant nous avons l'id de l'offre qu'on observe
               // qui est $_POST['post_id'] du coup il est posstible de recuperer les informations de celui ci Tout ce qui est en bas n'est qu'une pale copie de
-              // singe-offre.php, donc TODO VOIR L'OFFRE - Description + inscrits -
+              // single-offre.php, donc TODO VOIR L'OFFRE - Description + inscrits -
+              $post_id = $_POST['post_id'];
 
 
               $field = get_field_object("description", $_POST['post_id']);
-
               echo '<h2>'.$field['label'].'</h2>';
               echo '<p>'.$field['value'].'</p>';
 
 
             // TODO Afficher tout les inscrit de l'offre
 
+            global $wpdb;
 
+            $selection = $wpdb->get_results(" SELECT * FROM {$wpdb->prefix}tuts_inscription WHERE id_offre = '$post_id' ");
+            ?>
+            <table>
+
+            <?php
+            foreach ($selection as $inscrit) {
+              echo '<tr>';
+              echo '<td>';
+              echo $inscrit->nom;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->horaire;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->prenom;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->telephone;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->addr_mail;
+              echo '</td>';
+              echo '</tr>';
+
+            }
 
             ?>
-
+          </table>
 
 
           <?php endwhile; ?>
