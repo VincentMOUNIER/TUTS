@@ -131,7 +131,7 @@ return $string;
 
 
 
-          } else { echo "Une erreur lors du traitement a été relevé, veuillez réessayer.";
+          } else { echo "Une erreur lors du traitement a été relevé, veuillez réessayer. Apres plusieurs tentatives, veuillez nous contacter.";
             wp_delete_user($user_id);
           }
           //TODO Traitement de l'insertion

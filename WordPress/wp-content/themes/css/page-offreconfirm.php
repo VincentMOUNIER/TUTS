@@ -1,8 +1,17 @@
-<?php /* Template Name: Mon Compte */ ?>
+<?php /* Template Name: Confirmation offre */ ?>
 <?php
 if ( !is_user_logged_in() ) {
   wp_redirect( get_permalink( $post->post_parent )); exit;
+} else {
+  $post = get_post($_GET['post_id']);
+  $post_user = $post->post_author;
+  $current_user = wp_get_current_user();
+  if ($current_user->ID != $post_user) {
+    wp_redirect( get_permalink( $post->post_parent )); exit;
+  }
 }
+
+
 ?>
 <?php get_header('aide');
 function child_theme_head_script() { ?>
@@ -27,51 +36,16 @@ function child_theme_head_script() { ?>
 
             <?php /* The loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
-              <H1> Bonjour <?php $current_user = wp_get_current_user();
-              echo $current_user->display_name;?>
-              <h2 class="text-center"> Boite à outils </h2>
-              <h2 class="text-center"> Votre Logo </h2>
+              <?php
 
-              <form action="#" method="POST" enctype="multipart/form-data">
-                <?php
-                uploadLogo();
-                wp_nonce_field( 'my_image_upload', 'my_image_upload_nonce' );
-
-                global $wpdb;
-                $id_user = get_current_user_id();
-                $result= $wpdb->get_row("SELECT * from {$wpdb->prefix}tuts_association WHERE id_user = '$id_user'");
-                if (($id_logo = $result->logo) != NULL) {
-                  ?>
-                  <img src="<?=wp_get_attachment_url($id_logo)?>">
-                  <?php
-                }
-                ?>
-                <input type="file" name="my_image_upload" id="my_image_upload">
-                <button type="submit">Valider</button>
-              </form>
-
-              <div id="pdf-tools">
-                <?php
-
-                $upload_dir = wp_upload_dir();
-
-                // recursiveListTool va prendre en parametre la basedir (directory) et la baseurl ( url ) car elle va chercher les pdf
-                // uploadé via le menu de wordpress, il faut penser a definir comment choisir les bons pdf ( mettre un tool-*.pdf par exemple )
-                recursiveListTool($upload_dir['basedir'],$upload_dir['baseurl']);
+              echo $_GET['post_id'];
+              //TODO Verifie que le post appartient à l'utilisateur connecté, sinon tu l'envoie se faire foutre. SI c'est bien l'utilisateur concerné, affiche lui les informations du post
 
 
 
 
 
-                ?>
-
-
-              </div> <!-- End div pdf tools -->
-              <div class="row">
-
-
-                <div class=" text-center"><a href="mes-offres" class="btn btn-default btn-lg" role="button">Mes Offres d'Experiences</a></div>
-              </div>
+              ?>
             <?php endwhile; ?>
 
           </div><!-- #content -->

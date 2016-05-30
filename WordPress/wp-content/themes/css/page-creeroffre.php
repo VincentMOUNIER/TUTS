@@ -1,4 +1,4 @@
-
+<?php /* Template Name: Creation Offre */ ?>
 <?php acf_form_head(); ?>
 <?php get_header('aide'); ?>
 <div class="container-fluid conteneur">
@@ -18,7 +18,8 @@
             acf_form(array(
           'post_id'	=> 'new',
           'field_groups'	=> array( 60 ),
-          'submit_value'	=> 'Creer une nouvelle offre'
+          'submit_value'	=> 'Creer une nouvelle offre',
+          'return' => 'confirmer-offre'
         )); ?>
           <?php endwhile; ?>
         <?php endif; ?>
