@@ -20,8 +20,9 @@ class Tuts_Newsletter_Widget extends WP_Widget
           <div class="form-group">
             <div class="col-lg-8 col-md-8 col-xs-10 col-sm-10 col-xs-offset-1 col-md-offset-2 col-sm-offset-1 col-lg-offset-2">
               <input type="email" id="nouvassmail" name="nouvassmail" class="form-control" placeholder="exemple@gmail.com">
-              <label><input type="radio" id="nouvetatbene" name="nouvetatasso" value="benevole" check> Je suis un Benevole </label>
               <label><input type="radio" id="nouvetatasso" name="nouvetatasso" value="association"> Je suis une association/collectif </label>
+              <label><input type="radio" id="nouvetatbene" name="nouvetatasso" value="benevole"> Je suis un bénévole </label>
+
 
             </div>
           </div>

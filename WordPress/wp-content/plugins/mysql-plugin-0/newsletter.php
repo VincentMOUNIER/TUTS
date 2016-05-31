@@ -20,7 +20,7 @@ class Tuts_Newsletter
 
   /* Menu Plugin */
   public function register_settings() {
-    register_setting('tuts_mail_settings', 'tuts_mail_sender');
+
     register_setting('tuts_mail_settings', 'tuts_mail_object');
     register_setting('tuts_mail_settings', 'tuts_mail_message');
     register_setting('tuts_mail_settings', 'tuts_mail_dest');
@@ -31,9 +31,9 @@ class Tuts_Newsletter
     add_settings_section('tuts_mail_section','Envoi d\'un mail general', array($this, 'section_html'), 'tuts_mail_settings');
 
 
-    add_settings_field('tuts_mail_sender', 'Expediteur', array($this, 'sender_mail_html'),'tuts_mail_settings','tuts_mail_section');
-    add_settings_field('tuts_mail_object', 'Objet', array($this, 'object_mail_html'),'tuts_mail_settings','tuts_mail_section');
     add_settings_field('tuts_mail_dest','Destinaire : ' , array($this, 'dest_mail_html'),'tuts_mail_settings','tuts_mail_section');
+    add_settings_field('tuts_mail_object', 'Objet', array($this, 'object_mail_html'),'tuts_mail_settings','tuts_mail_section');
+
     add_settings_field('tuts_mail_message', 'Message', array($this, 'message_mail_html'),'tuts_mail_settings','tuts_mail_section');
   }
 
@@ -43,9 +43,12 @@ class Tuts_Newsletter
 
 
   public function add_admin_menu() {
+    // Initialisation des differents menus
     $hookmail = add_submenu_page('tuts', 'Mail','Envoi de Mail','manage_options','tuts_mail',array($this, 'mail_menu_html'));
     add_submenu_page('tuts', 'Parameters','Parametres du plugin','manage_options','tuts_parameters',array($this, 'parameters_menu_html'));
     $hookassociation = add_submenu_page('tuts', 'Associations','Association en Attente','manage_options','tuts_pending_ass',array($this, 'pending_menu_html'));
+    add_submenu_page('tuts','ListMail','Liste des Mail','manage_options','tuts_listmail',array($this,'listmail_html'));
+
     add_action('load-'.$hookmail, array($this, 'process_action'));
     add_action('load-'.$hookassociation, array($this, 'verification_confirmform'));
 
@@ -93,7 +96,32 @@ class Tuts_Newsletter
   }
 
 
+  public function listmail_html() {
+    echo '<h1>'.get_admin_page_title().'</h1>';
+    echo '<p> Ici vous trouverez les mails enregistrés </p>';
 
+    global $wpdb;
+    $select = $wpdb->get_results("SELECT * from {$wpdb->prefix}tuts_email");
+    ?>
+    <table>
+      <thead>
+        <td>Email</td>
+        <td>Type</td>
+      </thead>
+      <tbody>
+        <?php
+        foreach($select as $row){
+          echo "<tr>";
+          echo "<td>". $row->email ."</td>";
+          echo "<td>". $row->type." </td>";
+          echo "</tr>";
+        }
+        ?>
+      </tbody>
+    </table>
+    <?php
+
+  }
 
   public function mail_menu_html() {
     echo '<h1>'.get_admin_page_title().'</h1>';
@@ -136,18 +164,7 @@ class Tuts_Newsletter
 
     <form method="post" action="options.php">
       <?php settings_fields('tuts_mail_settings')?>
-      <label> E-mail de l'expéditeur </label>
-      <input type="email" name="tuts_mail_sender" value="<?php echo get_option('tuts_mail_sender') ?>"/>
-
-
-
-
-
-
-      <p> Vous parametrerez le modele de mail pour l'envoi des identifiants </p>
-
-
-
+      <p> Vous parametrerez le modele de mail pour l'envoi des identifiants ajouter [identifiant] à l'endroit souhaité pour afficher les identifiants </p>
       <label> Mail à envoyer (validation) :  </label>
       <textarea  name="tuts_sendaccept_message" ><?php echo get_option('tuts_sendaccept_message')?></textarea>
 
@@ -167,12 +184,7 @@ class Tuts_Newsletter
 
 
 
-  public function sender_mail_html() {
-    ?>
 
-    <input type="email" name="tuts_mail_sender" value="<?php echo get_option('tuts_mail_sender') ?>" id="inputmail"/>
-    <?php
-  }
 
   public function object_mail_html(){
     ?>
