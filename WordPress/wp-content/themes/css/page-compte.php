@@ -34,6 +34,7 @@ function child_theme_head_script() { ?>
 
               <form action="#" method="POST" enctype="multipart/form-data">
                 <?php
+                
                 uploadLogo();
                 wp_nonce_field( 'my_image_upload', 'my_image_upload_nonce' );
 
