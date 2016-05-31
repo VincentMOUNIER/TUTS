@@ -41,6 +41,24 @@ function child_theme_head_script() { ?>
               echo $_GET['post_id'];
               //TODO Verifie que le post appartient à l'utilisateur connecté, sinon tu l'envoie se faire foutre. SI c'est bien l'utilisateur concerné, affiche lui les informations du post
 
+              $fields = get_fields($_GET['post_id']);
+              var_dump($fields);
+
+              ?>
+              <table>
+
+                <tr>
+                  <td>
+
+                  </td>
+                  <td>
+
+                  </td>
+                </tr>
+
+              </table>
+              <?php
+              //TODO Faire un link pour un pdf
 
 
 

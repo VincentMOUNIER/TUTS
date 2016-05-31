@@ -28,7 +28,8 @@ function child_theme_head_script() { ?>
               {
                 foreach( $fields as $field_name => $value )
                 {
-                  $field = get_field_object($field_name);
+                  $field = get_field_object($field_name); // On obtient un field object ( voir doc acf )
+
 
                   // on traite le cas d'un champ de type taxonomie
                   if ($field['type'] == "taxonomy") {
@@ -38,22 +39,56 @@ function child_theme_head_script() { ?>
                       <?php
                       if( $value ):
                         foreach( $value as $term ): ?>
-                        <h5><?php echo $term->name; ?></h5>
-                        <p><?php echo $term->description; ?></p>
+                        <h5>
                         <a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?> </a>
-
+                        </h5>
                       <?php endforeach; ?>
-
                     </div>
                   <?php endif;
 
 
                 } else {
-                  // on traite le cas d'un champ classique
-                  echo '<div>';
-                  echo '<h3>' . $field['label'] . '</h3>';
 
-                  echo $value;
+                  echo '<div>';
+                  echo '<h3>' . $field['label'].'</h3>';
+                  if (is_array($value)){
+                    if ($field['type']=="google_map"){ // Le cas d'un google_map
+                      echo $value['address'];
+                    } elseif ($field['type']=="repeater"){ // le cas d'un repeater
+                        if (have_rows($field['label'])) {
+                          ?>
+                          <ul>
+                          <?php
+                          while (have_rows($field['label']))  {
+                            the_row();                                                    // On recupere chaque element du repeater : à savoir la date,
+                            $date = the_sub_field('date');                                // l'heure de debut, l'heure de fin et le nb de places
+                            $heureDebut = the_sub_field('heure_de_debut');
+                            $heureFin = the_sub_field('heure_de_fin');
+                            $nbPlaces = the_sub_field('nombre_de_places_disponibles');
+
+                            // Ensuite on les affiche un par un dans un liste (?) il faut aussi verifier s'il s'agit de celui qui a poster l'offre
+
+
+
+                            ?>
+                            <li> <?=$date?> de <?=$heureDebut?> à <?=$heureFin?> pour <?=$nbPlaces?> </li>
+                            <?php
+                          }
+
+                          ?>
+                          </ul>
+                          <?php
+                        }
+                    }
+
+
+                    else{
+
+                      echo implode(", ",$value); // on traite le cas de checkbox par exemple
+                    }
+                  }else {
+                  echo $value; // Cas classique "champ texte"
+                }
                   echo '</div>';
                 }
                 //TODO Traiter les champs spéciaux
@@ -62,7 +97,7 @@ function child_theme_head_script() { ?>
               }
             }
             echo '<div>';
-            echo '<h3>Une offre proposée par ' . the_author() . '.</h3>';
+            echo '<h3>Une offre proposée par ' . get_the_author() . '.</h3>';
             echo '</div>';
 
 

@@ -1,4 +1,8 @@
 <?php /* Template Name: Creation Offre */ ?>
+<?php if ( !is_user_logged_in() ) {
+  wp_redirect( get_permalink( $post->post_parent )); exit;
+}   // Si l'utilisateur n'est pas authentifié, il sera renvoyé
+?>
 <?php acf_form_head(); ?>
 <?php get_header('aide'); ?>
 <div class="container-fluid conteneur">
@@ -17,7 +21,7 @@
             // le id est trouvable dans l'url lorsqu'on edit un field group dans le back office de WP et le menu d'ACF
             acf_form(array(
           'post_id'	=> 'new',
-          'field_groups'	=> array( 60 ),
+          'field_groups'	=> array( 136,167,138),
           'submit_value'	=> 'Creer une nouvelle offre',
           'return' => 'confirmer-offre'
         )); ?>
