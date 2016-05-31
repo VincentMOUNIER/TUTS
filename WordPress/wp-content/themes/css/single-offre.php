@@ -20,10 +20,10 @@ function child_theme_head_script() { ?>
 
             <?php /* The loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
-
+              <H1> Details de l'expérience </H1>
               <?php
-              $fields = get_fields();
 
+              $fields = get_fields();
               if( $fields )
               {
                 foreach( $fields as $field_name => $value )
@@ -51,33 +51,35 @@ function child_theme_head_script() { ?>
 
                   echo '<div>';
                   echo '<h3>' . $field['label'].'</h3>';
-                  if (is_array($value)){
+                if (is_array($value)){                  // La valeur obtenue est sous la forme d'un array quelques fois
                     if ($field['type']=="google_map"){ // Le cas d'un google_map
                       echo $value['address'];
                     } elseif ($field['type']=="repeater"){ // le cas d'un repeater
-                        if (have_rows($field['label'])) {
+                        if (have_rows($field['name'])) {
                           ?>
                           <ul>
                           <?php
-                          while (have_rows($field['label']))  {
+                          while (have_rows($field['name']))  {
                             the_row();                                                    // On recupere chaque element du repeater : à savoir la date,
-                            $date = the_sub_field('date');                                // l'heure de debut, l'heure de fin et le nb de places
-                            $heureDebut = the_sub_field('heure_de_debut');
-                            $heureFin = the_sub_field('heure_de_fin');
-                            $nbPlaces = the_sub_field('nombre_de_places_disponibles');
+                            $date = get_sub_field('date');                                // l'heure de debut, l'heure de fin et le nb de places
+                            $heureDebut = get_sub_field('heure_de_debut');
+                            $heureFin = get_sub_field('heure_de_fin');
+                            $nbPlaces = get_sub_field('nombre_de_places_disponibles');
 
                             // Ensuite on les affiche un par un dans un liste (?) il faut aussi verifier s'il s'agit de celui qui a poster l'offre
 
-
+                            echo '<li> '. $date . ' de '. $heureDebut . ' à '. $heureFin . ' pour environ ' . $nbPlaces .' personnes.</li>';
 
                             ?>
-                            <li> <?=$date?> de <?=$heureDebut?> à <?=$heureFin?> pour <?=$nbPlaces?> </li>
+
                             <?php
                           }
 
                           ?>
                           </ul>
                           <?php
+                        } else {
+                            echo "norow";
                         }
                     }
 
@@ -91,18 +93,12 @@ function child_theme_head_script() { ?>
                 }
                   echo '</div>';
                 }
-                //TODO Traiter les champs spéciaux
-
 
               }
             }
             echo '<div>';
             echo '<h3>Une offre proposée par ' . get_the_author() . '.</h3>';
             echo '</div>';
-
-
-
-
             ?>
 
             <div class="text-center">

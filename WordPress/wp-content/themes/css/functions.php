@@ -93,7 +93,7 @@ function recupextension ($filename)
 
 
 
-function uploadLogo(){
+function uploadLogo(){  //TODO Mettre une limitation de image size 
 
   // Check that the nonce is valid, and the user can edit this post.
   if (

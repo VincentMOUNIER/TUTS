@@ -59,9 +59,9 @@
         <?php
 
       } else {
-        ?>
+        $current_user = wp_get_current_user();?>
 
-        <p> Bienvenue Association </p>
+        <p> Bienvenue <?php echo $current_user->display_name ?> </p>
         <p> Cliquez <a href="mon-compte">ici</a> pour acceder à votre compte </p>
         <p><a href="<?php echo wp_logout_url( get_permalink() ); ?>">Se deconnecter</a></p>
         <?php
@@ -81,7 +81,7 @@
   <div class="clear">
 
   </div>
-  
+
 
 
 </div>
