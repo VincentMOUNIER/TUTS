@@ -122,6 +122,7 @@ th
 .contenu
 {
   text-align: center;
+  padding : 1em;
 }
 #logo
 {
@@ -244,6 +245,10 @@ word-wrap: break-word;
 padding : 0.2em;
 }
 
+#btn-offre{
+  margin : 1em;
+
+}
 
 /* ----- PAGE " Mes Offres" ----- */
 #table-offre {
@@ -254,4 +259,8 @@ padding : 0.2em;
 {
     border: 1px solid black;
     padding: 1em;
+}
+
+.btn {
+  margin : 1em;
 }

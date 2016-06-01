@@ -9,7 +9,11 @@ function child_theme_head_script() { ?>
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
   <?php }
   add_action( 'wp_head', 'child_theme_head_script' );?>
-
+  <style>
+  .inactive{
+    display:none;
+  }
+  </style>
   <div class="container-fluid conteneur">
 
     <div class="row">
@@ -20,59 +24,74 @@ function child_theme_head_script() { ?>
       </div>
 
       <div class="col-lg-8 contenu texte_contenu">
-        <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
-        <!-- Partie identification -->
+
         <div id="primary" class="content-area">
           <div id="content" class="site-content" role="main">
 
             <?php /* The loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
-              <H1> Bonjour <?php $current_user = wp_get_current_user();
-              echo $current_user->display_name;?>
-              <h2 class="text-center"> Boite à outils </h2>
-              <h2 class="text-center"> Votre Logo </h2>
-
-              <form action="#" method="POST" enctype="multipart/form-data">
-                <?php
-                
-                uploadLogo();
-                wp_nonce_field( 'my_image_upload', 'my_image_upload_nonce' );
-
-                global $wpdb;
-                $id_user = get_current_user_id();
-                $result= $wpdb->get_row("SELECT * from {$wpdb->prefix}tuts_association WHERE id_user = '$id_user'");
-                if (($id_logo = $result->logo) != NULL) {
-                  ?>
-                  <img src="<?=wp_get_attachment_url($id_logo)?>">
-                  <?php
-                }
-                ?>
-                <input type="file" name="my_image_upload" id="my_image_upload">
-                <button type="submit">Valider</button>
-              </form>
-
-              <div id="pdf-tools">
-                <?php
-
-                $upload_dir = wp_upload_dir();
-
-                // recursiveListTool va prendre en parametre la basedir (directory) et la baseurl ( url ) car elle va chercher les pdf
-                // uploadé via le menu de wordpress, il faut penser a definir comment choisir les bons pdf ( mettre un tool-*.pdf par exemple )
-                recursiveListTool($upload_dir['basedir'],$upload_dir['baseurl']);
-
-
-
-
-
-                ?>
-
-
-              </div> <!-- End div pdf tools -->
               <div class="row">
 
+                <div class="welcome col-lg-offset-2 col-lg-8">
+                  <H1> Bonjour <?php $current_user = wp_get_current_user();
+                  echo $current_user->display_name;?> </H1>
+                  <h2> Bienvenue sur votre espace personnel ! </h2>
+                </div>
+              </div> <!--Fin Div Row-->
 
-                <div class=" text-center"><a href="mes-offres" class="btn btn-default btn-lg" role="button">Mes Offres d'Experiences</a></div>
-              </div>
+
+                <div class="row">
+                  <div class="col-lg-8">
+                  <h2 class="text-center"> Boite à outils </h2>
+                  <div id="pdf-tools">
+                    <?php
+                    $upload_dir = wp_upload_dir();
+                    // recursiveListTool va prendre en parametre la basedir (directory) et la baseurl ( url ) car elle va chercher les pdf
+                    // uploadé via le menu de wordpress, il faut penser a definir comment choisir les bons pdf ( mettre un tool-*.pdf par exemple )
+                    recursiveListTool($upload_dir['basedir'],$upload_dir['baseurl']);
+                    ?>
+
+
+
+                  </div> <!-- End div pdf tools -->
+                  <div class="text-center" id="btn-offre"><a href="mes-offres" class="btn btn-default btn-lg" role="button"><H2>Mes Offres d'Experiences</H2>Pour consulter, créer, modifier ou supprimer des offres</a></div>
+                </div>
+                <div class="logo-upload col-lg-4 ">
+                  <h2 class="text-center"> Logo </h2>
+                  <?php
+                  uploadLogo();
+                  global $wpdb;
+                  $id_user = get_current_user_id();
+                  $result= $wpdb->get_row("SELECT * from {$wpdb->prefix}tuts_association WHERE id_user = '$id_user'");
+                  if (($id_logo = $result->logo) != NULL) {
+                    ?>
+                    <?=wp_get_attachment_image($id_logo)?>
+                    <?php
+                  }
+                  ?>
+                  <br><button id="aShowForm"> Cliquez ici pour changer votre logo </button>
+                  <form action="#" method="POST" enctype="multipart/form-data">
+
+                    <?php
+                    // UploadLogo va upload le logo si on a post le formulaire d'upload de logo ( Function.php )
+
+                    wp_nonce_field( 'my_image_upload', 'my_image_upload_nonce' );
+
+                    ?>
+                    <div class="animated inactive fadeOutUp well" id="logo-form">
+                    Choisir mon logo :
+                    <input type="file" accept="image/*" name="my_image_upload" id="my_image_upload"> Taille conseillée : 150x150px <br>
+                    <button type="submit">Valider</button>
+                  </form>
+                </div>
+                </div> <!-- Fin duv Logo-upload-->
+              </div> <!-- Fin div Row -->
+
+
+
+
+
+
             <?php endwhile; ?>
 
           </div><!-- #content -->
@@ -95,7 +114,13 @@ function child_theme_head_script() { ?>
 
   </div>
   <script>
-
+  document.getElementById("aShowForm").addEventListener("click", function(){
+    var item = document.getElementById("logo-form");
+    item.classList.toggle("inactive");
+    item.classList.toggle("active");
+    item.classList.toggle("fadeInDown");
+    item.classList.toggle("fadeOutUp");
+  });
   </script>
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

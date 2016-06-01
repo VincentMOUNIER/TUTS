@@ -12,7 +12,7 @@
     <div class="col-lg-8 contenu texte_contenu">
       <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
       <!-- Partie identification -->
-      <p> Hey </p>
+      <p>
       <?php
       function generate_login($car) {
 $string = "TUTS_";
@@ -147,8 +147,12 @@ return $string;
       } else {
           echo " Certains champs n'ont pas été saisi, veuillez remplir le formulaire.";
       }
-      ?>
 
+
+      ?>
+    </p>
+
+    <a href="<?=home_url( '/' )?> " class="btn btn-default btn-lg" role="button">Retour au site</a>
     </div>
 
     <div class="col-lg-2 contenu aside">

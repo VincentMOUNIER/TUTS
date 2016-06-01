@@ -1,5 +1,14 @@
 <?php
 
+function tuts_enqueue_scripts(){
+
+wp_register_script( 'googlemap', get_template_directory_uri().'/js/googlemap.js', 'jquery', '1.0' );
+wp_enqueue_script('googlemap');
+wp_enqueue_style('animatecss',get_template_directory_uri().'/css/animate.css');
+}
+add_action( 'wp_enqueue_scripts', 'tuts_enqueue_scripts' );
+
+
                 /* Precreate custom type post : offre */
  function my_pre_save_post( $post_id ) {
 
@@ -93,12 +102,13 @@ function recupextension ($filename)
 
 
 
-function uploadLogo(){  //TODO Mettre une limitation de image size 
+function uploadLogo(){
 
   // Check that the nonce is valid, and the user can edit this post.
   if (
   	isset( $_POST['my_image_upload_nonce'] )
   	&& wp_verify_nonce( $_POST['my_image_upload_nonce'], 'my_image_upload' )
+    && ($_FILES['my_image_upload']['error'] != UPLOAD_ERR_NO_FILE)
 
   ) {
   	// The nonce was valid
@@ -128,7 +138,7 @@ function uploadLogo(){  //TODO Mettre une limitation de image size
   	}
 
   } else {
-
+    
   	// The security check failed, maybe show the user an error.
   }
 }

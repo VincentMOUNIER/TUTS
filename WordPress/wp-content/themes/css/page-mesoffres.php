@@ -20,10 +20,17 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
     </div>
 
     <div class="col-lg-8 contenu texte_contenu">
+      <div class="row">
+      <div class="col-lg-4"><a href="../" class="btn btn-default btn-lg" role="button">Retourner à "Mon Compte"</a></div>
+      <div class="col-lg-4 "><h1 class="post-title" id="titre"><?php the_title(); ?></h1></div>
+    </div>
       <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
-        <div class=" text-center"><a href="creer-une-offre" class="btn btn-default btn-lg" role="button">Publier une offre</a></div>
+        <div class="row">
+
+        <div class="col-lg-offset-4 col-lg-4 text-center"><a href="creer-une-offre" class="btn btn-default btn-lg" role="button">Publier une offre</a></div>
+        </div>
         <?php
         // On va recuperer l'user pour filtrer les offres affichés par auteur
         $current_user = wp_get_current_user();
