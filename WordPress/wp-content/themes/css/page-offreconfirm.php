@@ -65,7 +65,7 @@ function child_theme_head_script() { ?>
 
               ?>
             <?php endwhile; ?>
-            <a href="<?=get_page_link(110)?> " class="btn btn-default btn-lg" role="button">Retour à mes offres</a>
+            <a href="<?=get_page_link(110)?> " class="btn btn-default btn-lg" role="button">Valider</a>
 
           </div><!-- #content -->
         </div><!-- #primary -->

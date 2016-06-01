@@ -5,6 +5,7 @@ function tuts_enqueue_scripts(){
 wp_register_script( 'googlemap', get_template_directory_uri().'/js/googlemap.js', 'jquery', '1.0' );
 wp_enqueue_script('googlemap');
 wp_enqueue_style('animatecss',get_template_directory_uri().'/css/animate.css');
+wp_enqueue_style('acfmap',get_template_directory_uri().'/css/acfmap.css');
 }
 add_action( 'wp_enqueue_scripts', 'tuts_enqueue_scripts' );
 
@@ -138,7 +139,7 @@ function uploadLogo(){
   	}
 
   } else {
-    
+
   	// The security check failed, maybe show the user an error.
   }
 }
