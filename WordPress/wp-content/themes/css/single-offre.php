@@ -119,7 +119,7 @@ function child_theme_head_script() { ?>
                 <H3> Description : </H3>
                 <?=the_field("definition")?>
                 <p> Mot-clés :
-                  <?php $field = get_field_object("type_experience"); // On obtient un field object ( voir doc acf )
+                  <?php $field = get_field_object("type_dexperience"); // On obtient un field object ( voir doc acf )
                 // on traite le cas d'un champ de type taxonomie
                     if( $field['value'] ):
                       foreach( $field['value'] as $term ): ?>
