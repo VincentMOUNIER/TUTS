@@ -21,7 +21,7 @@ add_action( 'wp_enqueue_scripts', 'tuts_enqueue_scripts' );
 
     // Create a new post
     $post = array(
-        'post_status'  => 'publish',
+        
         'post_title'  => 'Offre-Title',
         'post_type'  => 'offre'
     );

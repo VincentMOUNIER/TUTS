@@ -1,5 +1,6 @@
 <?php /* Template Name: Confirmation offre */ ?>
 <?php
+// Le morceau de code sert a verifier que le visiteur a le droit de consulter la page
 if ( !is_user_logged_in() ) {
   wp_redirect( get_permalink( $post->post_parent )); exit;
 } else {
@@ -36,25 +37,158 @@ function child_theme_head_script() { ?>
 
             <?php /* The loop */ ?>
             <?php while ( have_posts() ) : the_post(); ?>
-              <?php
 
+
+              <?php
               echo $_GET['post_id'];
               //TODO Verifie que le post appartient à l'utilisateur connecté, sinon tu l'envoie se faire foutre. SI c'est bien l'utilisateur concerné, affiche lui les informations du post
 
               $fields = get_fields($_GET['post_id']);
               var_dump($fields);
 
+
+
               ?>
               <table>
 
                 <tr>
                   <td>
-
+                    Nom de l'association/collectif
                   </td>
                   <td>
-
+                    resultat
                   </td>
                 </tr>
+
+                <tr>
+                  <td>
+                    Adresse
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Moyen d'accès
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+
+                <tr>
+                  <td>
+                    Titre de l'offre
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Description
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Type d'experience
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Accessibilité
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Lieu
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Moyen d'accès
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Details d'accès
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Nom référent
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Prénom référent
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Fonction référent
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Téléphone référent
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Dates
+                  </td>
+                  <td>
+                    resultat
+                  </td>
+                </tr>
+
+
+
 
               </table>
               <?php
@@ -65,8 +199,10 @@ function child_theme_head_script() { ?>
 
               ?>
             <?php endwhile; ?>
-            <a href="<?=get_page_link(110)?> " class="btn btn-default btn-lg" role="button">Valider</a>
-
+            <form action="offre-valid" method="post">
+              <input type="hidden" name="post_id" value="<?=$_GET['post_id']?>">
+            <button type="submit" class="btn btn-default btn-lg" role="button">Valider</button>
+            </form>
           </div><!-- #content -->
         </div><!-- #primary -->
       </div>

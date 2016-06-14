@@ -46,7 +46,7 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
         // setup_postdata sert à set la variable global $post ici pour apres la remettre comme avant avec wp_reset_postdata()
         foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
           <tr>
-            <!-- ICI il va s'agir de creer un formulaire à chaque bouton/lien qui aura pour nom "post_id" et valeur l'id du post auquel il est lier  -->
+            <!-- ICI il va s'agir de creer un formulaire à chaque bouton/lien qui aura pour un input avec comme nom "post_id" et valeur l'id du post auquel il est lier  -->
             <td>
             <a href="<?php the_permalink(); ?>"><?php echo get_field("titre_de_lexperience", $post->ID); ?></a>
           </td>

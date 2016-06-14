@@ -37,7 +37,7 @@ function child_theme_head_script() { ?>
                       foreach( $field['value'] as $term ): ?>
 
                         — <a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?>  </a>
-
+                        
                     <?php endforeach; ?>
                   <?php endif; ?>
               </p>
@@ -97,7 +97,7 @@ function child_theme_head_script() { ?>
             </div>
 
             <div class="col-lg-offset-2 col-lg-5">
-              <H3> Association </H3>
+              <H3> Association/Collectif </H3>
 
               <?php
               $authorID = get_the_author_id();
