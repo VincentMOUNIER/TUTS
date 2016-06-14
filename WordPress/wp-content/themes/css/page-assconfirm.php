@@ -98,11 +98,12 @@ return $string;
           $user_id = wp_insert_user( $userdata );
           if ( is_wp_error( $user_id ) ) {
               echo $user_id->get_error_message();
-            } else {
+            } else
 
-
+{
           $result = $wpdb->insert("{$wpdb->prefix}tuts_association",
-          array('id_user'=> $user_id,
+          array(
+          'id_user'=> $user_id,
           'login' => $login,
           'mdp'=>$mdp,
           'num_id'=>$reg_idnum,
@@ -121,7 +122,6 @@ return $string;
           'projet' => $reg_projet,
           'act' => $reg_domaineaction));
 
-          }
           if ($result!==false) {
 
 
@@ -135,6 +135,7 @@ return $string;
           } else { echo "Une erreur lors du traitement a été relevé, veuillez réessayer. Apres plusieurs tentatives, veuillez nous contacter.";
             wp_delete_user($user_id);
           }
+        }
           //TODO Traitement de l'insertion
 
         }else{
