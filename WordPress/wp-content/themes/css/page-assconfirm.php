@@ -98,7 +98,7 @@ return $string;
           $user_id = wp_insert_user( $userdata );
           if ( is_wp_error( $user_id ) ) {
               echo $user_id->get_error_message();
-            }
+            } else {
 
 
           $result = $wpdb->insert("{$wpdb->prefix}tuts_association",
@@ -121,6 +121,7 @@ return $string;
           'projet' => $reg_projet,
           'act' => $reg_domaineaction));
 
+          }
           if ($result!==false) {
 
 
