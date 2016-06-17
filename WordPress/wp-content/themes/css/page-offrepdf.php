@@ -58,12 +58,13 @@ $pdf->Cell(0,8,utf8_decode('Details de l\'expérience'),1,2,'C'); // Cellule de 
                                 /* Ligne Titre */
 $pdf->Row(array(utf8_decode("Titre de l'expérience"),get_field("titre_de_lexperience")));
 
-                                /* Ligne Type */
+                                /* Ligne Type d'experience */
 $type = get_field_object("type_dexperience");
 foreach( $type['value'] as $term ):
   $stringtype .= "- ".$term->name."\n";
 endforeach;
 $pdf->Row(array(utf8_decode("Type d'expérience"),utf8_decode($stringtype)));
+
                                 /* Accessibilité */
 $accessibilite = get_field("accessibilite");
 if (is_array($accessibilite)) {
@@ -133,7 +134,6 @@ if (have_rows("date")) {  // Cas d'un repeater "date" est le nom du repeater
 
 $pdf->Cell(0,8,utf8_decode("Description de l'offre"),1,2,'C');
 $pdf->Row(array(utf8_decode(get_field("definition"))));
-
 $pdf->Output();
 ?>
 

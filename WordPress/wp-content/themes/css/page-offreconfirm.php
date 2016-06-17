@@ -30,7 +30,7 @@ function child_theme_head_script() { ?>
       </div>
 
       <div class="col-lg-8 contenu texte_contenu">
-        <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
+        <h1 class="post-title" id="titre">Récapitulatif de l'offre</h1>
         <!-- Partie identification -->
         <div id="primary" class="content-area">
           <div id="content" class="site-content" role="main">
@@ -46,16 +46,31 @@ function child_theme_head_script() { ?>
               $fields = get_fields($_GET['post_id']);
 
 
+              $post = get_post($_GET['post_id']);
+              global $wpdb;
+              setup_postdata( $post );
+              $author = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association where id_user = '$post->post_author'");
+
+
 
               ?>
-              <table>
+              <table class="table-striped table">
 
                 <tr>
                   <td>
                     Nom de l'association/collectif
                   </td>
                   <td>
-                    resultat
+                    <?php echo ($author->nom);?>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Titre de l'offre
+                  </td>
+                  <td>
+                    <?php the_field("titre_de_lexperience") ?>
                   </td>
                 </tr>
 
@@ -64,7 +79,7 @@ function child_theme_head_script() { ?>
                     Adresse
                   </td>
                   <td>
-                    resultat
+                    <?php the_field("adresse_de_l_experience");?>
                   </td>
                 </tr>
 
@@ -73,26 +88,29 @@ function child_theme_head_script() { ?>
                     Moyen d'accès
                   </td>
                   <td>
-                    resultat
+                    <?php
+                    $moyenAcces = get_field("moyen_dacces");
+                    if (is_array($moyenAcces)) {
+                      echo (implode(", ", $moyenAcces));
+                      $detailAcces = get_field("moyen_detail");
+                      echo '<tr><td>Details d\'accès</td><td>'.$detailAcces.'</td></tr>';
+
+                    } else {
+                      echo "Non renseigné";
+                    }
+
+                    ?>
                   </td>
                 </tr>
 
 
-                <tr>
-                  <td>
-                    Titre de l'offre
-                  </td>
-                  <td>
-                    resultat
-                  </td>
-                </tr>
 
                 <tr>
                   <td>
                     Description
                   </td>
                   <td>
-                    resultat
+                    <?php the_field("definition") ?>
                   </td>
                 </tr>
 
@@ -101,7 +119,13 @@ function child_theme_head_script() { ?>
                     Type d'experience
                   </td>
                   <td>
-                    resultat
+                    <?php
+                    $type = get_field_object("type_dexperience");
+                    foreach( $type['value'] as $term ):
+                      $stringtype .= "- ".$term->name."\n";
+                    endforeach;
+                      echo $stringtype;
+                     ?>
                   </td>
                 </tr>
 
@@ -110,7 +134,25 @@ function child_theme_head_script() { ?>
                     Accessibilité
                   </td>
                   <td>
-                    resultat
+                    <?php
+                    $accessibilite = get_field("accessibilite");
+                    if (is_array($accessibilite)) {
+                      if (in_array("Mineur", $accessibilite)) {
+                        $stracces.= "- Accessible aux personnes mineures \n";
+                      } else {
+                        $stracces .= "- N'est pas accessible aux personnes mineures \n";
+                      }
+                      if (in_array("Handicap", $accessibilite)) {
+                        $stracces .= "- Accessible aux personnes possédant un handicap \n";
+                      } else {
+                        $stracces .= "- N'est pas accessible aux personnes possédant un handicap \n";
+                      }
+                    } else {
+                    $stracces .= "- N'est pas accessible aux personnes mineurs \n";
+                    $stracces .= "- N'est pas accessible aux personnes possédant un handicap \n";
+                    }
+                    echo $stracces;
+                    ?>
                   </td>
                 </tr>
 
@@ -119,34 +161,22 @@ function child_theme_head_script() { ?>
                     Lieu
                   </td>
                   <td>
-                    resultat
+                    <?php
+                    $location = get_field("adresse_de_l_experience");
+                    echo ($location['address']);
+
+                     ?>
                   </td>
                 </tr>
 
-                <tr>
-                  <td>
-                    Moyen d'accès
-                  </td>
-                  <td>
-                    resultat
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>
-                    Details d'accès
-                  </td>
-                  <td>
-                    resultat
-                  </td>
-                </tr>
 
                 <tr>
                   <td>
                     Nom référent
                   </td>
                   <td>
-                    resultat
+                    <?php the_field("nom_du_referent");?>
+
                   </td>
                 </tr>
 
@@ -155,7 +185,7 @@ function child_theme_head_script() { ?>
                     Prénom référent
                   </td>
                   <td>
-                    resultat
+                    <?php the_field("prenom_du_referent"); ?>
                   </td>
                 </tr>
 
@@ -164,7 +194,7 @@ function child_theme_head_script() { ?>
                     Fonction référent
                   </td>
                   <td>
-                    resultat
+                    <?php the_field("fonction_du_referent");?>
                   </td>
                 </tr>
 
@@ -173,7 +203,7 @@ function child_theme_head_script() { ?>
                     Téléphone référent
                   </td>
                   <td>
-                    resultat
+                    <?php the_field("telephone_du_referent");?>
                   </td>
                 </tr>
 
@@ -182,7 +212,27 @@ function child_theme_head_script() { ?>
                     Dates
                   </td>
                   <td>
-                    resultat
+                    <?php
+                      if (have_rows("date")) {  // Cas d'un repeater "date" est le nom du repeater
+                        while (have_rows("date"))  {
+                          the_row();                                                    // On recupere chaque element du repeater : à savoir la date,
+                          $date = get_sub_field('date');                                // l'heure de debut, l'heure de fin et le nb de places
+                          $heureDebut = get_sub_field('heure_de_debut');
+                          $heureFin = get_sub_field('heure_de_fin');
+                          $nbPlaces = get_sub_field('nombre_de_places_disponibles');
+
+                          // Ensuite on les affiche un par un dans un liste (?) il faut aussi verifier s'il s'agit de celui qui a poster l'offre
+
+                          $strdate .= "- ". $date . " de ". $heureDebut . " à ". $heureFin . " pour environ " . $nbPlaces ." personnes.";
+                          $strdate .= "</br>";
+                        }
+
+                        echo $strdate;
+                      } else {
+                        echo "Non renseigné";
+                      }
+
+                      ?>
                   </td>
                 </tr>
 
@@ -198,9 +248,11 @@ function child_theme_head_script() { ?>
 
               ?>
             <?php endwhile; ?>
+            <h3> Votre offre est elle correcte ? </h3>
             <form action="offre-valid" method="post">
               <input type="hidden" name="post_id" value="<?=$_GET['post_id']?>">
-              <button type="submit" class="btn btn-default btn-lg" role="button">Valider</button>
+              <button type="submit" class="btn btn-success btn-lg" role="button">Valider</button>
+              <button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier </button>
             </form>
 
           </div><!-- #content -->
