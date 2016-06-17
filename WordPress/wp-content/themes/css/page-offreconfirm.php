@@ -40,11 +40,10 @@ function child_theme_head_script() { ?>
 
 
               <?php
-              echo $_GET['post_id'];
+
               //TODO Verifie que le post appartient à l'utilisateur connecté, sinon tu l'envoie se faire foutre. SI c'est bien l'utilisateur concerné, affiche lui les informations du post
 
               $fields = get_fields($_GET['post_id']);
-              var_dump($fields);
 
 
 
@@ -201,8 +200,9 @@ function child_theme_head_script() { ?>
             <?php endwhile; ?>
             <form action="offre-valid" method="post">
               <input type="hidden" name="post_id" value="<?=$_GET['post_id']?>">
-            <button type="submit" class="btn btn-default btn-lg" role="button">Valider</button>
+              <button type="submit" class="btn btn-default btn-lg" role="button">Valider</button>
             </form>
+
           </div><!-- #content -->
         </div><!-- #primary -->
       </div>
