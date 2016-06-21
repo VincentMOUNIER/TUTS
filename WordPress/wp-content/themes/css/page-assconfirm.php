@@ -12,7 +12,7 @@
     <div class="col-lg-8 contenu texte_contenu">
       <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
       <!-- Partie identification -->
-      <p>
+
       <?php
       function generate_login($car) {
 $string = "TUTS_";
@@ -33,16 +33,18 @@ return $string;
       if(!empty($_POST['form_confirm'])&&
       !empty( $_POST['reg_name'])&&
       !empty( $_POST['reg_addr'])&&
-      !empty( $_POST['reg_website'])&&
+
+
+      (isset($_POST['reg_idnum']) || isset($_POST['reg_assref']))&&
+
+
       !empty( $_POST['reg_ref_name'])&&
       !empty( $_POST['reg_ref_pname'])&&
       !empty( $_POST['reg_ref_fonction'])&&
       !empty( $_POST['reg_ref_tel'])&&
       !empty($_POST['reg_ref_mail'])&&
-      !empty( $_POST['reg_mission'])&&
       !empty($_POST['reg_act'])&&
-      !empty( $_POST['reg_val'])&&
-      !empty( $_POST['reg_projet'])
+      !empty( $_POST['reg_val'])
 
 
       ) { //TODO ameliorer la validation d'un formulaire complet ( ??? button grisé si formulaire non complet js)
@@ -75,17 +77,17 @@ return $string;
           $mdp = wp_generate_password( $length=10, $include_standard_special_chars=false );
 
           $reg_name = $_POST['reg_name'];
-          $reg_addr = $_POST['reg_addr'];
+          $reg_addr = $_POST['reg_addr']." ".$_POST['reg_addr2']." ".$_POST['reg_addr3'];
           $reg_website = $_POST['reg_website'];
           $reg_ref_name = $_POST['reg_ref_name'];
           $reg_ref_pname = $_POST['reg_ref_pname'];
           $reg_ref_fonction = $_POST['reg_ref_fonction'];
           $reg_ref_tel = $_POST['reg_ref_tel'];
           $reg_ref_mail =$_POST['reg_ref_mail'];
-          $reg_mission = $_POST['reg_mission'];
+
           $reg_act =$_POST['reg_act'];
           $reg_val = $_POST['reg_val'];
-          $reg_projet = $_POST['reg_projet'];
+
           $reg_domaineaction = implode(" | ", $_POST['domain_group']);
 
           $userdata = array (
@@ -116,45 +118,53 @@ return $string;
           'fonction_ref' => $reg_ref_fonction,
           'tel_ref' => $reg_ref_tel ,
           'email_ref' =>  $reg_ref_mail,
-          'mission' =>  $reg_mission,
+
           'activite'  =>  $reg_act,
           'valeur'  =>  $reg_val,
-          'projet' => $reg_projet,
+          
           'act' => $reg_domaineaction));
 
           if ($result!==false) {
 
 
 
-
+            echo "<p>";
             echo "Votre enregistrement a été pris en compte, vous recevrez un mail contenant vos informations de connexion après confirmation de notre part" ;
+            echo "</p>";
 
 
 
-
-          } else { echo "Une erreur lors du traitement a été relevé, veuillez réessayer. Apres plusieurs tentatives, veuillez nous contacter.";
+          } else {
+            echo "<p>";
+            echo "Une erreur lors du traitement a été relevé, veuillez réessayer. Apres plusieurs tentatives, veuillez nous contacter.";
+            echo "</p>";
             wp_delete_user($user_id);
+            echo '<button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier le formulaire</button>';
           }
         }
           //TODO Traitement de l'insertion
 
         }else{
+          echo "<p>";
           echo "Vous vous êtes inscrit récemment, veuillez attendre confirmation de notre part pour obtenir vos identifiants" ;
-
+          echo "</p>";
 
 
         }
 
 
       } else {
+          echo "<p>";
           echo " Certains champs n'ont pas été saisi, veuillez remplir le formulaire.";
+          echo "</p>";
+          echo '<button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier le formulaire</button>';
       }
 
 
       ?>
-    </p>
 
-    <a href="<?=home_url( '/' )?> " class="btn btn-default btn-lg" role="button">Retour au site</a>
+
+    <a href="<?=home_url( '/' )?> " class="btn btn-default btn-lg" role="button">Retour à l'acceuil principal</a>
     </div>
 
     <div class="col-lg-2 contenu aside">

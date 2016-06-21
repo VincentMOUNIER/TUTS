@@ -252,8 +252,8 @@ function child_theme_head_script() { ?>
             <form action="offre-valid" method="post">
               <input type="hidden" name="post_id" value="<?=$_GET['post_id']?>">
               <button type="submit" class="btn btn-success btn-lg" role="button">Valider</button>
-              <button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier </button>
             </form>
+            <button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier </button>
 
           </div><!-- #content -->
         </div><!-- #primary -->

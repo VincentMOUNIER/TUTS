@@ -24,128 +24,132 @@
                 <input type="radio" name="reg_type" value="association" id="reg_type_ass" checked>Une association
                 <input type="radio" name="reg_type" value="collectif" id="reg_type_col">Un collectif
               </div>
-              <div class="form-group">
-                <label id="textinp1">Numéro d'identification:</label>
-                <input type="text" class="form-control" name="reg_idnum" id="reg_idnum">
-                <input type="hidden" class="form-control" name="reg_assref" id="reg_assref">
-              </div>
 
               <div class="form-group">
-                <label for="email">Nom:</label>
+                <label for="association">Nom de l'association : *</label>
                 <input type="text" class="form-control" id="reg_name" name="reg_name" onblur="checkNom(this)">
               </div>
               <div class="form-group">
-                <label for="email">Adresse :</label>
+                <label for="association">Adresse de l'association : *</label>
                 <textarea row="4" class="form-control" id="reg_addr" name="reg_addr"></textarea>
+                <label>Code postal : * </label>
+                <input type="text" class="form-control" id="reg_addr2" name="reg_addr2"></input>
+                <label>Ville : * </label >
+                <input type="text" class="form-control" id="reg_addr3" name="reg_addr3"></input>
               </div>
               <div class="form-group">
-                <label for="email">Site Web:</label>
+                <label for="association">Site Web de l'association : </label>
                 <input type="text" class="form-control" id="reg_website" name="reg_website">
               </div>
+              <div class="form-group">
+                <label id="textinp1" for="association">Numero au journal officiel : </label>
+                <input type="text" class="form-control" name="reg_idnum" id="reg_idnum">
+                <input type="hidden" class="form-control" name="reg_assref" id="reg_assref">
+              </div>
             </div>
+ <!-- Debut Description -->
+           <div class="col-lg-6 col-lg-offset-3">
+             <fieldset>
+               <legend>Description</legend>
 
+               <div class="form-group">
+                 <label for="association">Activité de l'association : </label>
+                 <textarea class="form-control" rows="5" name="reg_act"></textarea>
+               </div>
+               <div class="form-group">
+                 <label for="association">Valeurs/Fondamentaux de l'association : </label>
+                 <textarea class="form-control" rows="5" name="reg_val"></textarea>
+               </div>
+
+               <div class="row">
+                 <label>Domaine(s) d'activité : (Maximum de 3) </label>
+               </div>
+
+               <div class="col-lg-4">
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Accompagnement Social" class="check_dom">Accompagnement Social</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Citoyenneté et Droits de Humains" class="check_dom">Citoyenneté et Droits de Humains</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Culture" class="check_dom">Culture</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Développement local" class="check_dom">Développement local</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Diversité Culturelle" class="check_dom">Diversité Culturelle</label>
+                 </div>
+               </div>
+               <div class="col-lg-4">
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Economie Sociale et Solidaire" class="check_dom">Economie Sociale et Solidaire</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Education" class="check_dom">Education</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Environnement" class="check_dom">Environnement</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Insertion" class="check_dom">Insertion</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Loisir" class="check_dom">Loisir</label>
+                 </div>
+               </div>
+               <div class="col-lg-4">
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Protection et Défense des animaux" class="check_dom">Protection et Défense des animaux</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Santé" class="check_dom">Santé</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Solidarité internationale et action humanitaire" class="check_dom">Solidarité internationale et action humanitaire</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Sport" class="check_dom">Sport</label>
+                 </div>
+                 <div class="checkbox">
+                   <label><input type="checkbox" name="domain_group[]" value="Autre" class="check_dom">Autre</label>
+                 </div>
+               </div>
+             </div>
             <div class="col-lg-6 col-lg-offset-3">
               <fieldset>
-                <legend>Référent</legend>
+                <legend>Référent Unique</legend>
                 <div class="form-group">
-                  <label for="email">Nom Référent:</label>
+                  <label for="email">Nom du Référent Unique:</label>
                   <input type="text" class="form-control"  id="reg_ref_name" name="reg_ref_name">
                 </div>
                 <div class="form-group">
-                  <label for="email">Prénom référent:</label>
+                  <label for="email">Prénom du Référent Unique:</label>
                   <input type="text" class="form-control" id="reg_ref_pname" name="reg_ref_pname">
                 </div>
                 <div class="form-group">
-                  <label for="email">Fonction Référent:</label>
+                  <label for="email">Fonction du Référent Unique:</label>
                   <input type="text" class="form-control" id="reg_ref_fonction" name="reg_ref_fonction">
                 </div>
                 <div class="form-group">
-                  <label for="email">Telephone Référent:</label>
+                  <label for="email">Téléphone du Référent Unique:</label>
                   <input type="text" class="form-control" id="reg_ref_tel" name="reg_ref_tel">
                 </div>
                 <div class="form-group">
-                  <label for="email">Email Référent:</label>
+                  <label for="email">Email du Référent Unique:</label>
                   <input type="email" class="form-control" id="reg_ref_mail" name="reg_ref_mail">
                 </div>
               </fieldset>
             </div>
-            <div class="col-lg-6 col-lg-offset-3">
-              <fieldset>
-                <legend>Description</legend>
-                <div class="form-group">
-                  <label for="comment">Mission(s):</label>
-                  <textarea class="form-control" rows="5" name="reg_mission"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="comment">Activité:</label>
-                  <textarea class="form-control" rows="5" name="reg_act"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="comment">Valeurs/Fondamentaux:</label>
-                  <textarea class="form-control" rows="5" name="reg_val"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="comment">Projet(s):</label>
-                  <textarea class="form-control" rows="5" name="reg_projet"></textarea>
-                </div>
-                <div class="row">
-                  <label>Domaine(s) d'activité</label>
-                </div>
-
-                <div class="col-lg-4">
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Accompagnement Social">Accompagnement Social</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Citoyenneté et Droits de Humains">Citoyenneté et Droits de Humains</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Culture" >Culture</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Développement local">Développement local</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Diversité Culturelle">Diversité Culturelle</label>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Economie Sociale et Solidaire">Economie Sociale et Solidaire</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Education">Education</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Environnement">Environnement</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Insertion">Insertion</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Loisir">Loisir</label>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Protection et Défense des animaux">Protection et Défense des animaux</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Santé">Santé</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Solidarité internationale et action humanitaire">Solidarité internationale et action humanitaire</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Sport">Sport</label>
-                  </div>
-                  <div class="checkbox">
-                    <label><input type="checkbox" name="domain_group[]" value="Autre">Autre</label>
-                  </div>
-                </div>
-              </div>
             </fieldset>
           </div>
+          <script type="text/javascript">
+
+              //Syntax: checkboxlimit(checkbox_reference, limit)
+              checkboxlimit(document.getElementsByClassName('check_dom'), 3)
+
+          </script>
           <div class="col-lg-6 col-lg-offset-3">
             <fieldset>
               <legend id="charte">Charte</legend>
@@ -179,14 +183,11 @@
     </div>
   </div>
   <!-- Row -->
+</div>
 
-  <img alt="" class="img-responsive image_bas" src ="<?php bloginfo('template_url'); ?>/img/Bannierebas.png">
+<img alt="" class="img-responsive image_bas" src ="<?php bloginfo('template_url'); ?>/img/Bannierebas.png">
 
-  <div class="clear">
-
-  </div>
-
-
+<div class="clear">
 
 </div>
 
@@ -203,6 +204,7 @@
 
 <script src="bootstrap/js/jquery.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
+
 <script lang="javascript">
 var ass = document.getElementById("reg_type_ass");
 var col = document.getElementById("reg_type_col");
@@ -223,7 +225,17 @@ document.getElementById("usecond").addEventListener("change",checkTerm);
 
 function changetype() {
   if (ass.checked){
-    textinp.textContent = "Numéro d'identification:";
+    var labels = document.getElementsByTagName("label");
+    for (var i = 0; i < labels.length; i++) {
+      if (labels[i].htmlFor == "association") {
+        var strReplace = labels[i].innerHTML;
+
+
+
+        labels[i].innerHTML = strReplace.replace("du collectif","de l'association");;
+      }
+    }
+    textinp.textContent = "Numero au journal officiel:";
     regidnum.removeAttribute("value");
     regassref.setAttribute("type","hidden");
     regassref.setAttribute("value","1");
@@ -232,6 +244,14 @@ function changetype() {
 
   }
   if (col.checked){
+    var labels = document.getElementsByTagName("label");
+    for (var i = 0; i < labels.length; i++) {
+      if (labels[i].htmlFor == "association") {
+        var strReplace = labels[i].innerHTML;
+
+        labels[i].innerHTML = strReplace.replace("de l'association","du collectif");;
+      }
+    }
     textinp.textContent = "Association Referente:";
     regassref.removeAttribute("value");
     regidnum.setAttribute("type","hidden");
