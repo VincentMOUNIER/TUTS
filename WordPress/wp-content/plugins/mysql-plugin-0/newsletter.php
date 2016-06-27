@@ -44,12 +44,13 @@ class Tuts_Newsletter
 
   public function add_admin_menu() {
     // Initialisation des differents menus
-    $hookmail = add_submenu_page('tuts', 'Mail','Envoi de Mail','manage_options','tuts_mail',array($this, 'mail_menu_html'));
     add_submenu_page('tuts', 'Parameters','Parametres du plugin','manage_options','tuts_parameters',array($this, 'parameters_menu_html'));
-    $hookassociation = add_submenu_page('tuts', 'Associations','Association en Attente','manage_options','tuts_pending_ass',array($this, 'pending_menu_html'));
     add_submenu_page('tuts','ListMail','Liste des Mail','manage_options','tuts_listmail',array($this,'listmail_html'));
 
+    $hookmail = add_submenu_page('tuts', 'Mail','Envoi de Mail','manage_options','tuts_mail',array($this, 'mail_menu_html'));
     add_action('load-'.$hookmail, array($this, 'process_action'));
+
+    $hookassociation = add_submenu_page('tuts', 'Associations','Association en Attente','manage_options','tuts_pending_ass',array($this, 'pending_menu_html'));
     add_action('load-'.$hookassociation, array($this, 'verification_confirmform'));
 
   }
@@ -276,7 +277,7 @@ class Tuts_Newsletter
                 ?>
               <div class="cell-div">
 
-                <H1> <?=$row->nom?> <H1>
+                <H1> <?php echo $row->nom?> <H1>
                   <H2> General </H2>
                   <H3> Type </H3>
                   <p> <?php if ($row->ass_referente==NULL) {
@@ -288,42 +289,37 @@ class Tuts_Newsletter
                    </p>
 
                   <H3> Adresse </H3>
-                  <p><?=$row->adresse?></p>
+                  <p><?php echo $row->adresse?></p>
 
                   <H3> Site Web </H3>
-                  <p> <?=$row->site_web?> </p>
+                  <p> <?php echo $row->site_web?> </p>
 
                   <H2> Referent </H2>
                   <H3>Nom Referent</H3>
-                  <p> <?=$row->nom_ref?></p>
+                  <p> <?php echo $row->nom_ref?></p>
 
                   <H3>Prenom Referent</H3>
-                  <p><?=$row->prenom_ref?> </p>
+                  <p><?php echo $row->prenom_ref?> </p>
 
                   <H3>Fonction Referent</H3>
-                  <p><?=$row->fonction_ref?></p>
+                  <p><?php echo $row->fonction_ref?></p>
 
                   <H3>Telephone Referent</H3>
-                  <p><?=$row->tel_ref?></p>
+                  <p><?php echo $row->tel_ref?></p>
 
                   <H3>Email Referent</H3>
-                  <p><?=$row->email_ref?></p>
+                  <p><?php echo $row->email_ref?></p>
 
                   <H2> Informations </H2>
-                  <H3>Mission</H3>
-                  <p> <?=$row->mission?>
-                  </p>
+
                   <H3>Activite</H3>
-                  <p> <?=$row->activite?> </p>
+                  <p> <?php echo $row->activite?> </p>
 
                   <H3>Valeur</H3>
-                  <p> <?=$row->valeur?> </p>
-
-                  <H3>Projet</H3>
-                  <p> <?=$row->projet?> </p>
+                  <p> <?php echo $row->valeur?> </p>
 
                   <H3>Domaine d'action</H3>
-                  <p> <?=$row->act?> </p>
+                  <p> <?php echo $row->act?> </p>
                 </div>
               <?php
               }
@@ -465,6 +461,7 @@ class Tuts_Newsletter
           /*TABLE ASSOCIATION*/
           $wpdb->query("CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}tuts_association` (
           `id_association` int(11) NOT NULL,
+          `id_user` int(11) NOT NULL,
           `login` varchar(255) NOT NULL,
           `mdp` varchar(255) NOT NULL,
           `num_id` varchar(255) DEFAULT NULL,

@@ -38,14 +38,15 @@
                 <input type="text" class="form-control" id="reg_addr3" name="reg_addr3"></input>
               </div>
               <div class="form-group">
-                <label for="association">Site Web de l'association : </label>
+                <label for="association">Site Web de l'association : **</label>
                 <input type="text" class="form-control" id="reg_website" name="reg_website">
               </div>
               <div class="form-group">
-                <label id="textinp1" for="association">Numero au journal officiel : </label>
+                <label id="textinp1" for="association"> Numero au journal officiel : **</label>
                 <input type="text" class="form-control" name="reg_idnum" id="reg_idnum">
                 <input type="hidden" class="form-control" name="reg_assref" id="reg_assref">
               </div>
+              <p><i> ** : Un des deux champs est obligatoire.</i></p>
             </div>
  <!-- Debut Description -->
            <div class="col-lg-6 col-lg-offset-3">
@@ -121,23 +122,23 @@
               <fieldset>
                 <legend>Référent Unique</legend>
                 <div class="form-group">
-                  <label for="email">Nom du Référent Unique:</label>
+                  <label for="email">Nom du Référent Unique : *</label>
                   <input type="text" class="form-control"  id="reg_ref_name" name="reg_ref_name">
                 </div>
                 <div class="form-group">
-                  <label for="email">Prénom du Référent Unique:</label>
+                  <label for="email">Prénom du Référent Unique : *</label>
                   <input type="text" class="form-control" id="reg_ref_pname" name="reg_ref_pname">
                 </div>
                 <div class="form-group">
-                  <label for="email">Fonction du Référent Unique:</label>
+                  <label for="email">Fonction du Référent Unique : *</label>
                   <input type="text" class="form-control" id="reg_ref_fonction" name="reg_ref_fonction">
                 </div>
                 <div class="form-group">
-                  <label for="email">Téléphone du Référent Unique:</label>
+                  <label for="email">Téléphone du Référent Unique : *</label>
                   <input type="text" class="form-control" id="reg_ref_tel" name="reg_ref_tel">
                 </div>
                 <div class="form-group">
-                  <label for="email">Email du Référent Unique:</label>
+                  <label for="email">Email du Référent Unique : *</label>
                   <input type="email" class="form-control" id="reg_ref_mail" name="reg_ref_mail">
                 </div>
               </fieldset>
@@ -235,7 +236,7 @@ function changetype() {
         labels[i].innerHTML = strReplace.replace("du collectif","de l'association");;
       }
     }
-    textinp.textContent = "Numero au journal officiel:";
+    textinp.textContent = "Numero au journal officiel : **";
     regidnum.removeAttribute("value");
     regassref.setAttribute("type","hidden");
     regassref.setAttribute("value","1");
@@ -252,7 +253,7 @@ function changetype() {
         labels[i].innerHTML = strReplace.replace("de l'association","du collectif");;
       }
     }
-    textinp.textContent = "Association Referente:";
+    textinp.textContent = "Association Referente : **";
     regassref.removeAttribute("value");
     regidnum.setAttribute("type","hidden");
     regidnum.setAttribute("value","1");

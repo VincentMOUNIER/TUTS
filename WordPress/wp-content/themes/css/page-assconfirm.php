@@ -35,7 +35,7 @@ return $string;
       !empty( $_POST['reg_addr'])&&
 
 
-      (isset($_POST['reg_idnum']) || isset($_POST['reg_assref']))&&
+      (isset($_POST['reg_website']) || (isset($_POST['reg_idnum']) || isset($_POST['reg_assref'])))&&
 
 
       !empty( $_POST['reg_ref_name'])&&
@@ -53,15 +53,16 @@ return $string;
         if ($_POST['reg_assref']==="1"){ // si c'est assoss
         $reg_idnum= $_POST['reg_idnum'];
         $reg_assref = NULL;
+        $reg_name = $_POST['reg_name'];
 
-          $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE num_id = '$reg_idnum'" );
+          $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE nom = '$reg_name'" );
       } elseif ($_POST['reg_idnum']==="1") { // si c'est collectif
         $reg_assref= $_POST['reg_assref'];
         $reg_idnum= NULL;
         $reg_name = $_POST['reg_name'];
 
 
-          $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE ass_referente = '$reg_assref' AND nom = '$reg_name'" );
+          $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE nom = '$reg_name'" );
       }
 
 
@@ -121,7 +122,7 @@ return $string;
 
           'activite'  =>  $reg_act,
           'valeur'  =>  $reg_val,
-          
+
           'act' => $reg_domaineaction));
 
           if ($result!==false) {
@@ -164,7 +165,7 @@ return $string;
       ?>
 
 
-    <a href="<?=home_url( '/' )?> " class="btn btn-default btn-lg" role="button">Retour à l'acceuil principal</a>
+    <a href="<?=home_url( '/' )?> " class="btn btn-default btn-lg" role="button">Retour à l'accueil principal</a>
     </div>
 
     <div class="col-lg-2 contenu aside">
