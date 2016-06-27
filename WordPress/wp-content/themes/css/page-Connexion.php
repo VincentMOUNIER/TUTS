@@ -55,7 +55,7 @@
         'label_username' => 'Identifiant',
         'label_log_in' => 'Se Connecter')); ?>
         <a href="creer-son-compte-association">Je ne suis pas encore inscrit</a></br></br>
-        <a href="<?php wp_lostpassword_url(); ?>">Identifiants oubliés</a></br></br>
+        <a href="<?php echo wp_lostpassword_url( get_permalink() ); ?>">Identifiants oubliés</a></br></br>
         <?php
 
       } else {
