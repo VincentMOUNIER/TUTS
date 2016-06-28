@@ -18,16 +18,18 @@ $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
       <div class="main page">
         <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
         <!-- Partie identification -->
+
         <div class="row" id="formulaire" >
           <form action="confirmer-benevole" method="post" id="idform" onsubmit="return verifAll(this)">
+            <input type="hidden" name="post_id" value="<?php echo $_POST['post_id']?>">
             <div class="col-lg-6 col-lg-offset-3">
               <div class="form-group">
-                <label> Je suis : </label>
+                <label> Je suis : *</label>
                 <input type="radio" name="reg_genre" value="Homme" id="reg_genre">Homme
                 <input type="radio" name="reg_genre" value="Femme" id="reg_genre">Femme
               </div>
               <div class="form-group">
-                <label id="textinp1">Nom:</label>
+                <label id="textinp1">Nom : *</label>
                 <input type="text" class="form-control" name="reg_nom" id="reg_nom">
 
               </div>
@@ -38,7 +40,7 @@ $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
               </div>
               <div class="form-group">
                 <label for="email">Commune :</label>
-                <select name="reg_commune" size="1">
+                <select name="reg_commune" size="1" class="form-control">
 
                 <option>Lyon</option>
                 <option>Albigny-sur-Saône</option>
@@ -105,43 +107,83 @@ $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
               </select>
               </div>
               <div class="form-group">
-                <label for="email">Address Mail:</label>
-                <input type="text" class="form-control" id="reg_website" name="reg_mail">
+                <label for="email">Adresse Mail : **</label>
+                <input type="text" class="form-control" id="reg_mail" name="reg_mail" class="form-control">
               </div>
               <div class="form-group">
-                <label for="email">Telephone:</label>
-                <input type="text" class="form-control" id="reg_website" name="reg_telephone">
+                <label for="email">Telephone : **</label>
+                <input type="text" class="form-control" id="reg_tel" name="reg_telephone" class="form-control">
               </div>
+              <p><i> ** : Un des deux champs est obligatoire.</i></p>
+
             </div>
 
             <?php //TODO offre.getHoraire à faire?>
 
-            <!-- <div class="col-lg-6 col-lg-offset-3">
+            <div class="col-lg-6 col-lg-offset-3">
             <fieldset>
-            TODO Extraire les infos de l'offre (ACF) pour les mettre dans le formualaire
+
+
+
             <legend>Offre</legend>
             <div class="form-group">
             <label for="email">Date:</label>
-            <input type="text" class="form-control"  id="reg_ref_name" name="reg_date">
+            <select name="reg_date" class="form-control">
+<?php   // Recuperation des données du repeater date d'une offre avec son post id
+            if (have_rows("date", $_POST['post_id'])) {  // Cas d'un repeater "date" est le nom du repeater
+                while (have_rows("date",$_POST['post_id']))  {
+                  the_row();                                                    // On recupere chaque element du repeater : à savoir la date,
+                  $date = get_sub_field('date');                                // l'heure de debut, l'heure de fin et le nb de places
+                  echo '<option>';
+                  echo $date;
+                  echo '</option>';
+                }
+              }
+?>
+
+
+            </select>
             </div>
             <div class="form-group">
             <label for="email">Heure:</label>
-            <input type="text" class="form-control" id="reg_ref_pname" name="reg_heure">
+            <select name="reg_heure" class="form-control">
+              <option> 8h à 12h </option>
+              <option> 12h à 14h </option>
+              <option> 14h à 18h </option>
+              <option> Après 18h </option>
+            </select>
+
+
+
             </div>
             <div class="form-group">
-            <label for="email">Déjà bénévolat:</label>
-            <input type="text" class="form-control" id="reg_ref_fonction" name="reg_expbenevole">
+            <label for="email">Avez-vous déjà été bénévole ?</label>
+            <select name="reg_dejabene" class="form-control">
+              <option> Non </option>
+              <option> Oui </option>
+            </select>
             </div>
             <div class="form-group">
-            <label for="email">Comment avez vous connu TUTS:</label>
-            <input type="text" class="form-control" id="reg_ref_tel" name="reg_connututs">
+            <label for="reg_cb_tuts">Comment avez vous connu l'événement ?</label>
+            <div class="col-6-lg">
+            <input type="checkbox" name="reg_cb_tuts[]" value="Bouche-à-oreille"> Bouche-à-oreille
+            <input type="checkbox" name="reg_cb_tuts[]" value="Média"> Média
+            <input type="checkbox" name="reg_cb_tuts[]" value="Site internet"> Site internet
+            <input type="checkbox" name="reg_cb_tuts[]" value="Facebook"> Facebook
+            <input type="checkbox" name="reg_cb_tuts[]" value="Twitter"> Twitter
+            <input type="checkbox" name="reg_cb_tuts[]" value="Par une association"> Par une association
+            <input type="checkbox" name="reg_cb_tuts[]" value="Par des représentants dans la rue"> Par des représentants dans la rue
+            <input type="checkbox" name="reg_cb_tuts[]" value="Publicité urbaine"> Publicité urbaine
+            </div>
+
             </div>
             <div class="form-group">
-            <label for="email">Infos à nous transmettre:</label>
-            <input type="text" class="form-control" id="reg_ref_tel" name="reg_info">
+            <label for="email">Infos à nous transmettre : </label>
+            <textarea name="reg_infos" rows="5" class="form-control">
+            </textarea>
             </div>
             </fieldset>
-            </div> -->
+            </div>
 
             <div class="col-lg-6 col-lg-offset-3">
               <fieldset>

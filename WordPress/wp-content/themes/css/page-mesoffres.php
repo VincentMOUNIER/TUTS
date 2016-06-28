@@ -38,7 +38,12 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
         // posts_per_page => -1 sert à lister toutes les offres ( sans se limiter à 5 par défaut )
         $args = array( 'posts_per_page'=>'-1', 'author' => $current_user->ID, 'post_type' => 'offre' );
         $myposts = get_posts( $args );
+
+        if ($_GET['updated']=="true") {
+          echo '<div class="well well-sm"> Votre offre a bien été mise à jour </div>';
+        }
         ?>
+
 
         <table id="table-offre">
 
@@ -51,22 +56,22 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
             <a href="<?php the_permalink(); ?>"><?php echo get_field("titre_de_lexperience", $post->ID); ?></a>
           </td>
           <td>
-            <form method="post" action="voir-inscrit" id="voir-inscrit">
+            <form method="post" action="voir-inscrit" id="voir-inscrit<?php echo $post->ID ?>">
               <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
-            <a href="#" onclick='document.getElementById("voir-inscrit").submit()' >Voir les inscrits</a>
-          </form>
+              <a href="#" onclick='document.getElementById("voir-inscrit<?php echo $post->ID ?>").submit()' >Voir les inscrits</a>
+            </form>
         </td>
         <td>
-          <form method="post" action="modifier-offre" id="modif-offre">
+          <form method="post" action="modifier-offre" id="modif-offre<?php echo $post->ID ?>">
             <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
-          <a href="#" onclick='document.getElementById("modif-offre").submit()' >Modifier l'offre</a>
-        </form>
+            <a href="#" onclick='document.getElementById("modif-offre<?php echo $post->ID ?>").submit()' >Modifier l'offre</a>
+          </form>
       </td>
       <td>
-        <form method="post" action="" id="modif-date">
+        <form method="post" action="modifier-dates" id="modif-date<?php echo $post->ID ?>">
           <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
-        <a href="#" onclick='document.getElementById("modif-date").submit()' >Modifier les dates</a>
-      </form>
+          <a href="#" onclick='document.getElementById("modif-date<?php echo $post->ID ?>").submit()' >Modifier les dates</a>
+        </form>
     </td>
     </tr>
 

@@ -18,15 +18,17 @@
 
     			<?php /* The loop */ ?>
     			<?php while ( have_posts() ) : the_post(); ?>
+
             <?php
+            echo $_POST['post_id'];
             // acf_form, il s'agit ici de la méthode V4, voir ensuite le hook prepost dans functions.php , le field group concerné est le 60 pour l'instant
             // Je pense et c'est sûr, qu'il va falloir mettre tout les id field group
             // le id est trouvable dans l'url lorsqu'on edit un field group dans le back office de WP et le menu d'ACF
-            acf_form(array(
-					'post_id'	=> $_POST['post_id'],
-					'field_groups'	=> array( 60 ),
-					'submit_value'	=> 'Mettre à jour'
-				)); ?>
+        //     acf_form(array(
+				// 	'post_id'	=> $_POST['post_id'],
+				// 	'field_groups'	=> array( 60 ),
+				// 	'submit_value'	=> 'Mettre à jour'
+				// )); ?>
 
     			<?php endwhile; ?>
 

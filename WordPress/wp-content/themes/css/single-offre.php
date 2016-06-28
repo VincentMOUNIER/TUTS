@@ -37,7 +37,7 @@ function child_theme_head_script() { ?>
                       foreach( $field['value'] as $term ): ?>
 
                         — <a href="<?php echo get_term_link( $term ); ?>"><?php echo $term->name; ?>  </a>
-                        
+
                     <?php endforeach; ?>
                   <?php endif; ?>
               </p>
@@ -114,6 +114,9 @@ function child_theme_head_script() { ?>
                   <p><strong>Adresse :</strong> <?=$associationRow->adresse?></p>
                 </div>
 
+
+
+
               </div>
               <div class="row">
               <H3> Dates disponibles </H3>
@@ -144,7 +147,7 @@ function child_theme_head_script() { ?>
 
             <div class="text-center">
               <form method="post" action="<?php echo esc_url( get_permalink( get_page_by_title( 'Inscription Bénévole' ) ) ); ?>">
-                <input type="hidden" name="post_id" value=<?= get_the_ID(); ?>/>
+                <input type="hidden" name="post_id" value="<?php echo get_the_ID(); ?>">
               <button type="submit" class="btn btn-primary">S'inscrire</button>
               </form>
             </div>
