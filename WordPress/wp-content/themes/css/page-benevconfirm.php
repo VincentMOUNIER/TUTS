@@ -12,85 +12,77 @@
     <div class="col-lg-8 contenu texte_contenu">
       <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
       <!-- Partie identification -->
-
+      <p> Hey </p>
       <?php
 
-      if( isset($_POST['reg_genre'])
-      &&isset($_POST['reg_nom'])
-      &&isset($_POST['reg_prenom'])
-      &&isset($_POST['reg_commune'])
-      &&(isset($_POST['reg_mail']) || isset($_POST['reg_telephone']))
 
+      // Utiliser les $_SESSION ?
+
+
+
+
+      if(!empty($_POST['form_confirm'])&&
+      !empty( $_POST['reg_name'])&&
+      !empty( $_POST['reg_addr'])&&
+      !empty( $_POST['reg_website'])&&
+      !empty( $_POST['reg_ref_name'])&&
+      !empty( $_POST['reg_ref_pname'])&&
+      !empty( $_POST['reg_ref_fonction'])&&
+      !empty( $_POST['reg_ref_tel'])&&
+      !empty($_POST['reg_ref_mail'])&&
+      !empty( $_POST['reg_mission'])&&
+      !empty($_POST['reg_act'])&&
+      !empty( $_POST['reg_val'])&&
+      !empty( $_POST['reg_projet'])
 
 
       ) { //TODO ameliorer la validation d'un formulaire complet ( ??? button grisé si formulaire non complet js)
         global $wpdb;
-        $id_offre = $_POST['post_id'];
-        $bnom = $_POST['reg_nom'];
-        $bprenom = $_POST['reg_prenom'];
-        $bcommune = $_POST['reg_commune'];
-        $bmail = $_POST['reg_mail'];
-        $btel = $_POST['reg_telephone'];
-        $bdate = $_POST['reg_date'];
-        $bheure = $_POST['reg_heure'];
-        $bdeja = $_POST['reg_dejabene'];
-        $bconnututs = $_POST['reg_cb_tuts'];
-        $binfos = $_POST['reg_infos'];
-
-        echo var_dump($bconnututs);
 
 
-
-
-        $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_inscription WHERE id_offre= '$id_offre' AND nom='$bnom' and prenom='$bprenom'" );
+        $row = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE ass_referente = '$reg_assref'AND nom = '$reg_name'" );
 
         if (is_null($row)){
           //TODO a faire verifier
 
           $result = $wpdb->insert("{$wpdb->prefix}tuts_inscription",
-          array(
-            'id_offre' => $id_offre,
-            'nom' => $bnom,
-            'prenom'=> $bprenom,
-            'commune' => $bcommune,
-            'addr_mail' => $bmail,
-            'telephone' => $btel,
-            'date' => $bdate,
-            'horaire' => $bheure,
-            'benevolat' => $bdeja,
-            'connaissance' => implode($bconnututs, ", "),
-            'info' => $binfos
-           ));
+          array('id_user'=> $user_id,
+          'login' => $login,
+          'mdp'=>$mdp,
+          'num_id'=>$reg_idnum,
+          'ass_referente' => $reg_assref,
+          'nom'=> $reg_name,
+          'adresse' => $reg_addr,
+          'site_web' =>  $reg_website,
+          'nom_ref' =>  $reg_ref_name,
+          'prenom_ref' =>  $reg_ref_pname,
+          'fonction_ref' => $reg_ref_fonction,
+          'tel_ref' => $reg_ref_tel ,
+          'email_ref' =>  $reg_ref_mail,
+          'mission' =>  $reg_mission,
+          'activite'  =>  $reg_act,
+          'valeur'  =>  $reg_val,
+          'projet' => $reg_projet ));
 
           if ($result!==false) {
-            echo "<p>Merci de vous être inscrit à cette offre, vous êtes dorénavant un Bénévole d'un Jour!</p>
-
-            <p>Un mail à été envoyé au responsable de l'expérience. Il vous contactera  pour valider votre inscription et convenir des détails de la mission.</p>
-
-            <p>Si le responsable d'expérience ne vous appelle pas d'ici 7 jours, veuillez contacter l'association en question ou choisir une autre mission!</p>" ;
-          } else {
-            echo"<p> Une erreur lors du traitement a été relevé, veuillez nous contacter à l'adresse mail tousunistoussolidaires@gmail.com. </p>";
-            echo '<button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier le formulaire</button>';
+            echo "Votre enregistrement a été pris en compte, vous recevrez un mail contenant vos informations de connexion après confirmation de notre part" ;
           }
+          else {echo"Une erreur lors du traitement a été relevé, veuillez réessayer.";}
           //TODO Traitement de l'insertion
 
       }else{
-        echo "<p>";
-        echo "Vous semblez être déjà inscrit pour cette offre, si vous souhaitez la refaire, veuillez contacter l'association en question." ;
-        echo "</p>";
+        echo "Vous vous êtes inscrit récemment, veuillez attendre confirmation de notre part pour obtenir vos identifiants" ;
+
 
         //TODO Afficher message d'erreur si le num_id est déjà utilisé
       }
 
 
     } else {
-      echo "<p>";
       echo " Certains champs n'ont pas été saisi, veuillez remplir le formulaire.";
-      echo "</p>";
-      echo '<button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier le formulaire</button>';
     }
     ?>
-  <a href="<?=home_url( '/' )?> " class="btn btn-default btn-lg" role="button">Retour à l'accueil principal</a>
+
   </div>
 
   <div class="col-lg-2 contenu aside">

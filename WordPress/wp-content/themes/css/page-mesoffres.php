@@ -21,14 +21,15 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
 
     <div class="col-lg-8 contenu texte_contenu">
       <div class="row">
-      <div class="col-lg-4"><a href="../" class="btn btn-default btn-lg" role="button">Retourner à "Mon Compte"</a></div>
-      <div class="col-lg-4 "><h1 class="post-title" id="titre"><?php the_title(); ?></h1></div>
+
+      <div><h1 class="post-title" id="titre"><?php the_title(); ?></h1></div>
     </div>
+    <p>Les différents boutons pour voir les inscrits et modifier les offres ne sont pas encore fonctionnels. </p>
       <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
-        <div class="row">
-
+        <div class="row row_bouton">
+              <div class="col-lg-4"><a href="../" class="btn btn-default btn-lg" role="button">Retourner à "Mon Compte"</a></div>
         <div class="col-lg-offset-4 col-lg-4 text-center"><a href="creer-une-offre" class="btn btn-default btn-lg" role="button">Publier une offre</a></div>
         </div>
         <?php
@@ -38,12 +39,7 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
         // posts_per_page => -1 sert à lister toutes les offres ( sans se limiter à 5 par défaut )
         $args = array( 'posts_per_page'=>'-1', 'author' => $current_user->ID, 'post_type' => 'offre' );
         $myposts = get_posts( $args );
-
-        if ($_GET['updated']=="true") {
-          echo '<div class="well well-sm"> Votre offre a bien été mise à jour </div>';
-        }
         ?>
-
 
         <table id="table-offre">
 
@@ -51,27 +47,27 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
         // setup_postdata sert à set la variable global $post ici pour apres la remettre comme avant avec wp_reset_postdata()
         foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
           <tr>
-            <!-- ICI il va s'agir de creer un formulaire à chaque bouton/lien qui aura pour un input avec comme nom "post_id" et valeur l'id du post auquel il est lier  -->
-            <td>
-            <a href="<?php the_permalink(); ?>"><?php echo get_field("titre_de_lexperience", $post->ID); ?></a>
+            <!-- ICI il va s'agir de creer un formulaire à chaque bouton/lien qui aura pour nom "post_id" et valeur l'id du post auquel il est lier  -->
+            <td class="titre_exp">
+            <a href="<?php the_permalink(); ?>" class="titre_exp_texte"><?php echo get_field("titre_de_lexperience", $post->ID); ?></a>
           </td>
-          <td>
-            <form method="post" action="voir-inscrit" id="voir-inscrit<?php echo $post->ID ?>">
+          <td class="bouton_offre">
+            <form method="post" action="voir-inscrit" id="voir-inscrit">
               <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
-              <a href="#" onclick='document.getElementById("voir-inscrit<?php echo $post->ID ?>").submit()' >Voir les inscrits</a>
-            </form>
-        </td>
-        <td>
-          <form method="post" action="modifier-offre" id="modif-offre<?php echo $post->ID ?>">
-            <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
-            <a href="#" onclick='document.getElementById("modif-offre<?php echo $post->ID ?>").submit()' >Modifier l'offre</a>
+            <a href="#" onclick='document.getElementById("voir-inscrit").submit()' >Voir les inscrits</a>
           </form>
-      </td>
-      <td>
-        <form method="post" action="modifier-dates" id="modif-date<?php echo $post->ID ?>">
-          <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
-          <a href="#" onclick='document.getElementById("modif-date<?php echo $post->ID ?>").submit()' >Modifier les dates</a>
+        </td>
+        <td class="bouton_offre">
+          <form method="post" action="modifier-offre" id="modif-offre">
+            <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
+          <a href="#" onclick='document.getElementById("modif-offre").submit()' >Modifier l'offre</a>
         </form>
+      </td>
+      <td class="bouton_offre">
+        <form method="post" action="" id="modif-date">
+          <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
+        <a href="#" onclick='document.getElementById("modif-date").submit()' >Modifier les dates</a>
+      </form>
     </td>
     </tr>
 
