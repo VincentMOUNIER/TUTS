@@ -65,26 +65,20 @@
 
           if ($result!==false) {
             //TODO envoyer un mail
-
-            global $wpdb;
-            $offre = get_post($id_offre);
-            $message = "Bonjour, vous avez un nouveau bénévole pour l'offre \"".$offre->post_title." \". Pensez à le contacter dès que possible !";
-            $receive = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE id_user = '$offre->post_author'");
-
-
-            $header = array('From : '. 'TUTS');
-
-
-              $result = wp_mail($receive->email_ref,"Nouveau bénévole inscrit !",$message, $header);
-
-              var_dump($receive->email_ref);
-
-
+            send_mail_nouvelinscrit($id_offre);
             echo "<p>Merci de vous être inscrit à cette offre, vous êtes dorénavant un Bénévole d'un Jour!</p>
 
             <p>Un mail à été envoyé au responsable de l'expérience. Il vous contactera  pour valider votre inscription et convenir des détails de la mission.</p>
 
             <p>Si le responsable d'expérience ne vous appelle pas d'ici 7 jours, veuillez contacter l'association en question ou choisir une autre mission!</p>" ;
+            ?>
+
+            <form action="benevole-pdf" method="post">
+              <input type="hidden" name="post_id" value="<?php echo $id_offre?>">
+              <button class="btn btn-primary" type="submit" role="button"> Telecharger un PDF </button>
+            </form>
+
+            <?php
           } else {
             echo"<p> Une erreur lors du traitement a été relevé, veuillez nous contacter à l'adresse mail tousunistoussolidaires@gmail.com. </p>";
             echo '<button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier le formulaire</button>';

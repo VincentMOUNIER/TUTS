@@ -1,16 +1,5 @@
-<?php /* Template Name: Offre PDF */ ?>
+<?php /* Template Name: Benevole PDF */ ?>
 <?php
-if ( !is_user_logged_in() ) {
-  wp_redirect( get_permalink( $post->post_parent )); exit;
-} else {
-  $post = get_post($_POST['post_id']);
-  $post_user = $post->post_author;
-  $current_user = wp_get_current_user();
-  if ($current_user->ID != $post_user) {
-    wp_redirect( get_permalink( $post->post_parent )); exit;
-  }
-}
-
 
 $fields = get_fields($_POST['post_id']); // On recupere les informations du post
 $post = get_post($_POST['post_id']);
@@ -40,16 +29,13 @@ $pdf->Rect(55+15,40,210-55-30,45);                      // 15 = marge , 210 = Ta
 $pdf->MultiCell(210-65-30,5,utf8_decode("
 Nom Association / Collectif : ".$author->nom."\n
 Nom Référent : ".$author->nom_ref." ".$author->prenom_ref."\n
-Téléphone Référent : ".$author->tel_ref."\n
-Mail Référent : ".$author->email_ref."\n
+\n
+\n\n\n
 "),0,'L');
                                                       // FIN ASSOCIATION
 
-                                                      // DEBUT DATE SOUMISSION DE L'OFFRE
-$pdf->Cell(0,10,'',0,2); // marge puis retour à la ligne
-$pdf->Cell(0,10,utf8_decode("Offre soumis le ".$post->post_date."."),0,2);
-                                                      // FIN DATE SOUMISSION DE L'Offre
-                                                      //
+
+
                                                       // DEBUT TABLEAU RECAP DE L'Offre
 
 $pdf->SetWidths(array((210-30)/2,(210-30)/2));        // array( longueur de la premiere colonne, longueur de la deuxieme )
@@ -120,7 +106,7 @@ if (have_rows("date")) {  // Cas d'un repeater "date" est le nom du repeater
 
       // Ensuite on les affiche un par un dans un liste (?) il faut aussi verifier s'il s'agit de celui qui a poster l'offre
 
-      $strdate .= "- ". $date . " de ". $heureDebut . " à ". $heureFin . " pour environ " . $nbPlaces ." personnes.";
+      $strdate .= "- ". $date . " de ". $heureDebut . " à ". $heureFin ;
       $strdate .= "\n";
     }
 
@@ -153,7 +139,7 @@ $pdf->Output();
         <!-- Partie identification -->
         <div id="primary" class="content-area">
           <div id="content" class="site-content" role="main">
-    
+
 
 
           </div><!-- #content -->
