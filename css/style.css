@@ -4,6 +4,26 @@
 }
 html, body {
   height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+html
+{
+    margin-top: 0px !important;
+}
+button.btn.btn-primary a
+{
+  color:white;
+}
+
+.acf-button-add
+{
+  visibility: hidden;
+  display : none;
+}
+body
+{
+  background-color: #34495E !important;
 }
 .page
 {
@@ -11,90 +31,280 @@ html, body {
   min-height: 100%;
 }
 
-.header
+.bouton_haut
 {
-  border: solid black;
-  width: 100%;
-
-
+  margin-top: 1em;
 }
 
+#charte_contenu
+{
+  height: 20em;
+  overflow-y: scroll;
+}
+#acf_138, #acf_137, #acf_136
+{
+  width: 60%;
+  margin: auto;
+}
+
+.connexion
+{
+  padding:1em;
+}
+.field
+{
+  margin-bottom: 2em;
+}
+
+fieldset
+{
+  border: 1px;
+}
+
+p.infos
+{
+  margin: 0 0 0;
+}
+.coordonnees
+{
+      padding-top:1em;
+}
+
+
+
+div[class="container-fluid conteneur"]
+{
+    /*background-color: #34495E !important;*/
+    background-image: url("img/background.png");
+}
+
+.texte_contenu
+{
+  background-color: white;
+  border-radius: 3em;
+  border: 0.5em outset black;
+}
+
+.header
+{
+  width: 100%;
+  background-color: rgb(9, 102, 142);
+
+}
+th
+{
+  text-align: center;
+}
 .conteneur
 {
-  border : solid black;
   width: 100%;
+  background-color: white;
 
 }
 
 .footer
 {
-  border : solid black;
   width: 100%;
-  background: orange;
+  background: white;
   position: fixed;
   bottom: 0px;
+  left: 0px;
   overflow: hidden;
-
+  border-top: 0.2em outset black;
+  /*height: 10em;*/
 }
 
 .titre{
   text-align: center;
+  color:white;
 }
+
+.image_bas, .image_haut
+{
+  margin:auto;
+  width: 50%;
+}
+
 
 .contenu
 {
   text-align: center;
-  height:60em;
-  border: 0.1em solid black;
 }
 #logo
 {
   width: 10em;
+  border-radius: 5em;
+  border: 0.3em outset white;
+
+}
+.coordonnees
+{
+  text-align: center;
 
 }
 
-td img
+td img, .item img
 {
-  width: 5em;
-
+  max-width: 12em !important;
+  width: auto;
+  height : 80px;
+  max-height: 80px;
   margin-left: auto;
   margin-right: auto;
-  display:block;
+  display:inline-block;
 }
+.img-container{
+  display:inline-block;
+}
+
+.item {
+    text-align: center;
+}
+.carousel-control{
+  background-image : none !important;
+}
+
+.bouton_footer
+{
+  text-align: center;
+  margin-top: 1em;
+}
+
+
 table
 {
   margin: auto;
   /*Les tables se centrent */
 }
-.aside{
-  padding:0 !important;
-}
-#aside_a
+
+.clear
 {
-  float: left;
-  height: 60em;
+  height:8em;
 }
 
-#aside_b
+
+/*Connexion*/
+
+.connexion
 {
-  float: right;
-  height: 60em;
+  margin-top : 2em;
 }
 
 /*Responsive*/
 @media screen and(max-width: 640px) {
-  .aside
-  {
-    display:none;
+
+  .contenu{
+
+    font-size: 2em;
   }
 }
 
-@media screen and(max-width: 1024px) and (min-width: 640px){
-  .aside
+@media screen and (min-width: 1200px){
+
+  .lien_video
   {
-    display:none;
+    display : none;
   }
 }
-@media screen and(min-width: 1024px){
 
+@media screen and (max-width: 1199px){
+
+  .aside, #contact
+  {
+    display:none !important;
+  }
+  .texte_contenu
+  {
+    width: 100%;
+  }
+
+  .image_bas, .image_haut, .video
+  {
+    display: none;
+  }
+  .bouton_haut
+  {
+    margin : 0;
+    width: 100%;
+    height: 3em;
+  }
+  .contenu{
+
+    font-size: 2em;
+  }
+}
+
+
+/*   ----- PAGE "MON COMPTE" ---- */
+
+#pdf-tools {
+  overflow: auto;
+  white-space:nowrap;
+  overflow-y: hidden;
+}
+
+.div-tools{
+  display : inline-block;
+  width : auto;
+}
+.img-tools{
+  width : auto;
+}
+.name-pdf {
+word-wrap: break-word;
+padding : 0.2em;
+}
+
+
+/* ----- PAGE " Mes Offres" ----- */
+/*Mes offres d'expériences*/
+table#table-offre
+{
+  margin-bottom: 2em;
+}
+
+.row_bouton
+{
+  margin : 2em;
+}
+
+#table-offre {
+  margin: auto;
+}
+
+#table-offre td
+{
+
+    padding: 1em;
+}
+
+#table-offre tr
+{
+    border: 1px solid black;
+}
+
+#table-offre tbody
+{
+
+}
+.titre_exp
+{
+  background-color: #34495E ;
+}
+
+.titre_exp_texte
+{
+  color: white;
+  font-weight: bold;
+}
+.titre_exp_texte:hover
+{
+  font-size: 120%;
+  color: white;
+  font-weight: bold;
+}
+
+/** PAGE "CREATION COMPTE" **/
+.checkbox{
+  text-align : left;
 }

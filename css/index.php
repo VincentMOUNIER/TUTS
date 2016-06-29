@@ -1,81 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css"  charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<?php /* Template Name: Creation Offre */ ?>
+<?php acf_form_head(); ?>
+<?php get_header('aide'); ?>
+<div class="container-fluid conteneur">
 
-  <title>Test - css</title>
-</head>
-<body>
-  <div class="page">
+  <div class="row">
 
-    <div class="container-fluid header">
+    <div class="col-lg-2 contenu aside">
 
-      <div class="row">
+      <!-- <img src="<?php bloginfo('template_url'); ?>/img/aside_a.gif" alt="" id="aside_a"/> -->
+    </div>
 
-        <div class="col-lg-2 logo">
-          <img src="img/tuts.jpg" alt="Logo Tuts" id="logo" />
-        </div>
+    <div class="col-lg-8 contenu texte_contenu">
+      <div class="main page">
+        <div id="primary" class="content-area">
+          <div id="content" class="site-content" role="main">
 
-        <div class="col-lg-8 titre">
-          <h1>Tous Unis Tous Solidaires</h1>
-        </div>
+            <h3>Bonjour et bienvenue sur le site du projet TOUS unis TOUS solidaires</h3><br>
+            <p>
+              Je suis au regret de vous informer que cette fonctionnalité du site n'est pas encore accessible.<br>
+              Si il est prévu que cette dernière doit fonctionner veuillez reporter ce bug en nous contactant au coordonnées présentes dans le pied de page.<br>
+              Merci d'avance et bonne navigation :)<br>
+              <button type="button" name="button" class=" btn btn-default"><a href="<?=get_page_link(80)?> ">Retour</a></button>
+            </p>
 
+          </div><!-- #content -->
+        </div><!-- #primary -->
       </div>
-      <!-- row -->
-    </div>
-    <!-- container fluid -->
+    </div> <!-- Contenu -->
 
-    <div class="container-fluid conteneur">
-
-      <div class="row">
-
-        <div class="col-lg-3 contenu aside">
-
-          <img src="img/aside_a.gif" alt="" id="aside_a"/>
-        </div>
-
-        <div class="col-lg-6 contenu">
-          <p>
-            CONTENU
-          </p>
-        </div>
-
-        <div class="col-lg-3 contenu aside">
-          <img src="img/aside_b.gif" alt="" id="aside_b"/>
-        </div>
-
+      <div class="col-lg-2 contenu aside">
+        <!-- <img src="<?php bloginfo('template_url'); ?>/img/aside_b.gif" alt="" id="aside_b"/> -->
       </div>
-      <!-- Row -->
     </div>
-    <!-- Container fluid -->
+    <!-- Row -->
 
-    <div class="container-fluid footer">
-      <table>
-        <tr>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_LEFOYER.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_emmaeus.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_ANCIELA.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_MAISONDESSOLIDARITES.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_HI.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_CROIXROUGE.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_FB.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_HABITAT.jpg"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_RCFLYON.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_PETITSFRERES.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_SCD.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_UNICEF.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_CONSEIL.png"></td>
-          <td><img alt="" class="img-responsive" src ="img/LOGO_AFEV.png"></td>
+    <img alt="" class="img-responsive image_bas" src ="<?php bloginfo('template_url'); ?>/img/Bannierebas.png">
 
-        </tr>
-      </table>
+    <div class="clear">
+
     </div>
-    <!-- container fluid -->
+
+
 
   </div>
-  <!-- page -->
 
-</body>
-</html>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+  <script src="bootstrap/js/jquery.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="<?php bloginfo('template_url'); ?>/js/offre.js"></script>
+
+<?php get_footer(); ?>
