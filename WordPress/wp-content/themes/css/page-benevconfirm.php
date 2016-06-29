@@ -66,6 +66,20 @@
           if ($result!==false) {
             //TODO envoyer un mail
 
+            global $wpdb;
+            $offre = get_post($id_offre);
+            $message = "Bonjour, vous avez un nouveau bénévole pour l'offre \"".$offre->post_title." \". Pensez à le contacter dès que possible !";
+            $receive = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE id_user = '$offre->post_author'");
+
+
+            $header = array('From : '. 'TUTS');
+
+
+              $result = wp_mail($receive->email_ref,"Nouveau bénévole inscrit !",$message, $header);
+
+              var_dump($receive->email_ref);
+
+
             echo "<p>Merci de vous être inscrit à cette offre, vous êtes dorénavant un Bénévole d'un Jour!</p>
 
             <p>Un mail à été envoyé au responsable de l'expérience. Il vous contactera  pour valider votre inscription et convenir des détails de la mission.</p>
@@ -75,14 +89,13 @@
             echo"<p> Une erreur lors du traitement a été relevé, veuillez nous contacter à l'adresse mail tousunistoussolidaires@gmail.com. </p>";
             echo '<button style ="display:inline"class="btn btn-warning btn-lg" onclick="history.go(-1)"> Modifier le formulaire</button>';
           }
-          //TODO Traitement de l'insertion
 
       }else{
         echo "<p>";
         echo "Vous semblez être déjà inscrit pour cette offre, si vous souhaitez la refaire, veuillez contacter l'association en question." ;
         echo "</p>";
 
-        //TODO Afficher message d'erreur si le num_id est déjà utilisé
+
       }
 
 

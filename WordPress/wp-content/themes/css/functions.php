@@ -177,4 +177,24 @@ function uploadLogo(){
   	// The security check failed, maybe show the user an error.
   }
 }
+
+
+          /** Fonction d'envoi de mail apres inscription **/
+
+function send_mail_nouvelinscrit($id_offre){
+  global $wpdb;
+  $offre = get_post($id_offre);
+  $message = "Bonjour, vous avez un nouveau bénévole pour l'offre \"".$offre->post_title." \". Pensez à le contacter dès que possible !";
+  $receive = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association WHERE id_user = '$offre->post_author'");
+
+
+  $header = array('From : '. 'TUTS');
+
+
+    $result = wp_mail($receive->email_ref,"Nouveau bénévole inscrit !",$message, $header);
+
+
+
+
+}
 ?>
