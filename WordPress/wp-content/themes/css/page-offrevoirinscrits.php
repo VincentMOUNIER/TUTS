@@ -1,12 +1,11 @@
 <?php /* Template Name: Offre-voirinscrit */ ?>
-<?phpif ( !is_user_logged_in() ) {
+<?php
+if ( !is_user_logged_in() ) {
   wp_redirect( get_permalink( $post->post_parent )); exit;
-} ?>
-<?php get_header('aide');
-function child_theme_head_script() { ?>
-  <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css" />
-  <?php }
-  add_action( 'wp_head', 'child_theme_head_script' );?>
+}
+
+get_header('aide');
+?>
 
   <div class="container-fluid conteneur">
 
@@ -41,26 +40,95 @@ function child_theme_head_script() { ?>
             global $wpdb;
 
             $selection = $wpdb->get_results(" SELECT * FROM {$wpdb->prefix}tuts_inscription WHERE id_offre = '$post_id' ");
-            ?>
-            <table>
+              echo '<table id="datatable">';
+              echo '<thead>';
+              echo '<tr>';
 
-            <?php
+              echo '<th>';
+              echo 'Nom';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Prénom';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Commune';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Téléphone';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'E-mail';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Date choisie';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Horaire Choisie';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Déjà été bénévole ?';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Comment a t il connu TUTS ?';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Infos complémentaires';
+              echo '</th>';
+
+              echo '<th>';
+              echo 'Date d\'inscription';
+              echo '</th>';
+
+
+
+              echo '</tr>';
+              echo '</thead>';
+
+
+
             foreach ($selection as $inscrit) {
               echo '<tr>';
               echo '<td>';
               echo $inscrit->nom;
               echo '</td>';
               echo '<td>';
-              echo $inscrit->horaire;
+              echo $inscrit->prenom;
               echo '</td>';
               echo '<td>';
-              echo $inscrit->prenom;
+              echo $inscrit->commune;
               echo '</td>';
               echo '<td>';
               echo $inscrit->telephone;
               echo '</td>';
               echo '<td>';
               echo $inscrit->addr_mail;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->date;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->horaire;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->benevolat;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->connaissance;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->info;
+              echo '</td>';
+              echo '<td>';
+              echo $inscrit->date_inscrit;
               echo '</td>';
               echo '</tr>';
 
@@ -91,8 +159,18 @@ function child_theme_head_script() { ?>
 
       </div>
       <!-- Container fluid -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script>
+      jQuery(function($) {
+        $(document).ready(function(){
+          $('#datatable').DataTable(
+            {"scrollX": true}
+          );
+        });
 
+
+      });
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
       <script src="<?php bloginfo('template_url'); ?>/bootstrap/js/bootstrap.min.js"></script>
       <script src="<?php bloginfo('template_url'); ?>/js/tuts_script.js"></script>
 <?php get_footer(); ?>

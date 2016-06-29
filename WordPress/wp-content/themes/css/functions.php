@@ -1,11 +1,16 @@
 <?php
 
 function tuts_enqueue_scripts(){
-
+wp_enqueue_script( 'jquery' );
 wp_register_script( 'googlemap', get_template_directory_uri().'/js/googlemap.js', 'jquery', '1.0' );
 wp_enqueue_script('googlemap');
+wp_register_script('datatablejs', "https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js", "jquery", '3.0');
+wp_enqueue_script('datatablejs');
 wp_enqueue_style('animatecss',get_template_directory_uri().'/css/animate.css');
 wp_enqueue_style('acfmap',get_template_directory_uri().'/css/acfmap.css');
+wp_enqueue_style('datatable',"https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css");
+
+
 }
 add_action( 'wp_enqueue_scripts', 'tuts_enqueue_scripts' );
 

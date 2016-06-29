@@ -179,8 +179,7 @@ $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
             </div>
             <div class="form-group">
             <label for="email">Infos à nous transmettre : </label>
-            <textarea name="reg_infos" rows="5" class="form-control">
-            </textarea>
+            <textarea name="reg_infos" rows="5" class="form-control"></textarea>
             </div>
             </fieldset>
             </div>

@@ -36,8 +36,8 @@
         $bdeja = $_POST['reg_dejabene'];
         $bconnututs = $_POST['reg_cb_tuts'];
         $binfos = $_POST['reg_infos'];
+        $dateinscrit = getdate();
 
-        echo var_dump($bconnututs);
 
 
 
@@ -59,12 +59,13 @@
             'horaire' => $bheure,
             'benevolat' => $bdeja,
             'connaissance' => implode($bconnututs, ", "),
-            'info' => $binfos
+            'info' => $binfos,
+              'date_inscrit' => $dateinscrit['year'] . "/". $dateinscrit['mon'] ."/". $dateinscrit['mday']
            ));
 
           if ($result!==false) {
             //TODO envoyer un mail
-            
+
             echo "<p>Merci de vous être inscrit à cette offre, vous êtes dorénavant un Bénévole d'un Jour!</p>
 
             <p>Un mail à été envoyé au responsable de l'expérience. Il vous contactera  pour valider votre inscription et convenir des détails de la mission.</p>
