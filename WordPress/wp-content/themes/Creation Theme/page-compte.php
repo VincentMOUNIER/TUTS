@@ -21,16 +21,12 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
 
           <?php /* The loop */ ?>
           <?php while ( have_posts() ) : the_post(); ?>
-            
+
             <h2 class="text-center"> Boite à outils </h2>
             <div id="pdf-tools">
             <?php
 
-            $upload_dir = wp_upload_dir();
-
-            // recursiveListTool va prendre en parametre la basedir (directory) et la baseurl ( url ) car elle va chercher les pdf
-            // uploadé via le menu de wordpress, il faut penser a definir comment choisir les bons pdf ( mettre un tool-*.pdf par exemple )
-            recursiveListTool($upload_dir['basedir'],$upload_dir['baseurl']);
+          the_content();
 
 
 

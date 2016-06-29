@@ -25,32 +25,45 @@ add_action( 'wp_head', 'child_theme_head_script' );?>
             <?php
             // On va recuperer l'user pour filtrer les offres affichés par auteur
             $current_user = wp_get_current_user();
-            
+
             // posts_per_page => -1 sert à lister toutes les offres ( sans se limiter à 5 par défaut )
             $args = array( 'posts_per_page'=>'-1', 'author' => $current_user->ID, 'post_type' => 'offre' );
             $myposts = get_posts( $args );
+            ?>
 
+            <table id="table-offre">
+
+              <?php
             // setup_postdata sert à set la variable global $post ici pour apres la remettre comme avant avec wp_reset_postdata()
             foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
-            	<li>
+            	<tr>
                 <!-- ICI il va s'agir de creer un formulaire à chaque bouton/lien qui aura pour nom "post_id" et valeur l'id du post auquel il est lier  -->
+                <td>
             		<a href="<?php the_permalink(); ?>"><?php echo get_field("titre_de_lexperience", $post->ID); ?></a>
+              </td>
+              <td>
                 <form method="post" action="voir-inscrit" id="voir-inscrit">
                   <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
                 <a href="#" onclick='document.getElementById("voir-inscrit").submit()' >Voir les inscrits</a>
               </form>
+            </td>
+            <td>
               <form method="post" action="modifier-offre" id="modif-offre">
                 <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
               <a href="#" onclick='document.getElementById("modif-offre").submit()' >Modifier l'offre</a>
             </form>
+          </td>
+          <td>
             <form method="post" action="" id="modif-date">
               <input type="hidden" name="post_id" value="<?php echo $post->ID ?>"/>
             <a href="#" onclick='document.getElementById("modif-date").submit()' >Modifier les dates</a>
           </form>
+        </td>
+        </tr>
 
-            	</li>
             <?php endforeach;
             wp_reset_postdata();?>
+          </table>
 
 
 

@@ -12,13 +12,6 @@
     			<?php /* The loop */ ?>
     			<?php while ( have_posts() ) : the_post(); ?>
 
-    				<?php
-
-
-
-            ?>
-
-
 
             <?php
             // acf_form, il s'agit ici de la méthode V4, voir ensuite le hook prepost dans functions.php , le field group concerné est le 60 pour l'instant
@@ -27,7 +20,8 @@
             acf_form(array(
 					'post_id'	=> 'new',
 					'field_groups'	=> array( 60 ),
-					'submit_value'	=> 'Creer une nouvelle offre'
+					'submit_value'	=> 'Creer une nouvelle offre',
+          'return' => 'offreconfirm'
 				)); ?>
 
     			<?php endwhile; ?>

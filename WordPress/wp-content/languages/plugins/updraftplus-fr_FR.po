@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-04-24 15:14:00+0000\n"
+"PO-Revision-Date: 2016-04-27 06:54:29+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,11 +32,11 @@ msgstr "Plus d'informations..."
 
 #: central/bootstrap.php:424
 msgid "Key size: %d bits"
-msgstr "Taille de clénbsp;: %d bits"
+msgstr "Taille de clé&nbsp;: %d octets"
 
 #: central/bootstrap.php:441
 msgid "Encryption key size:"
-msgstr "Taille de la clé d'encodagenbsp;:"
+msgstr "Taille de la clé d'encodage&nbsp;:"
 
 #: central/bootstrap.php:442 central/bootstrap.php:443
 #: central/bootstrap.php:445
@@ -65,7 +65,7 @@ msgstr "plus lent, plus robuste"
 
 #: central/bootstrap.php:419
 msgid "Public key was sent to:"
-msgstr "Clé publique envoyée ànbsp;: "
+msgstr "Clé publique envoyée à&nbsp;: "
 
 #: central/bootstrap.php:452
 msgid "View recent UpdraftCentral log events"
@@ -113,7 +113,7 @@ msgstr "Aucune clé créée"
 
 #: central/bootstrap.php:419
 msgid "Access this site as user:"
-msgstr "Accéder à ce site en tant qu'utilisateurnbsp;:"
+msgstr "Accéder à ce site en tant qu'utilisateur&nbsp;:"
 
 #: central/bootstrap.php:422
 msgid "Created:"
@@ -221,7 +221,7 @@ msgstr "ces jeux de sauvegarde"
 
 #: admin.php:4294
 msgid "Total backup size:"
-msgstr "Taille totale de la sauvegardenbsp;:"
+msgstr "Taille totale de la sauvegarde&nbsp;:"
 
 #: admin.php:5212
 msgid "Your settings have been saved."
@@ -257,7 +257,7 @@ msgstr "Une clef a été créée, mais la tentative d&rsquo;enregistrement avec 
 
 #: methods/updraftvault.php:208
 msgid "No Vault connection was found for this site (has it moved?); please disconnect and re-connect."
-msgstr "Auncune connection au \"Vault\" n&rsquo;a été trouvée pour ce site (a-t-il été déplacénbsp;?)nbsp;; veuillez vous déconnecter et vous reconnecter."
+msgstr "Auncune connection au \"Vault\" n&rsquo;a été trouvée pour ce site (a-t-il été déplacénbsp;?)&nbsp;; veuillez vous déconnecter et vous reconnecter."
 
 #: methods/updraftvault.php:263 methods/updraftvault.php:269
 #: methods/updraftvault.php:275
@@ -271,11 +271,11 @@ msgstr "%s par an"
 
 #: admin.php:3101
 msgid "Call WordPress action:"
-msgstr "Appel action WordPressnbsp;:"
+msgstr "Appel action WordPress&nbsp;:"
 
 #: backup.php:386
 msgid "Unexpected error: no class '%s' was found (your UpdraftPlus installation seems broken - try re-installing)"
-msgstr "Erreur inattenduenbsp;: aucune classe '%s' n&rsquo;a pu être trouvée (votre installation UpdraftPlus semble corrompue - essayez de la réinstaller)"
+msgstr "Erreur inattendue&nbsp;: aucune classe '%s' n&rsquo;a pu être trouvée (votre installation UpdraftPlus semble corrompue - essayez de la réinstaller)"
 
 #: class-updraftplus.php:3576
 msgid "It will be imported as a new site."
@@ -291,7 +291,7 @@ msgstr "L'importation d'un site Wordpress ordinaire vers une installation multis
 
 #: restorer.php:1533
 msgid "Uploads URL:"
-msgstr "URL des envoisnbsp;:"
+msgstr "URL des envois&nbsp;:"
 
 #: admin.php:556
 msgid "Please fill in the required information."
@@ -311,7 +311,7 @@ msgstr "Annuler"
 
 #: admin.php:5111
 msgid "Not got any remote storage?"
-msgstr "Possédez vous un lieu de stockagenbsp;? (stockage distant)"
+msgstr "Possédez vous un lieu de stockage&nbsp;? (stockage distant)"
 
 #: admin.php:5111
 msgid "Check out UpdraftPlus Vault."
@@ -339,27 +339,27 @@ msgstr "Options du fichier"
 
 #: admin.php:4277
 msgid "Uploaded to:"
-msgstr "Mise en ligne pournbsp;:"
+msgstr "Mise en ligne pour&nbsp;:"
 
 #: admin.php:4849
 msgid "Skipping: this archive was already restored."
-msgstr "Ignorénbsp;:  cette archive a déjà été restaurée."
+msgstr "Ignoré&nbsp;:  cette archive a déjà été restaurée."
 
 #: class-updraftplus.php:1218 class-updraftplus.php:1220
 msgid "files: %s"
-msgstr "Fichiersnbsp;: %s"
+msgstr "Fichiers&nbsp;: %s"
 
 #: class-updraftplus.php:1237
 msgid "External database (%s)"
-msgstr "Base de données externenbsp;: %s"
+msgstr "Base de données externe&nbsp;: %s"
 
 #: class-updraftplus.php:1240
 msgid "Size: %s MB"
-msgstr "Taillenbsp;: %s Mb"
+msgstr "Taille&nbsp;: %s Mb"
 
 #: class-updraftplus.php:1245 class-updraftplus.php:1250
 msgid "%s checksum: %s"
-msgstr "%s checksumnbsp;: %s"
+msgstr "%s checksum&nbsp;: %s"
 
 #: class-updraftplus.php:1249
 msgid "(when decrypted)"
@@ -416,7 +416,7 @@ msgstr "Inclure tous les fichiers dans la sauvegarde"
 
 #: admin.php:2751
 msgid "Your saved settings also affect what is backed up - e.g. files excluded."
-msgstr "Vos réglages sauvegardés affectent aussi ce qui est sauvegardé (exnbsp;: fichiers exclus)"
+msgstr "Vos réglages sauvegardés affectent aussi ce qui est sauvegardé (ex&nbsp;: fichiers exclus)"
 
 #: admin.php:5111
 msgid "Backup won't be sent to any remote storage - none has been saved in the %s"
@@ -480,7 +480,7 @@ msgstr "En cours..."
 
 #: admin.php:1614
 msgid "Backup sets removed: %d"
-msgstr "Jeux de sauvegarde supprimésnbsp;: %d"
+msgstr "Jeux de sauvegarde supprimés&nbsp;: %d"
 
 #: admin.php:2869
 msgid "Press here to look inside your remote storage methods for any existing backup sets (from any site, if they are stored in the same folder)."
@@ -500,7 +500,7 @@ msgstr "Désélectionner"
 
 #: admin.php:2934 admin.php:2937
 msgid "Are you sure that you wish to remove %s from UpdraftPlus?"
-msgstr "Voulez vous vraiment supprimer %s d'UpdraftPlusnbsp;?"
+msgstr "Voulez vous vraiment supprimer %s d'UpdraftPlus&nbsp;?"
 
 #: admin.php:3754
 msgid "or to configure more complex schedules"
@@ -626,7 +626,7 @@ msgstr "https://updraftplus.com"
 
 #. Description of the plugin/theme
 msgid "Backup and restore: take backups locally, or backup to Amazon S3, Dropbox, Google Drive, Rackspace, (S)FTP, WebDAV & email, on automatic schedules."
-msgstr "Sauvegarde et restaurationnbsp;: sauvegarder localement, ou sur Amazon S3, Dropbox, Google Drive, Rackspace, (S)FTP, WebDAV & email, en planification automatique. "
+msgstr "Sauvegarde et restauration&nbsp;: sauvegarder localement, ou sur Amazon S3, Dropbox, Google Drive, Rackspace, (S)FTP, WebDAV & email, en planification automatique. "
 
 #. Author of the plugin/theme
 msgid "UpdraftPlus.Com, DavidAnderson"

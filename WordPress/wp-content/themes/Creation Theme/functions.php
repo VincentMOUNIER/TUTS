@@ -12,7 +12,7 @@
     // Create a new post
     $post = array(
         'post_status'  => 'publish',
-        'post_title'  => 'Offre-Title', 
+        'post_title'  => 'Offre-Title',
         'post_type'  => 'offre'
     );
     // TODO TITLE == Changer post_title, mettre un $_POST ?
@@ -58,40 +58,7 @@ function recupextension ($filename)
   return substr(strrchr($filename, '.'), 1);
 }
 
-//fonction qui permet de compter le nombre d'images dans un dossier spécifié à l'appel de la fonction
-function listTool(){
 
-  $upload_dir = wp_upload_dir();
-  $rep = $upload_dir['path'];
-  $urlupload = $upload_dir['url'];
-
-  echo "rep : ".$rep."\n";
-  echo "urlupload : ".$urlupload."\n";
-
-  if (is_dir($rep))
-  {
-    if ($rh = opendir($rep))
-    {
-      $i = 0;
-      while (($file = readdir($rh)) !== false)
-      {
-        if ($file != '.' && $file != '..')
-        {
-          if (!is_dir($rep.$file) && (recupextension($file)=="pdf"))
-          {
-
-
-
-
-            echo '<div class="div-tools"><div class="img-tools"><a href="'.$urlupload."/".$file.'"><img src="'.$urlupload."/pdf1.png".'" width=100px height=100px/></a>';
-            echo '<p class="text-center name-pdf"> '.$file.' </p></div></div>';
-
-          }else {echo "prout";}
-        }
-      }
-    }else { echo "opendir";}
-  }else{ echo "lol";}
-  }
 
 
 

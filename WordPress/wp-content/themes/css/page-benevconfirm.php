@@ -63,6 +63,8 @@
            ));
 
           if ($result!==false) {
+            //TODO envoyer un mail
+            
             echo "<p>Merci de vous être inscrit à cette offre, vous êtes dorénavant un Bénévole d'un Jour!</p>
 
             <p>Un mail à été envoyé au responsable de l'expérience. Il vous contactera  pour valider votre inscription et convenir des détails de la mission.</p>

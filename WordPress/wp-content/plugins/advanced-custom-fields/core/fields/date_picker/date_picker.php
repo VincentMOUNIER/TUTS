@@ -2,7 +2,7 @@
 
 class acf_field_date_picker extends acf_field
 {
-	
+
 	/*
 	*  __construct
 	*
@@ -11,7 +11,7 @@ class acf_field_date_picker extends acf_field
 	*  @since	3.6
 	*  @date	23/01/13
 	*/
-	
+
 	function __construct()
 	{
 		// vars
@@ -23,21 +23,21 @@ class acf_field_date_picker extends acf_field
 			'display_format' => 'dd/mm/yy',
 			'first_day' => 1, // monday
 		);
-		
-		
+
+
 		// actions
 		add_action('init', array($this, 'init'));
-		
-		
+
+
 		// do not delete!
     	parent::__construct();
 	}
-	
-	
+
+
 	/*
 	*  init
 	*
-	*  This function is run on the 'init' action to set the field's $l10n data. Before the init action, 
+	*  This function is run on the 'init' action to set the field's $l10n data. Before the init action,
 	*  access to the $wp_locale variable is not possible.
 	*
 	*  @type	action (init)
@@ -46,11 +46,11 @@ class acf_field_date_picker extends acf_field
 	*  @param	N/A
 	*  @return	N/A
 	*/
-	
+
 	function init()
 	{
 		global $wp_locale;
-		
+
 		$this->l10n = array(
 			'closeText'         => __( 'Done', 'acf' ),
 	        'currentText'       => __( 'Today', 'acf' ),
@@ -64,7 +64,7 @@ class acf_field_date_picker extends acf_field
 		);
 	}
 	
-	
+
 	/*
 	*  create_field()
 	*
@@ -76,7 +76,7 @@ class acf_field_date_picker extends acf_field
 	*  @since	3.6
 	*  @date	23/01/13
 	*/
-	
+
 	function create_field( $field )
 	{
 		// make sure it's not blank
@@ -88,7 +88,7 @@ class acf_field_date_picker extends acf_field
 		{
 			$field['display_format'] = 'dd/mm/yy';
 		}
-		
+
 
 		// html
 		echo '<div class="acf-date_picker" data-save_format="' . $field['date_format'] . '" data-display_format="' . $field['display_format'] . '" data-first_day="' . $field['first_day'] . '">';
@@ -96,8 +96,8 @@ class acf_field_date_picker extends acf_field
 			echo '<input type="text" value="" class="input"  />';
 		echo '</div>';
 	}
-	
-	
+
+
 	/*
 	*  create_options()
 	*
@@ -110,16 +110,16 @@ class acf_field_date_picker extends acf_field
 	*
 	*  @param	$field	- an array holding all the field's data
 	*/
-	
+
 	function create_options( $field )
 	{
 		// global
 		global $wp_locale;
-		
-		
+
+
 		// vars
 		$key = $field['name'];
-	    
+
 	    ?>
 <tr class="field_option field_option_<?php echo $this->name; ?>">
 	<td class="label">
@@ -128,7 +128,7 @@ class acf_field_date_picker extends acf_field
 		<p><?php _e("\"yymmdd\" is the most versatile save format. Read more about",'acf'); ?> <a href="http://docs.jquery.com/UI/Datepicker/formatDate"><?php _e("jQuery date formats",'acf'); ?></a></p>
 	</td>
 	<td>
-		<?php 
+		<?php
 		do_action('acf/create_field', array(
 			'type'	=>	'text',
 			'name'	=>	'fields[' .$key.'][date_format]',
@@ -144,7 +144,7 @@ class acf_field_date_picker extends acf_field
 		<p><?php _e("\"dd/mm/yy\" or \"mm/dd/yy\" are the most used display formats. Read more about",'acf'); ?> <a href="http://docs.jquery.com/UI/Datepicker/formatDate" target="_blank"><?php _e("jQuery date formats",'acf'); ?></a></p>
 	</td>
 	<td>
-		<?php 
+		<?php
 		do_action('acf/create_field', array(
 			'type'	=>	'text',
 			'name'	=>	'fields[' .$key.'][display_format]',
@@ -158,24 +158,24 @@ class acf_field_date_picker extends acf_field
 		<label for=""><?php _e("Week Starts On",'acf'); ?></label>
 	</td>
 	<td>
-		<?php 
-		
+		<?php
+
 		$choices = array_values( $wp_locale->weekday );
-		
+
 		do_action('acf/create_field', array(
 			'type'	=>	'select',
 			'name'	=>	'fields['.$key.'][first_day]',
 			'value'	=>	$field['first_day'],
 			'choices'	=>	$choices,
 		));
-		
+
 		?>
 	</td>
 </tr>
 		<?php
-		
+
 	}
-	
+
 }
 
 new acf_field_date_picker();
