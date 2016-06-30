@@ -23,16 +23,17 @@ get_header('aide');
             <?php while ( have_posts() ) : the_post(); ?>
 
               <?php
-              // $_POST['post_id'] sert à avoir l'id du de l'offre à laquelle on va lister les participants qui attendent la confirmation
-              // TODO Alors, on est sur une page et pas sur une offre donc get_fields ne va pas fonctionner, cependant nous avons l'id de l'offre qu'on observe
-              // qui est $_POST['post_id'] du coup il est posstible de recuperer les informations de celui ci Tout ce qui est en bas n'est qu'une pale copie de
-              // single-offre.php, donc TODO VOIR L'OFFRE - Description + inscrits -
+
               $post_id = $_POST['post_id'];
+              $offre = get_post($post_id);
+              echo '<h2>';
+              echo 'Bénévole de l\'offre ';
+              echo '</h2>';
 
 
-              $field = get_field_object("description", $_POST['post_id']);
-              echo '<h2>'.$field['label'].'</h2>';
-              echo '<p>'.$field['value'].'</p>';
+              echo '<h3>"';
+              echo $offre->post_title;
+              echo '"</h3>';
 
 
             // TODO Afficher tout les inscrit de l'offre

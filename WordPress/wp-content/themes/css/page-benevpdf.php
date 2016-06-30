@@ -1,12 +1,11 @@
 <?php /* Template Name: Benevole PDF */ ?>
 <?php
-
 $fields = get_fields($_POST['post_id']); // On recupere les informations du post
 $post = get_post($_POST['post_id']);
 global $wpdb;
 setup_postdata( $post );
 
-$author = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association where id_user = '$post->post_author'");
+$author = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}tuts_association where id_user =".$post->post_author);
 
 
 require( ABSPATH."wp-includes/mc_table.php");
@@ -25,7 +24,7 @@ $pdf->Cell(0,15,"","",1); // Cell pour ajuster en y     // ASSOCIATION
 $pdf->Cell(60); // Cell pour ajuster en x
 
 $pdf->SetFont("Arial",'',12);
-$pdf->Rect(55+15,40,210-55-30,45);                      // 15 = marge , 210 = Taille total A4, 55 = Taille logo + 5 mm de marge
+$pdf->Rect(55+15,40,210-55-30,25);                      // 15 = marge , 210 = Taille total A4, 55 = Taille logo + 5 mm de marge
 $pdf->MultiCell(210-65-30,5,utf8_decode("
 Nom Association / Collectif : ".$author->nom."\n
 Nom Référent : ".$author->nom_ref." ".$author->prenom_ref."\n
@@ -42,7 +41,7 @@ $pdf->SetWidths(array((210-30)/2,(210-30)/2));        // array( longueur de la p
 $pdf->Cell(0,8,utf8_decode('Details de l\'expérience'),1,2,'C'); // Cellule de "présentation"
 
                                 /* Ligne Titre */
-$pdf->Row(array(utf8_decode("Titre de l'expérience"),get_field("titre_de_lexperience")));
+$pdf->Row(array(utf8_decode("Titre de l'expérience"),utf8_decode(get_field("titre_de_lexperience"))));
 
                                 /* Ligne Type d'experience */
 $type = get_field_object("type_dexperience");
@@ -122,52 +121,3 @@ $pdf->Cell(0,8,utf8_decode("Description de l'offre"),1,2,'C');
 $pdf->Row(array(utf8_decode(get_field("definition"))));
 $pdf->Output();
 ?>
-
-<?php get_header('aide');?>
-
-  <div class="container-fluid conteneur">
-
-    <div class="row">
-
-      <div class="col-lg-2 contenu aside">
-
-        <!-- <img src="<?php bloginfo('template_url'); ?>/img/aside_a.gif" alt="" id="aside_a"/> -->
-      </div>
-
-      <div class="col-lg-8 contenu texte_contenu">
-        <h1 class="post-title" id="titre"><?php the_title(); ?></h1>
-        <!-- Partie identification -->
-        <div id="primary" class="content-area">
-          <div id="content" class="site-content" role="main">
-
-
-
-          </div><!-- #content -->
-        </div><!-- #primary -->
-      </div>
-
-      <div class="col-lg-2 contenu aside">
-        <!-- <img src="<?php bloginfo('template_url'); ?>/img/aside_b.gif" alt="" id="aside_b"/> -->
-      </div>
-    </div>
-    <!-- Row -->
-
-    <img alt="" class="img-responsive image_bas" src ="<?php bloginfo('template_url'); ?>/img/Bannierebas.png">
-
-    <div class="clear">
-
-    </div>
-
-
-
-  </div>
-  <script>
-
-  </script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-
-
-  <script src="http://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.concat.min.js"></script>
-  <?php get_footer(); ?>
