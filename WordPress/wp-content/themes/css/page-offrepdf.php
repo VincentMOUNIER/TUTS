@@ -113,14 +113,14 @@ $pdf->Cell(0,8,utf8_decode('Dates de l\'expérience'),1,2,'C');
 if (have_rows("date")) {  // Cas d'un repeater "date" est le nom du repeater
     while (have_rows("date"))  {
       the_row();                                                    // On recupere chaque element du repeater : à savoir la date,
-      $date = get_sub_field('date');                                // l'heure de debut, l'heure de fin et le nb de places
-      $heureDebut = get_sub_field('heure_de_debut');
-      $heureFin = get_sub_field('heure_de_fin');
+      $date = date("d/m/y", get_sub_field('date'));                              // l'heure de debut, l'heure de fin et le nb de places
+      $time = date("H:i", get_sub_field('date'));
+      $duree = get_sub_field('duree');
       $nbPlaces = get_sub_field('nombre_de_places_disponibles');
 
       // Ensuite on les affiche un par un dans un liste (?) il faut aussi verifier s'il s'agit de celui qui a poster l'offre
 
-      $strdate .= "- ". $date . " de ". $heureDebut . " à ". $heureFin . " pour environ " . $nbPlaces ." personnes.";
+      $strdate .= "- ". $date . " à ". $time . " d'une durée approximative de " . $duree . " heures pour environ " . $nbPlaces ." personnes.";
       $strdate .= "\n";
     }
 
@@ -153,7 +153,7 @@ $pdf->Output();
         <!-- Partie identification -->
         <div id="primary" class="content-area">
           <div id="content" class="site-content" role="main">
-    
+
 
 
           </div><!-- #content -->

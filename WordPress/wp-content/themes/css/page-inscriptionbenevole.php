@@ -133,7 +133,7 @@ $_POST['offre_id'] = id du post de l'offre auquel le benevole s'inscrit
             if (have_rows("date", $_POST['post_id'])) {  // Cas d'un repeater "date" est le nom du repeater
                 while (have_rows("date",$_POST['post_id']))  {
                   the_row();                                                    // On recupere chaque element du repeater : à savoir la date,
-                  $date = get_sub_field('date');                                // l'heure de debut, l'heure de fin et le nb de places
+                  $date = date("d/m/Y", get_sub_field('date'));                                // l'heure de debut, l'heure de fin et le nb de places
                   echo '<option>';
                   echo $date;
                   echo '</option>';
